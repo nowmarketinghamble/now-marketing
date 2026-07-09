@@ -625,8 +625,8 @@ footer {
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-mega-panel, .nav-dropdown-panel { display: none; }
-  .nav-burger { display: flex; }
-  .nav-cta { display: none; }
+  .nav-right { display: none; }
+  .nav-burger { display: flex; min-width: 38px; }
 }
 @media (max-width: 640px) {
   :root { --pad: 20px; }
