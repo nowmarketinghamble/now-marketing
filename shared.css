@@ -579,9 +579,54 @@ footer {
   .footer-main { grid-template-columns: 1fr 1fr; gap: 40px; }
   .nav-mega-panel { min-width: 400px; }
 }
+/* MOBILE NAV BURGER */
+.nav-burger {
+  display: none; flex-direction: column; justify-content: center;
+  gap: 5px; background: none; border: none; cursor: pointer;
+  padding: 8px; z-index: 1001; flex-shrink: 0;
+}
+.nav-burger span {
+  display: block; width: 22px; height: 2px;
+  background: rgba(255,255,255,.85); border-radius: 2px;
+  transition: transform .3s ease, opacity .3s ease;
+}
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* MOBILE NAV OVERLAY */
+.mobile-nav {
+  display: none; position: fixed; inset: 0;
+  background: var(--dark); z-index: 1000;
+  flex-direction: column; justify-content: center;
+  padding: 80px var(--pad) 60px;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav-links { display: flex; flex-direction: column; gap: 6px; margin-bottom: 48px; }
+.mobile-nav-link {
+  font-family: var(--font-headline);
+  font-size: clamp(38px, 10vw, 56px);
+  font-weight: 300; text-transform: uppercase;
+  color: var(--white); text-decoration: none;
+  line-height: 1.15; transition: color .2s;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding-bottom: 10px;
+}
+.mobile-nav-link:last-child { border-bottom: none; }
+.mobile-nav-link:hover { color: var(--blue); }
+.mobile-nav-cta {
+  display: inline-block; font-family: var(--font-main);
+  font-size: 12px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .12em; color: var(--white);
+  background: var(--blue); padding: 16px 32px;
+  border-radius: 4px; text-decoration: none; align-self: flex-start;
+}
+
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-mega-panel, .nav-dropdown-panel { display: none; }
+  .nav-burger { display: flex; }
+  .nav-cta { display: none; }
 }
 @media (max-width: 640px) {
   :root { --pad: 20px; }

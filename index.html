@@ -43,6 +43,7 @@
     .hero-client-badge.active { opacity:1; }
     .hero-client-badge::before { content:''; display:block; width:20px; height:1px; background:var(--blue); }
     /* Slide-specific background colours — swap for background-image when photos are ready */
+    .hero-slide-0 { background:linear-gradient(135deg,#050d1a 0%,#001228 60%,#000814 100%); }
     .hero-slide-1 { background:linear-gradient(135deg,#1a1008 0%,#2a1800 60%,#0f0a00 100%); }
     .hero-slide-2 { background:linear-gradient(135deg,#08101a 0%,#001428 60%,#000a14 100%); }
     .hero-slide-3 { background:linear-gradient(135deg,#081008 0%,#001a00 60%,#000a00 100%); }
@@ -390,14 +391,31 @@
     <a href="tel:07899792663" class="nav-phone">07899 792663</a>
     <a href="/contact/" class="nav-cta">Get a Quote</a>
   </div>
+<button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-links">
+    <a href="/services/" class="mobile-nav-link">Services</a>
+    <a href="/sectors/" class="mobile-nav-link">Sectors</a>
+    <a href="/work/" class="mobile-nav-link">Work</a>
+    <a href="/about/" class="mobile-nav-link">About</a>
+    <a href="/insights/" class="mobile-nav-link">Insights</a>
+    <a href="/contact/" class="mobile-nav-link">Contact</a>
+  </div>
+  <a href="/contact/" class="mobile-nav-cta">Get a Quote &#8594;</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-media">
     <div class="hero-slides" id="heroSlides">
+      <!-- IMAGE FILE: now-marketing/images/hero-now-marketing.jpg (1920 x 1080px) -->
+      <div class="hero-slide hero-slide-0 active" data-client="Now Marketing"
+           style="background-image:url('images/hero-now-marketing.jpg');background-size:cover;background-position:center;background-repeat:no-repeat">
+        <template class="slide-headline">We turn<br>brands into<br>conversations.<br><span class="blue">Businesses into<br>stories.</span></template>
+      </div>
       <!-- IMAGE FILE: now-marketing/images/hero-bargate.jpg (1920 x 1080px) -->
-      <div class="hero-slide hero-slide-1 active" data-client="Bargate Homes"
+      <div class="hero-slide hero-slide-1" data-client="Bargate Homes"
            style="background-image:url('images/hero-bargate.jpg');background-size:cover;background-position:center;background-repeat:no-repeat">
         <template class="slide-headline">New homes<br>marketed with<br>care and<br><span class="blue">precision.</span></template>
       </div>
@@ -432,10 +450,11 @@
     <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
     <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
     <button class="hero-dot" data-slide="4" aria-label="Slide 5"></button>
+    <button class="hero-dot" data-slide="5" aria-label="Slide 6"></button>
   </div>
   <div class="hero-content" style="padding-top:68px;">
     <p class="hero-eyebrow">Southampton &amp; Hampshire &nbsp;·&nbsp; Full-service creative agency &nbsp;·&nbsp; Est. 2003</p>
-    <h1 class="hero-headline" id="heroHeadline">New homes<br>marketed with<br>care and<br><span class="blue">precision.</span></h1>
+    <h1 class="hero-headline" id="heroHeadline">We turn<br>brands into<br>conversations.<br><span class="blue">Businesses into<br>stories.</span></h1>
     <div class="hero-bottom">
       <div>
         <p class="hero-desc">Full-service brand, web and digital marketing since 2003. Trusted by businesses across Hampshire, Dorset, Wiltshire and West Sussex.</p>
@@ -870,6 +889,22 @@
   });
   if(badge){badge.textContent=slides[0].dataset.client||'';badge.classList.add('active');}
   resetBar();start();
+})();
+</script>
+<script>
+(function(){
+  var b=document.getElementById('navBurger'),m=document.getElementById('mobileNav');
+  if(!b||!m)return;
+  b.addEventListener('click',function(){
+    b.classList.toggle('open');m.classList.toggle('open');
+    document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+  });
+  m.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      b.classList.remove('open');m.classList.remove('open');
+      document.body.style.overflow='';
+    });
+  });
 })();
 </script>
 </body>
