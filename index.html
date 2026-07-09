@@ -199,10 +199,11 @@
     }
     .logo-cell {
       height: 200px; display: flex; align-items: center; justify-content: center;
-      border-right: 1px solid var(--vapor); padding: 20px;
+      border-right: 1px solid var(--vapor); border-bottom: 1px solid var(--vapor); padding: 20px;
       box-sizing: border-box; transition: background .25s;
     }
-    .logo-cell:last-child { border-right: none; }
+    .logo-cell:nth-child(6n) { border-right: none; }
+    .logo-cell:nth-last-child(-n+6) { border-bottom: none; }
     .logo-cell:hover { background: var(--ash); }
     .logo-cell img {
       max-height: 160px; max-width: 100%;
@@ -337,7 +338,10 @@
       .section-2col, .about-inner { grid-template-columns:1fr; gap:48px; }
       .svc-grid-3, .work-grid, .sectors-grid, .testi-grid, .insights-grid { grid-template-columns:1fr 1fr; }
       .logo-strip { grid-template-columns: repeat(3,1fr); }
-      .logo-cell:nth-child(3n) { border-right:none; }
+      .logo-cell:nth-child(6n) { border-right: 1px solid var(--vapor); }
+      .logo-cell:nth-child(3n) { border-right: none; }
+      .logo-cell:nth-last-child(-n+6) { border-bottom: 1px solid var(--vapor); }
+      .logo-cell:nth-last-child(-n+3) { border-bottom: none; }
       .areas-grid { grid-template-columns: 1fr 1fr 1fr; }
       .area-cell:nth-child(3) { border-right:none; }
     }
@@ -347,7 +351,8 @@
       .hero-bottom { flex-direction:column; align-items:flex-start; gap:28px; }
       .hero-ctas { flex-direction:column; align-items:flex-start; }
       .svc-grid-3, .work-grid, .sectors-grid, .testi-grid, .insights-grid { grid-template-columns:1fr; }
-      .logo-strip { grid-template-columns:1fr 1fr; }
+      .logo-cell { height: 110px; }
+      .logo-cell img { max-height: 70px; }
       .areas-grid { grid-template-columns:1fr; }
       .area-cell { border-right:none; border-bottom: 1px solid rgba(255,255,255,.35); }
     }
@@ -638,49 +643,41 @@
       <div class="logo-cell">
         <img src="images/logos/austin-hughes.png" alt="Austin Hughes" onerror="this.outerHTML='<span class=logo-fallback>Austin Hughes</span>'">
       </div>
-    </div>
-    <div style="margin-top:1px;">
-      <div class="logo-strip">
-        <div class="logo-cell">
-          <img src="images/logos/glenfiddich.png" alt="Glenfiddich" onerror="this.outerHTML='<span class=logo-fallback>Glenfiddich</span>'">
-        </div>
-        <div class="logo-cell">
-          <img src="images/logos/strutt-and-parker.png" alt="Strutt &amp; Parker" onerror="this.outerHTML='<span class=logo-fallback>Strutt &amp; Parker</span>'">
-        </div>
-        <div class="logo-cell">
-          <img src="images/logos/charters.png" alt="Charters" onerror="this.outerHTML='<span class=logo-fallback>Charters</span>'">
-        </div>
-        <div class="logo-cell">
-          <img src="images/logos/stolichnaya.png" alt="Stolichnaya" onerror="this.outerHTML='<span class=logo-fallback>Stolichnaya</span>'">
-        </div>
-        <div class="logo-cell">
-          <img src="images/logos/trinity-rose.png" alt="Trinity Rose" onerror="this.outerHTML='<span class=logo-fallback>Trinity Rose</span>'">
-        </div>
-        <div class="logo-cell">
-          <img src="images/logos/wykeham-homes.png" alt="Wykeham Homes" onerror="this.outerHTML='<span class=logo-fallback>Wykeham Homes</span>'">
-        </div>
+      <div class="logo-cell">
+        <img src="images/logos/glenfiddich.png" alt="Glenfiddich" onerror="this.outerHTML='<span class=logo-fallback>Glenfiddich</span>'">
       </div>
-    </div>
-    <div style="margin-top:1px;">
-      <div class="logo-strip">
-        <div class="logo-cell">
-          <img src="images/logos/steens-group.png" alt="Steens Group" onerror="this.outerHTML='<span class=logo-fallback>Steens Group</span>'">
-        </div>
-        <div class="logo-cell">
-          <img src="images/logos/newman-cozens.png" alt="Newman Cozens" onerror="this.outerHTML='<span class=logo-fallback>Newman Cozens</span>'">
-        </div>
-        <div class="logo-cell">
-          <img src="images/logos/doswell.png" alt="Doswell" onerror="this.outerHTML='<span class=logo-fallback>Doswell</span>'">
-        </div>
-        <div class="logo-cell">
-          <img src="images/logos/st-cross-homes.png" alt="St Cross Homes" onerror="this.outerHTML='<span class=logo-fallback>St Cross Homes</span>'">
-        </div>
-        <div class="logo-cell">
-          <img src="images/logos/william-jarrod.png" alt="William Jarrod" onerror="this.outerHTML='<span class=logo-fallback>William Jarrod</span>'">
-        </div>
-        <div class="logo-cell">
-          <img src="images/logos/charters-financial.png" alt="Charters Financial" onerror="this.outerHTML='<span class=logo-fallback>Charters Financial</span>'">
-        </div>
+      <div class="logo-cell">
+        <img src="images/logos/strutt-and-parker.png" alt="Strutt &amp; Parker" onerror="this.outerHTML='<span class=logo-fallback>Strutt &amp; Parker</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/charters.png" alt="Charters" onerror="this.outerHTML='<span class=logo-fallback>Charters</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/stolichnaya.png" alt="Stolichnaya" onerror="this.outerHTML='<span class=logo-fallback>Stolichnaya</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/trinity-rose.png" alt="Trinity Rose" onerror="this.outerHTML='<span class=logo-fallback>Trinity Rose</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/wykeham-homes.png" alt="Wykeham Homes" onerror="this.outerHTML='<span class=logo-fallback>Wykeham Homes</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/steens-group.png" alt="Steens Group" onerror="this.outerHTML='<span class=logo-fallback>Steens Group</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/newman-cozens.png" alt="Newman Cozens" onerror="this.outerHTML='<span class=logo-fallback>Newman Cozens</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/doswell.png" alt="Doswell" onerror="this.outerHTML='<span class=logo-fallback>Doswell</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/st-cross-homes.png" alt="St Cross Homes" onerror="this.outerHTML='<span class=logo-fallback>St Cross Homes</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/william-jarrod.png" alt="William Jarrod" onerror="this.outerHTML='<span class=logo-fallback>William Jarrod</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/charters-financial.png" alt="Charters Financial" onerror="this.outerHTML='<span class=logo-fallback>Charters Financial</span>'">
       </div>
     </div>
   </div>
