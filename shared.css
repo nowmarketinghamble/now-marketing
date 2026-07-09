@@ -133,14 +133,13 @@ body  {
 
 /* Logo */
 .nav-logo {
-  font-family: var(--font-main); font-size: 20px;
-  font-weight: 300; letter-spacing: -.01em;
-  color: var(--white); text-decoration: none;
-  display: flex; align-items: center; line-height: 1;
+  text-decoration: none;
+  display: flex; align-items: center; gap: 3px; line-height: 1;
   flex-shrink: 0;
 }
-.nav-logo-now  { font-weight: 300; color: rgba(255,255,255,.85); }
-.nav-logo-mark { font-weight: 700; color: var(--white); }
+.nav-logo-img  { height: 22px; width: auto; display: block; }
+.nav-logo-now  { display: none; }
+.nav-logo-mark { display: none; }
 .nav-logo-dot  {
   display: inline-block; width: 7px; height: 7px;
   background: var(--blue); border-radius: 50%;
@@ -497,11 +496,10 @@ footer {
   gap: 48px; padding-bottom: 64px;
 }
 .footer-logo {
-  font-family: var(--font-main); font-size: 22px; font-weight: 300;
-  color: var(--white); text-decoration: none;
-  display: flex; align-items: center; margin-bottom: 8px; line-height: 1;
+  text-decoration: none;
+  display: flex; align-items: center; gap: 3px; margin-bottom: 8px; line-height: 1;
 }
-.footer-logo .nav-logo-mark { font-weight: 700; }
+.footer-logo .nav-logo-img { height: 26px; }
 .footer-tagline-sub {
   font-family: var(--font-main); font-size: 11px; font-weight: 700;
   text-transform: uppercase; letter-spacing: .1em;
