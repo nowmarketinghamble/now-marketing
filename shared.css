@@ -119,7 +119,7 @@ body  {
   z-index: 200; height: 68px;
   display: flex; align-items: center;
   justify-content: space-between;
-  padding: 0 var(--pad);
+  padding: 0 max(var(--pad), calc((100vw - var(--max)) / 2 + var(--pad)));
   gap: 32px;
 }
 .sitenav::before {
