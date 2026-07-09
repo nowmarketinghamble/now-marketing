@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Now Marketing | Creative Agency Southampton Hampshire</title>
+  <meta name="description" content="Now Marketing is a full-service creative agency founded in Southampton in 2003. Hands-on, senior-level attention on every project. Brand, web, digital, print and more." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.now-marketing.net/about/" />
+  <meta property="og:title" content="About Now Marketing | Creative Agency Southampton" />
+  <meta property="og:description" content="Founded in 2003 by Mike Lewis. Full-service creative marketing from The Creative Hub, Netley Abbey, Southampton." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.now-marketing.net/about/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared.css" />
+  <style>
+    body { background: var(--white); color: #111; }
+
+    /* PAGE HERO */
+    .page-hero { min-height: 65vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 var(--pad) 80px; position: relative; overflow: hidden; }
+    .hero-media { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+    .hero-slides { position: absolute; inset: 0; }
+    .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease; background-color: var(--dark-2); }
+    .hero-slide.active { opacity: 1; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,.3) 60%, rgba(0,0,0,.1) 100%); z-index: 1; }
+    .hero-dots { position: absolute; bottom: 32px; right: var(--pad); display: flex; gap: 8px; z-index: 3; }
+    .hero-dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,.35); cursor: pointer; transition: background .3s; }
+    .hero-dot.active { background: var(--blue); }
+    .hero-content { position: relative; z-index: 2; }
+    .page-hero-eyebrow { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; position: relative; z-index: 2; }
+    .page-hero-eyebrow::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .page-hero-headline { font-family: var(--font-headline); font-size: clamp(52px,7vw,100px); font-weight: 300; line-height: .94; letter-spacing: -.01em; text-transform: uppercase; color: var(--white); max-width: 16ch; position: relative; z-index: 2; margin-bottom: 28px; }
+    .page-hero-headline .blue { color: var(--blue); }
+    .page-hero-sub { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: rgba(255,255,255,.88); max-width: 520px; position: relative; z-index: 2; }
+
+    /* AGENCY STORY */
+    .story-section { background: var(--dark); padding: 100px 0; }
+    .story-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 100px; align-items: start; }
+    .story-label { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .story-label::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .story-h2 { font-family: var(--font-headline); font-size: clamp(36px,4vw,60px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; margin-bottom: 32px; }
+    .story-h2 em { font-family: var(--font-main); font-style: normal; font-weight: 300; color: var(--blue); }
+    .story-body p { font-family: var(--font-body); font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.92); margin-bottom: 22px; }
+    .story-body p:last-child { margin-bottom: 0; }
+    .story-aside-year { font-family: var(--font-headline); font-size: 120px; font-weight: 400; color: rgba(255,255,255,.35); line-height: 1; margin-bottom: 0; }
+    .story-aside-note { font-family: var(--font-main); font-size: 13px; color: rgba(255,255,255,.5); letter-spacing: .06em; margin-top: 8px; }
+
+    /* VALUES */
+    .values-section { background: var(--white); padding: 100px 0; }
+    .section-label { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .section-label::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .section-h2 { font-family: var(--font-headline); font-size: clamp(36px,4vw,58px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
+    .section-h2 em { font-family: var(--font-main); font-style: normal; font-weight: 300; color: var(--blue); }
+    .values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--vapor); }
+    .value-card { background: var(--white); padding: 48px 40px; }
+    .value-num { font-family: var(--font-headline); font-size: 48px; font-weight: 400; color: var(--blue); line-height: 1; margin-bottom: 20px; opacity: .3; }
+    .value-title { font-family: var(--font-headline); font-size: 24px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 16px; }
+    .value-body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: #444; }
+
+    /* STATS STRIP */
+    .stats-strip { background: var(--dark-3); padding: 80px 0; }
+    .stats-inner { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; background: rgba(255,255,255,.35); }
+    .stat-cell { background: var(--dark-3); padding: 48px 40px; text-align: center; }
+    .stat-n { font-family: var(--font-headline); font-size: clamp(52px,5vw,80px); font-weight: 300; color: var(--white); line-height: 1; }
+    .stat-n span { color: var(--blue); }
+    .stat-l { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.5); margin-top: 10px; }
+
+    /* MIKE SECTION */
+    .mike-section { background: var(--ash); padding: 100px 0; }
+    .mike-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
+    .mike-portrait { width: 100%; aspect-ratio: 3/4; background: var(--vapor); border-radius: var(--r); display: flex; align-items: flex-end; padding: 24px; position: relative; overflow: hidden; }
+    .mike-portrait-bg { position: absolute; inset: 0; background: linear-gradient(135deg, var(--dark-3) 0%, var(--dark-4) 100%); }
+    .mike-portrait-label { position: relative; z-index: 1; font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.4); }
+    .mike-role { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 8px; }
+    .mike-name { font-family: var(--font-headline); font-size: clamp(38px,4vw,64px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 32px; }
+    .mike-body p { font-family: var(--font-body); font-size: 17px; line-height: 1.75; color: #333; margin-bottom: 20px; }
+    .mike-body p:last-child { margin-bottom: 0; }
+    .mike-tag-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    .mike-tag { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--dark); background: var(--white); border: 1px solid var(--vapor); padding: 8px 16px; border-radius: 4px; }
+
+    /* CLIENT LOGOS */
+    .logos-section { background: var(--white); padding: 80px 0; }
+    .logos-label { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--mid); text-align: center; margin-bottom: 48px; display: flex; align-items: center; justify-content: center; gap: 16px; }
+    .logos-label::before, .logos-label::after { content: ''; flex: 1; height: 1px; background: var(--vapor); }
+    .logo-strip { display: grid; grid-template-columns: repeat(6,1fr); border: 1px solid var(--vapor); border-radius: var(--r); overflow: hidden; }
+    .logo-cell { height: 200px; display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--vapor); padding: 20px; box-sizing: border-box; transition: background .25s; }
+    .logo-cell:last-child { border-right: none; }
+    .logo-cell:hover { background: var(--ash); }
+    .logo-cell img { max-height: 160px; max-width: 100%; width: auto; height: auto; display: block; object-fit: contain; filter: grayscale(100%) opacity(0.45); transition: filter .35s ease; }
+    .logo-cell:hover img { filter: grayscale(0%) opacity(1); }
+    .logo-fallback { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--mid); }
+
+    /* CTA BAND */
+    .cta-band { background: var(--blue); padding: 80px 0; }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .cta-h { font-family: var(--font-headline); font-size: clamp(28px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; }
+    .btn-white { display: inline-block; font-family: var(--font-main); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--blue); background: var(--white); border: none; padding: 18px 36px; border-radius: 4px; text-decoration: none; white-space: nowrap; transition: background .2s, color .2s; }
+    .btn-white:hover { background: var(--dark); color: var(--white); }
+
+    @media (max-width: 900px) {
+      .story-inner, .mike-inner { grid-template-columns: 1fr; gap: 40px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2,1fr); }
+      .logos-grid { grid-template-columns: repeat(3,1fr); }
+      .cta-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="sitenav">
+  <a href="/" class="nav-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+  <ul class="nav-links">
+    <li class="nav-mega-trigger">
+      <a href="/services/">Services</a>
+      <div class="nav-mega-panel">
+        <div>
+          <a href="/services/branding-and-identity/" class="nav-mega-item"><span class="nav-mega-title">Branding &amp; Identity</span><span class="nav-mega-sub">Logo, brand strategy, guidelines</span></a>
+          <a href="/services/web-design-southampton/" class="nav-mega-item"><span class="nav-mega-title">Web Design</span><span class="nav-mega-sub">UX-led, mobile-first website design</span></a>
+          <a href="/services/web-development/" class="nav-mega-item"><span class="nav-mega-title">Web Development</span><span class="nav-mega-sub">Bespoke builds, CMS, e-commerce</span></a>
+          <a href="/services/digital-marketing/" class="nav-mega-item"><span class="nav-mega-title">Digital Marketing</span><span class="nav-mega-sub">SEO, PPC, social media</span></a>
+        </div>
+        <div>
+          <a href="/services/print-and-advertising/" class="nav-mega-item"><span class="nav-mega-title">Print &amp; Advertising</span><span class="nav-mega-sub">Brochures, press ads, direct mail</span></a>
+          <a href="/services/copywriting/" class="nav-mega-item"><span class="nav-mega-title">Copywriting</span><span class="nav-mega-sub">Brand copy, web content, SEO writing</span></a>
+          <a href="/services/exhibitions-and-signage/" class="nav-mega-item"><span class="nav-mega-title">Exhibitions &amp; Signage</span><span class="nav-mega-sub">Stands, banners, vehicle livery</span></a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/sectors/">Sectors</a>
+      <div class="nav-dropdown-panel">
+        <a href="/sectors/property-marketing/" class="nav-dd-item"><span class="nav-dd-num">01</span><span class="nav-dd-label">Property Marketing</span></a>
+        <a href="/sectors/professional-services/" class="nav-dd-item"><span class="nav-dd-num">02</span><span class="nav-dd-label">Professional Services</span></a>
+        <a href="/sectors/luxury-brands/" class="nav-dd-item"><span class="nav-dd-num">03</span><span class="nav-dd-label">Luxury &amp; Premium Brands</span></a>
+      </div>
+    </li>
+    <li><a href="/work/">Work</a></li>
+    <li><a href="/about/" class="active">About</a></li>
+    <li><a href="/insights/">Insights</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:07899792663" class="nav-phone">07899 792663</a>
+    <a href="/contact/" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-media">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide active"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+    </div>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" data-slide="0"></button>
+    <button class="hero-dot" data-slide="1"></button>
+    <button class="hero-dot" data-slide="2"></button>
+  </div>
+  <div class="hero-content" style="padding-top:68px;">
+    <p class="page-hero-eyebrow">Southampton creative agency / Est. 2003</p>
+    <h1 class="page-hero-headline">Twenty years of creative <em class="blue">excellence.</em></h1>
+    <p class="page-hero-sub">A full-service creative marketing agency, based in Southampton since 2003. We do things properly, every time.</p>
+  </div>
+</section>
+
+<section class="story-section">
+  <div class="wrap">
+    <div class="story-inner">
+      <div>
+        <div class="story-aside-year">2003</div>
+        <p class="story-aside-note">Founded, Southampton</p>
+        <div style="margin-top:48px;">
+          <p class="story-label">Our story</p>
+          <h2 class="story-h2">Built to do things <em>differently.</em></h2>
+        </div>
+      </div>
+      <div class="story-body">
+        <p>Now Marketing was founded in 2003 by Mike Lewis with a straightforward idea: that clients deserve direct access to the people actually doing the work. No account managers acting as a telephone between you and the creatives. No junior teams picking up senior-billed projects. Just thoughtful, experienced creative people who genuinely care about the results.</p>
+        <p>From day one, the agency was built to be full-service. Brand identity, print design, web, digital marketing, copywriting, exhibitions and signage -- all under one roof, all informed by the same creative thinking. That breadth is not accidental. Marketing works best when the brand, the message and the medium are joined up, and that only happens when the same team is thinking about all of them together.</p>
+        <p>Based at The Creative Hub in Netley Abbey, Southampton, we work with clients across Hampshire, Dorset, Wiltshire, West Sussex and beyond. Some have been with us for over a decade. That kind of longevity only happens when you consistently deliver work that makes a genuine difference to a client's business.</p>
+        <p>We are not the biggest agency in the South. That is deliberate. Staying at a size where Mike is personally involved in every project means our clients always get our best thinking, our best creative and our best attention. It also means that when you brief us, you are briefing the person who will actually design, write and deliver the work.</p>
+        <p>Over twenty years, we have built brands from scratch, relaunched businesses going through change, designed hundreds of print campaigns, built websites that convert, and helped clients at every stage of growth. The work is always different. The standard never is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values-section">
+  <div class="wrap">
+    <p class="section-label">What we believe</p>
+    <h2 class="section-h2">Three principles that <em>guide everything.</em></h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-num">01</div>
+        <div class="value-title">Honesty over jargon</div>
+        <p class="value-body">We tell you what your project actually needs, not what sounds impressive in a credentials deck. If a simpler solution will serve you better, we will say so. If your brief has a problem, we will tell you before we start, not after. Good creative partnerships are built on candour, and we would rather have a difficult conversation early than a costly one later.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">02</div>
+        <div class="value-title">Delivery over promises</div>
+        <p class="value-body">Every project we take on has a clear timeline and a clear budget. We stick to both. Agencies that are brilliant at pitching but inconsistent at delivery are frustrating to work with, and we have never built our reputation that way. When we say something will be ready, it will be ready. When we say something will cost a certain amount, it will cost that amount.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">03</div>
+        <div class="value-title">Partnership over transactions</div>
+        <p class="value-body">We do not think of client relationships as a series of invoices. We invest time in understanding your business, your market and your ambitions so that every piece of work we produce is pulling in the right direction. Many of our clients have been with us for five, ten or fifteen years. That only happens when an agency genuinely treats success as a shared objective.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-strip">
+  <div class="wrap">
+    <div class="stats-inner">
+      <div class="stat-cell">
+        <div class="stat-n">20<span>+</span></div>
+        <div class="stat-l">Years in business</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-n">200<span>+</span></div>
+        <div class="stat-l">Projects delivered</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-n">100<span>+</span></div>
+        <div class="stat-l">Clients served</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-n">5</div>
+        <div class="stat-l">Counties covered</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mike-section">
+  <div class="wrap">
+    <div class="mike-inner">
+      <div class="mike-portrait">
+        <div class="mike-portrait-bg"></div>
+        <p class="mike-portrait-label">Photography coming soon</p>
+      </div>
+      <div>
+        <p class="mike-role">Founder and Creative Director</p>
+        <h2 class="mike-name">Mike Lewis</h2>
+        <div class="mike-body">
+          <p>Mike Lewis founded Now Marketing in 2003 after more than a decade working in design and brand agencies across the South of England. His background spans corporate identity, print design, web and digital -- a breadth that made a genuinely full-service agency the obvious model when he set out on his own.</p>
+          <p>What makes Mike's approach distinctive is his personal involvement in every project the agency takes on. Where many agency founders move into a management role as their business grows, Mike has deliberately kept the agency at a scale where he remains the lead creative on every brief. That means clients are working directly with a designer and strategist with over twenty years of experience, not being handed to someone more junior once the relationship is established.</p>
+          <p>Based at The Creative Hub in Netley Abbey, Southampton, Mike works across brand, web, digital, print and exhibitions for clients throughout Hampshire and the wider South. He is particularly experienced in property marketing, having worked with some of the region's most respected estate agents and residential developers over many years.</p>
+          <p>When Mike is not working on client projects, he spends his time thinking about how brands communicate -- what makes some brands feel compelling and others forgettable, and how to close that gap for the businesses he works with.</p>
+        </div>
+        <div class="mike-tag-row">
+          <span class="mike-tag">Brand Strategy</span>
+          <span class="mike-tag">Creative Direction</span>
+          <span class="mike-tag">Web Design</span>
+          <span class="mike-tag">Digital Marketing</span>
+          <span class="mike-tag">Print Design</span>
+          <span class="mike-tag">20+ Years Experience</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="logos-section">
+  <div class="wrap">
+    <p class="logos-label">A selection of clients we have worked with</p>
+    <div class="logo-strip">
+      <div class="logo-cell"><img src="../images/logos/spencers.png" alt="Spencers" onerror="this.outerHTML='<span class=logo-fallback>Spencers</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/dh-holdings.png" alt="DH Holdings" onerror="this.outerHTML='<span class=logo-fallback>DH Holdings</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/bargate-homes.png" alt="Bargate Homes" onerror="this.outerHTML='<span class=logo-fallback>Bargate Homes</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/mortgage-decisions.png" alt="Mortgage Decisions" onerror="this.outerHTML='<span class=logo-fallback>Mortgage Decisions</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/olive-homes.png" alt="Olive Homes" onerror="this.outerHTML='<span class=logo-fallback>Olive Homes</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/austin-hughes.png" alt="Austin Hughes" onerror="this.outerHTML='<span class=logo-fallback>Austin Hughes</span>'"></div>
+    </div>
+    <div style="margin-top:1px;">
+      <div class="logo-strip">
+        <div class="logo-cell"><img src="../images/logos/glenfiddich.png" alt="Glenfiddich" onerror="this.outerHTML='<span class=logo-fallback>Glenfiddich</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/strutt-and-parker.png" alt="Strutt &amp; Parker" onerror="this.outerHTML='<span class=logo-fallback>Strutt &amp; Parker</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/charters.png" alt="Charters" onerror="this.outerHTML='<span class=logo-fallback>Charters</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/stolichnaya.png" alt="Stolichnaya" onerror="this.outerHTML='<span class=logo-fallback>Stolichnaya</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/trinity-rose.png" alt="Trinity Rose" onerror="this.outerHTML='<span class=logo-fallback>Trinity Rose</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/wykeham-homes.png" alt="Wykeham Homes" onerror="this.outerHTML='<span class=logo-fallback>Wykeham Homes</span>'"></div>
+      </div>
+    </div>
+    <div style="margin-top:1px;">
+      <div class="logo-strip">
+        <div class="logo-cell"><img src="../images/logos/steens-group.png" alt="Steens Group" onerror="this.outerHTML='<span class=logo-fallback>Steens Group</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/newman-cozens.png" alt="Newman Cozens" onerror="this.outerHTML='<span class=logo-fallback>Newman Cozens</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/doswell.png" alt="Doswell" onerror="this.outerHTML='<span class=logo-fallback>Doswell</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/st-cross-homes.png" alt="St Cross Homes" onerror="this.outerHTML='<span class=logo-fallback>St Cross Homes</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/william-jarrod.png" alt="William Jarrod" onerror="this.outerHTML='<span class=logo-fallback>William Jarrod</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/charters-financial.png" alt="Charters Financial" onerror="this.outerHTML='<span class=logo-fallback>Charters Financial</span>'"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2 class="cta-h">Work with an agency that genuinely cares.</h2>
+      <a href="/contact/" class="btn-white">Get a Quote</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <div>
+        <a href="/" class="footer-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+        <p class="footer-tagline-sub">Creative Marketing Agency</p>
+        <p class="footer-tagline">The Creative Hub, 7 Carisbrooke<br>Netley Abbey, Southampton<br>Hampshire, SO31 5GH<br><br>T: <a href="tel:07899792663" style="color:inherit;text-decoration:none;">07899 792663</a><br>E: <a href="mailto:hello@now-marketing.net" style="color:inherit;text-decoration:none;">hello@now-marketing.net</a></p>
+      </div>
+      <div>
+        <p class="footer-col-h">Services</p>
+        <div class="footer-links">
+          <a href="/services/branding-and-identity/">Branding &amp; Identity</a>
+          <a href="/services/web-design-southampton/">Web Design</a>
+          <a href="/services/web-development/">Web Development</a>
+          <a href="/services/digital-marketing/">Digital Marketing</a>
+          <a href="/services/print-and-advertising/">Print &amp; Advertising</a>
+          <a href="/services/copywriting/">Copywriting</a>
+          <a href="/services/exhibitions-and-signage/">Exhibitions &amp; Signage</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Sectors</p>
+        <div class="footer-links">
+          <a href="/sectors/property-marketing/">Property Marketing</a>
+          <a href="/sectors/professional-services/">Professional Services</a>
+          <a href="/sectors/luxury-brands/">Luxury &amp; Premium</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Studio</p>
+        <div class="footer-links">
+          <a href="/about/">About Us</a>
+          <a href="/work/">Our Work</a>
+          <a href="/insights/">Insights</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">&#169; 2025 Now Marketing. All rights reserved. Registered in England.</p>
+      <p class="footer-legal">Creative Marketing Agency &nbsp;·&nbsp; Southampton, Hampshire</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){var s=document.querySelectorAll('#heroSlides .hero-slide'),d=document.querySelectorAll('#heroDots .hero-dot'),c=0,t;function g(n){s[c].classList.remove('active');d[c].classList.remove('active');c=(n+s.length)%s.length;s[c].classList.add('active');d[c].classList.add('active');}function st(){t=setInterval(function(){g(c+1);},5000);}d.forEach(function(x,i){x.addEventListener('click',function(){clearInterval(t);g(i);st();});});st();})();
+</script>
+</body>
+</html>

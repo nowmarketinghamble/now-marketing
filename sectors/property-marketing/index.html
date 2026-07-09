@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Marketing Agency Southampton | Estate Agent Marketing Hampshire | Now Marketing</title>
+  <meta name="description" content="Property marketing agency in Hampshire and the South Coast. Brand, brochures, web and digital for estate agents and residential developers. Charters, Strutt and Parker, Wykeham Homes, St Cross Homes." />
+  <meta name="keywords" content="property marketing agency Southampton, estate agent marketing Hampshire, residential developer marketing" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.now-marketing.net/sectors/property-marketing/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../shared.css" />
+  <style>
+    body { background: var(--white); color: #111; }
+    .page-hero { min-height: 65vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 var(--pad) 80px; position: relative; overflow: hidden; }
+    .hero-media { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+    .hero-slides { position: absolute; inset: 0; }
+    .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease; background-color: var(--dark-2); }
+    .hero-slide.active { opacity: 1; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,.3) 60%, rgba(0,0,0,.1) 100%); z-index: 1; }
+    .hero-dots { position: absolute; bottom: 32px; right: var(--pad); display: flex; gap: 8px; z-index: 3; }
+    .hero-dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,.35); cursor: pointer; transition: background .3s; }
+    .hero-dot.active { background: var(--blue); }
+    .hero-content { position: relative; z-index: 2; }
+    .page-hero-eyebrow { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .page-hero-eyebrow::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .page-hero-headline { font-family: var(--font-headline); font-size: clamp(52px,7vw,100px); font-weight: 300; line-height: .94; letter-spacing: -.01em; text-transform: uppercase; color: var(--white); max-width: 16ch; margin-bottom: 28px; }
+    .page-hero-headline .blue { color: var(--blue); }
+    .page-hero-sub { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: rgba(255,255,255,.88); max-width: 520px; }
+
+    .expertise-section { background: var(--dark); padding: 100px 0; }
+    .expertise-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 100px; }
+    .section-label { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .section-label::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .section-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; margin-bottom: 32px; }
+    .section-h2 em { font-family: var(--font-main); font-style: normal; font-weight: 300; color: var(--blue); }
+    .body-dark p { font-family: var(--font-body); font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.92); margin-bottom: 22px; }
+    .client-names { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    .client-badge { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.85); background: rgba(0,174,239,.15); border: 1px solid rgba(0,174,239,.3); padding: 8px 16px; border-radius: 4px; }
+
+    .services-section { background: var(--white); padding: 100px 0; }
+    .services-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--vapor); }
+    .svc-card { background: var(--white); padding: 40px 32px; }
+    .svc-title { font-family: var(--font-headline); font-size: 20px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 12px; }
+    .svc-body { font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: #555; }
+
+    .work-section { background: var(--ash); padding: 100px 0; }
+    .work-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
+    .work-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--vapor); }
+    .work-card { background: var(--ash); padding: 40px 28px; }
+    .work-thumb { width: 100%; aspect-ratio: 4/3; background: var(--vapor); border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
+    .work-thumb-label { font-family: var(--font-main); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--fog); }
+    .work-client { font-family: var(--font-headline); font-size: 22px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 8px; }
+    .work-proj { font-family: var(--font-body); font-size: 14px; color: #555; }
+
+    .testi-section { background: var(--dark-3); padding: 100px 0; }
+    .testi-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; margin-bottom: 60px; }
+    .testi-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; background: rgba(255,255,255,.35); }
+    .testi-card { background: var(--dark-3); padding: 44px 36px; }
+    .testi-quote { font-family: var(--font-body); font-size: 16px; line-height: 1.75; color: rgba(255,255,255,.82); margin-bottom: 28px; }
+    .testi-quote::before { content: '\201C'; font-family: var(--font-headline); font-size: 48px; color: var(--blue); line-height: 1; display: block; margin-bottom: 8px; }
+    .testi-name { font-family: var(--font-main); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--white); }
+    .testi-co { font-family: var(--font-main); font-size: 11px; color: rgba(255,255,255,.4); margin-top: 4px; }
+
+    .cta-band { background: var(--blue); padding: 80px 0; }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .cta-h { font-family: var(--font-headline); font-size: clamp(28px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; }
+    .btn-white { display: inline-block; font-family: var(--font-main); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--blue); background: var(--white); border: none; padding: 18px 36px; border-radius: 4px; text-decoration: none; white-space: nowrap; transition: background .2s, color .2s; }
+    .btn-white:hover { background: var(--dark); color: var(--white); }
+
+    @media (max-width: 900px) {
+      .expertise-inner { grid-template-columns: 1fr; gap: 40px; }
+      .services-grid, .work-grid, .testi-grid { grid-template-columns: 1fr; }
+      .cta-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="sitenav">
+  <a href="/" class="nav-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+  <ul class="nav-links">
+    <li class="nav-mega-trigger">
+      <a href="/services/">Services</a>
+      <div class="nav-mega-panel">
+        <div>
+          <a href="/services/branding-and-identity/" class="nav-mega-item"><span class="nav-mega-title">Branding &amp; Identity</span><span class="nav-mega-sub">Logo, brand strategy, guidelines</span></a>
+          <a href="/services/web-design-southampton/" class="nav-mega-item"><span class="nav-mega-title">Web Design</span><span class="nav-mega-sub">UX-led, mobile-first website design</span></a>
+          <a href="/services/web-development/" class="nav-mega-item"><span class="nav-mega-title">Web Development</span><span class="nav-mega-sub">Bespoke builds, CMS, e-commerce</span></a>
+          <a href="/services/digital-marketing/" class="nav-mega-item"><span class="nav-mega-title">Digital Marketing</span><span class="nav-mega-sub">SEO, PPC, social media</span></a>
+        </div>
+        <div>
+          <a href="/services/print-and-advertising/" class="nav-mega-item"><span class="nav-mega-title">Print &amp; Advertising</span><span class="nav-mega-sub">Brochures, press ads, direct mail</span></a>
+          <a href="/services/copywriting/" class="nav-mega-item"><span class="nav-mega-title">Copywriting</span><span class="nav-mega-sub">Brand copy, web content, SEO writing</span></a>
+          <a href="/services/exhibitions-and-signage/" class="nav-mega-item"><span class="nav-mega-title">Exhibitions &amp; Signage</span><span class="nav-mega-sub">Stands, banners, vehicle livery</span></a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/sectors/" class="active">Sectors</a>
+      <div class="nav-dropdown-panel">
+        <a href="/sectors/property-marketing/" class="nav-dd-item"><span class="nav-dd-num">01</span><span class="nav-dd-label">Property Marketing</span></a>
+        <a href="/sectors/professional-services/" class="nav-dd-item"><span class="nav-dd-num">02</span><span class="nav-dd-label">Professional Services</span></a>
+        <a href="/sectors/luxury-brands/" class="nav-dd-item"><span class="nav-dd-num">03</span><span class="nav-dd-label">Luxury &amp; Premium Brands</span></a>
+      </div>
+    </li>
+    <li><a href="/work/">Work</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/insights/">Insights</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:07899792663" class="nav-phone">07899 792663</a>
+    <a href="/contact/" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-media">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide active"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+    </div>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" data-slide="0"></button>
+    <button class="hero-dot" data-slide="1"></button>
+    <button class="hero-dot" data-slide="2"></button>
+  </div>
+  <div class="hero-content" style="padding-top:68px;">
+    <p class="page-hero-eyebrow">Property marketing agency</p>
+    <h1 class="page-hero-headline">Property marketing agency in Hampshire and the <em class="blue">South Coast.</em></h1>
+    <p class="page-hero-sub">Deep experience in property marketing: estate agents, residential developers and property management businesses across Hampshire and the South.</p>
+  </div>
+</section>
+
+<section class="expertise-section">
+  <div class="wrap">
+    <div class="expertise-inner">
+      <div>
+        <p class="section-label">Our property expertise</p>
+        <h2 class="section-h2">A specialist in <em>property marketing.</em></h2>
+        <div class="client-names">
+          <span class="client-badge">Charters</span>
+          <span class="client-badge">Strutt &amp; Parker</span>
+          <span class="client-badge">Wykeham Homes</span>
+          <span class="client-badge">St Cross Homes</span>
+          <span class="client-badge">Doswell</span>
+          <span class="client-badge">Newman Cozens</span>
+        </div>
+      </div>
+      <div class="body-dark">
+        <p>Property marketing sits at an interesting intersection of disciplines. The best estate agents and residential developers understand that their brand is not just how they look -- it is the total impression they make at every touchpoint, from the agent's board at the end of the road to the brochure that a buyer takes home, to the website that appears when they search online the next morning.</p>
+        <p>Now Marketing has been working with property clients across Hampshire and the South Coast for over twenty years. Our clients include some of the most respected names in the regional property market: Charters, one of Hampshire's leading independent estate agencies; Strutt &amp; Parker, whose regional operations we have supported with design and marketing work; Wykeham Homes and St Cross Homes, quality Hampshire developers whose sales literature and marketing we have produced; and established names including Doswell and Newman Cozens.</p>
+        <p>What makes property marketing distinctive is its breadth. A successful property marketing programme requires consistent brand application across an unusual range of formats: from A1 hoardings to A5 brochure inserts, from portal photography to social media, from development brochures to press advertising. Maintaining quality and consistency across all of these simultaneously requires an agency that understands the medium, the audience and the pace at which property marketing moves.</p>
+        <p>We understand the property purchase journey and the role that marketing plays at each stage: building awareness of the development or agency, creating emotional connection with the product, providing the information buyers need to make a decision, and then reinforcing confidence through the sales process. Every piece of marketing we produce for property clients is designed with this journey in mind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="wrap">
+    <p class="section-label">Services for property clients</p>
+    <h2 class="services-h2">What we do for the property sector.</h2>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-title">Brand and Identity</div>
+        <p class="svc-body">Agency brand refreshes, new development naming and identity, developer brand guidelines. We have created and refreshed brands for both estate agents and residential developers at various scales, from boutique independents to multi-office regional networks.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-title">Development Brochures</div>
+        <p class="svc-body">Sales brochures, specification documents and move-in packs for residential developments. Premium print quality that reflects the quality of the homes being sold, with clear floorplan presentation, lifestyle photography briefs and compelling copywriting throughout.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-title">Website Design and Development</div>
+        <p class="svc-body">Agent and developer websites with property search integration, lead capture, development microsites and CMS management. Mobile-first, SEO-optimised and designed to convert visitors into enquiries. We understand the technical requirements of property portals and CRM integration.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-title">Digital Marketing</div>
+        <p class="svc-body">SEO, PPC and social media campaigns for estate agents and developers. Local SEO is particularly important in the property sector, where buyers are specifically searching for properties and agents in defined geographic areas. We help property businesses appear prominently for the search terms that drive buyer enquiries.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-title">Photography Briefs</div>
+        <p class="svc-body">We work alongside photographers and videographers on development photoshoots, briefing for the images and footage needed across digital, print and social channels. We cannot shoot the photography, but we can ensure the right brief is in place to capture what the marketing programme needs.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-title">Sales Support Materials</div>
+        <p class="svc-body">Site hoardings, show home dressing graphics, display boards, agent particulars templates, signage and point-of-sale materials. Everything a development sales office or estate agency needs to present its product confidently to buyers throughout the sales process.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work-section">
+  <div class="wrap">
+    <p class="section-label">Featured property work</p>
+    <h2 class="work-h2">Property projects we are proud of.</h2>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
+        <div class="work-client">Charters</div>
+        <p class="work-proj">Brand refresh and complete marketing collateral for a leading Hampshire estate agency. New logo, brand guidelines, press advertising programme, web design and ongoing digital marketing.</p>
+      </div>
+      <div class="work-card">
+        <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
+        <div class="work-client">Wykeham Homes</div>
+        <p class="work-proj">Development brochures, website and digital marketing campaign for two Hampshire residential developments. Premium print production with special finishes throughout, aligned with the developer's quality positioning.</p>
+      </div>
+      <div class="work-card">
+        <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
+        <div class="work-client">St Cross Homes</div>
+        <p class="work-proj">Brand identity and sales literature for a Portsmouth-based residential developer. New brand, development brochures and web presence designed to reflect the quality of the homes being delivered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testi-section">
+  <div class="wrap">
+    <p class="section-label" style="color:var(--blue);">What property clients say</p>
+    <h2 class="testi-h2">In their own words.</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p class="testi-quote">Mike and the team at Now Marketing have been our agency partner for over a decade. The quality of their work is consistently high, they understand the property market, and they are always responsive when deadlines are tight. We would not go anywhere else.</p>
+        <div class="testi-name">Director</div>
+        <div class="testi-co">Leading Hampshire Estate Agency</div>
+      </div>
+      <div class="testi-card">
+        <p class="testi-quote">We needed a complete brand and marketing package for a new development, and Now Marketing delivered exactly what we needed, on time and on budget. The brochure quality was exceptional and genuinely reflected the quality of the homes we were selling.</p>
+        <div class="testi-name">Sales and Marketing Director</div>
+        <div class="testi-co">Hampshire Residential Developer</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2 class="cta-h">Brief us on your property project.</h2>
+      <a href="/contact/" class="btn-white">Get a Quote</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <div>
+        <a href="/" class="footer-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+        <p class="footer-tagline-sub">Creative Marketing Agency</p>
+        <p class="footer-tagline">The Creative Hub, 7 Carisbrooke<br>Netley Abbey, Southampton<br>Hampshire, SO31 5GH<br><br>T: <a href="tel:07899792663" style="color:inherit;text-decoration:none;">07899 792663</a><br>E: <a href="mailto:hello@now-marketing.net" style="color:inherit;text-decoration:none;">hello@now-marketing.net</a></p>
+      </div>
+      <div>
+        <p class="footer-col-h">Services</p>
+        <div class="footer-links">
+          <a href="/services/branding-and-identity/">Branding &amp; Identity</a>
+          <a href="/services/web-design-southampton/">Web Design</a>
+          <a href="/services/web-development/">Web Development</a>
+          <a href="/services/digital-marketing/">Digital Marketing</a>
+          <a href="/services/print-and-advertising/">Print &amp; Advertising</a>
+          <a href="/services/copywriting/">Copywriting</a>
+          <a href="/services/exhibitions-and-signage/">Exhibitions &amp; Signage</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Sectors</p>
+        <div class="footer-links">
+          <a href="/sectors/property-marketing/">Property Marketing</a>
+          <a href="/sectors/professional-services/">Professional Services</a>
+          <a href="/sectors/luxury-brands/">Luxury &amp; Premium</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Studio</p>
+        <div class="footer-links">
+          <a href="/about/">About Us</a>
+          <a href="/work/">Our Work</a>
+          <a href="/insights/">Insights</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">&#169; 2025 Now Marketing. All rights reserved. Registered in England.</p>
+      <p class="footer-legal">Creative Marketing Agency &nbsp;·&nbsp; Southampton, Hampshire</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){var s=document.querySelectorAll('#heroSlides .hero-slide'),d=document.querySelectorAll('#heroDots .hero-dot'),c=0,t;function g(n){s[c].classList.remove('active');d[c].classList.remove('active');c=(n+s.length)%s.length;s[c].classList.add('active');d[c].classList.add('active');}function st(){t=setInterval(function(){g(c+1);},5000);}d.forEach(function(x,i){x.addEventListener('click',function(){clearInterval(t);g(i);st();});});st();})();
+</script>
+</body>
+</html>

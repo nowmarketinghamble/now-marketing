@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sector Expertise | Property, Professional Services and Luxury Brands | Now Marketing</title>
+  <meta name="description" content="Now Marketing has deep sector expertise in property and residential development, professional services B2B, and luxury and premium brands. Southampton and Hampshire creative agency since 2003." />
+  <meta name="keywords" content="property marketing agency Hampshire, professional services marketing Southampton, luxury brand agency, sector specialist creative agency" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.now-marketing.net/sectors/" />
+  <meta property="og:title" content="Sector Expertise | Now Marketing Southampton" />
+  <meta property="og:description" content="Three sectors. One agency. Deep specialist knowledge in property, professional services and luxury brands." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.now-marketing.net/sectors/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared.css" />
+  <style>
+    body { background: var(--white); color: #111; }
+
+    /* HERO */
+    .page-hero { min-height: 65vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 var(--pad) 80px; position: relative; overflow: hidden; }
+    .hero-media { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+    .hero-slides { position: absolute; inset: 0; }
+    .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease; background-color: var(--dark-2); }
+    .hero-slide.active { opacity: 1; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,.3) 60%, rgba(0,0,0,.1) 100%); z-index: 1; }
+    .hero-dots { position: absolute; bottom: 32px; right: var(--pad); display: flex; gap: 8px; z-index: 3; }
+    .hero-dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,.35); cursor: pointer; transition: background .3s; }
+    .hero-dot.active { background: var(--blue); }
+    .hero-content { position: relative; z-index: 2; }
+    .page-hero-eyebrow { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .page-hero-eyebrow::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .page-hero-headline { font-family: var(--font-headline); font-size: clamp(52px,7vw,100px); font-weight: 300; line-height: .94; letter-spacing: -.01em; text-transform: uppercase; color: var(--white); max-width: 16ch; margin-bottom: 28px; }
+    .page-hero-headline .blue { color: var(--blue); }
+    .page-hero-sub { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: rgba(255,255,255,.88); max-width: 520px; }
+
+    /* SECTOR HUB */
+    .sectors-hub { background: var(--white); padding: 100px 0; }
+    .section-label { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .section-label::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .section-h2 { font-family: var(--font-headline); font-size: clamp(36px,4vw,58px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 16px; }
+    .section-h2 em { font-family: var(--font-main); font-style: normal; font-weight: 300; color: var(--blue); }
+    .section-intro { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: #444; max-width: 640px; margin-bottom: 60px; }
+
+    /* SECTOR CARDS -- full-width stacked with image panel */
+    .sector-list { display: flex; flex-direction: column; gap: 2px; }
+    .sector-card { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; overflow: hidden; background: var(--dark); text-decoration: none; color: inherit; }
+    .sector-card:nth-child(even) { direction: rtl; }
+    .sector-card:nth-child(even) .sector-card-body { direction: ltr; }
+    .sector-card-img { background-size: cover; background-position: center; background-color: var(--dark-3); position: relative; overflow: hidden; }
+    .sector-card-img::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,.15); transition:background .3s; }
+    .sector-card:hover .sector-card-img::after { background:rgba(0,0,135,.08); }
+    .sector-card-body { background: var(--dark-2); padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; direction: ltr; }
+    .sector-num { font-family: var(--font-headline); font-size: 72px; font-weight: 400; color: rgba(255,255,255,.35); line-height: 1; margin-bottom: 8px; }
+    .sector-title { font-family: var(--font-headline); font-size: clamp(28px,3vw,44px); font-weight: 400; text-transform: uppercase; color: var(--white); margin-bottom: 20px; line-height: .96; }
+    .sector-title .blue { color: var(--blue); }
+    .sector-desc { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: rgba(255,255,255,.75); margin-bottom: 32px; max-width: 440px; }
+    .sector-clients { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.4); margin-bottom: 40px; }
+    .sector-clients span { color: rgba(255,255,255,.7); }
+    .sector-link { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: gap .2s; }
+    .sector-link::after { content: '\2192'; }
+    .sector-link:hover { gap: 14px; }
+
+    /* WHY IT MATTERS STRIP */
+    .why-strip { background: var(--dark-3); padding: 100px 0; }
+    .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(255,255,255,.35); margin-top: 60px; }
+    .why-cell { background: var(--dark-3); padding: 48px 36px; }
+    .why-cell-bar { height: 3px; background: var(--blue); margin-bottom: 32px; }
+    .why-cell-title { font-family: var(--font-headline); font-size: 20px; font-weight: 400; text-transform: uppercase; color: var(--white); margin-bottom: 14px; }
+    .why-cell-body { font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: rgba(255,255,255,.65); }
+    .why-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; }
+    .why-label { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .why-label::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+
+    /* CLIENT BAR */
+    .client-bar { background: var(--dark); padding: 80px 0; border-top: 1px solid rgba(255,255,255,.35); }
+    .client-bar-label { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.35); text-align: center; margin-bottom: 48px; }
+    .client-grid { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px 64px; }
+    .client-name { font-family: var(--font-headline); font-size: 14px; font-weight: 400; text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.25); transition: color .2s; cursor: default; }
+    .client-name:hover { color: rgba(255,255,255,.65); }
+
+    /* CTA BAND */
+    .cta-band { background: var(--blue); padding: 80px 0; }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .cta-h { font-family: var(--font-headline); font-size: clamp(28px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; }
+    .btn-white { display: inline-block; font-family: var(--font-main); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--blue); background: var(--white); border: none; padding: 18px 36px; border-radius: 4px; text-decoration: none; white-space: nowrap; transition: background .2s, color .2s; }
+    .btn-white:hover { background: var(--dark); color: var(--white); }
+
+    @media (max-width: 900px) {
+      .sector-card { grid-template-columns: 1fr; min-height: auto; }
+      .sector-card:nth-child(even) { direction: ltr; }
+      .sector-card-img { min-height: 280px; }
+      .sector-card-body { padding: 48px 32px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .cta-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Sector Expertise",
+    "description": "Now Marketing sector specialists: property and residential development, professional services, luxury and premium brands.",
+    "url": "https://www.now-marketing.net/sectors/",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Now Marketing",
+      "url": "https://www.now-marketing.net"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<nav class="sitenav">
+  <a href="/" class="nav-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+  <ul class="nav-links">
+    <li class="nav-mega-trigger">
+      <a href="/services/">Services</a>
+      <div class="nav-mega-panel">
+        <div>
+          <a href="/services/branding-and-identity/" class="nav-mega-item"><span class="nav-mega-title">Branding &amp; Identity</span><span class="nav-mega-sub">Logo, brand strategy, guidelines</span></a>
+          <a href="/services/web-design-southampton/" class="nav-mega-item"><span class="nav-mega-title">Web Design</span><span class="nav-mega-sub">UX-led, mobile-first website design</span></a>
+          <a href="/services/web-development/" class="nav-mega-item"><span class="nav-mega-title">Web Development</span><span class="nav-mega-sub">Bespoke builds, CMS, e-commerce</span></a>
+          <a href="/services/digital-marketing/" class="nav-mega-item"><span class="nav-mega-title">Digital Marketing</span><span class="nav-mega-sub">SEO, PPC, social media</span></a>
+        </div>
+        <div>
+          <a href="/services/print-and-advertising/" class="nav-mega-item"><span class="nav-mega-title">Print &amp; Advertising</span><span class="nav-mega-sub">Brochures, press ads, direct mail</span></a>
+          <a href="/services/copywriting/" class="nav-mega-item"><span class="nav-mega-title">Copywriting</span><span class="nav-mega-sub">Brand copy, web content, SEO writing</span></a>
+          <a href="/services/exhibitions-and-signage/" class="nav-mega-item"><span class="nav-mega-title">Exhibitions &amp; Signage</span><span class="nav-mega-sub">Stands, banners, vehicle livery</span></a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/sectors/" class="active">Sectors</a>
+      <div class="nav-dropdown-panel">
+        <a href="/sectors/property-marketing/" class="nav-dd-item"><span class="nav-dd-num">01</span><span class="nav-dd-label">Property Marketing</span></a>
+        <a href="/sectors/professional-services/" class="nav-dd-item"><span class="nav-dd-num">02</span><span class="nav-dd-label">Professional Services</span></a>
+        <a href="/sectors/luxury-brands/" class="nav-dd-item"><span class="nav-dd-num">03</span><span class="nav-dd-label">Luxury &amp; Premium Brands</span></a>
+      </div>
+    </li>
+    <li><a href="/work/">Work</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/insights/">Insights</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:07899792663" class="nav-phone">07899 792663</a>
+    <a href="/contact/" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-media">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide active"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+    </div>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" data-slide="0"></button>
+    <button class="hero-dot" data-slide="1"></button>
+    <button class="hero-dot" data-slide="2"></button>
+  </div>
+  <div class="hero-content" style="padding-top:68px;">
+    <p class="page-hero-eyebrow">Sector expertise</p>
+    <h1 class="page-hero-headline">Three sectors. <span class="blue">Deep knowledge.</span></h1>
+    <p class="page-hero-sub">We work where we know the landscape. Twenty years of focused expertise across property, professional services and luxury brands means we understand your audience before you brief us.</p>
+  </div>
+</section>
+
+<section class="sectors-hub">
+  <div class="wrap">
+    <p class="section-label">Where we specialise</p>
+    <h2 class="section-h2">Clients we understand. <em>Industries we know.</em></h2>
+    <p class="section-intro">Specialist knowledge makes every project sharper. We know what motivates property buyers, what earns the trust of business clients, and what quality looks like to a premium audience. That insight informs everything we produce.</p>
+  </div>
+
+  <div class="sector-list">
+
+    <a href="/sectors/property-marketing/" class="sector-card">
+      <div class="sector-card-img" style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=80');"></div>
+      <div class="sector-card-body">
+        <div class="sector-num">01</div>
+        <h2 class="sector-title">Property <span class="blue">Marketing</span></h2>
+        <p class="sector-desc">From independent estate agents to national housebuilders, we bring creative rigour and deep market understanding to every property brief. Brand identity, brochures, digital marketing, CGI campaigns and fully managed web design for the residential sector across Hampshire and the South.</p>
+        <p class="sector-clients">Clients include: <span>Charters, Strutt &amp; Parker, Wykeham Homes, St Cross Homes, Doswell, Newman Cozens</span></p>
+        <span class="sector-link">Explore property marketing</span>
+      </div>
+    </a>
+
+    <a href="/sectors/professional-services/" class="sector-card">
+      <div class="sector-card-img" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80');"></div>
+      <div class="sector-card-body">
+        <div class="sector-num">02</div>
+        <h2 class="sector-title">Professional <span class="blue">Services</span></h2>
+        <p class="sector-desc">B2B marketing that builds credibility and creates preference. We work with law firms, financial advisers, consultancies and service businesses to communicate expertise without jargon and position them distinctively against their competitors. Brand-led, content-driven, results-focused.</p>
+        <p class="sector-clients">Clients include: <span>Trinity Rose, Charters Financial, William Jarrod</span></p>
+        <span class="sector-link">Explore professional services</span>
+      </div>
+    </a>
+
+    <a href="/sectors/luxury-brands/" class="sector-card">
+      <div class="sector-card-img" style="background-image:url('https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=900&q=80');"></div>
+      <div class="sector-card-body">
+        <div class="sector-num">03</div>
+        <h2 class="sector-title">Luxury <span class="blue">and Premium</span></h2>
+        <p class="sector-desc">Premium audiences respond to quality in every detail. We apply the same precision to luxury brand work that the category demands, crafting campaigns, packaging, and digital experiences that justify a premium and protect brand equity. We understand the difference between expensive and exceptional.</p>
+        <p class="sector-clients">Clients include: <span>Glenfiddich, Stolichnaya</span></p>
+        <span class="sector-link">Explore luxury brands</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="why-strip">
+  <div class="wrap">
+    <p class="why-label">Why it matters</p>
+    <h2 class="why-h2">Sector knowledge shortens every brief.</h2>
+    <div class="why-grid">
+      <div class="why-cell">
+        <div class="why-cell-bar"></div>
+        <div class="why-cell-title">No Learning Curve</div>
+        <p class="why-cell-body">When your agency already understands your market, your competitors and your audience, the strategic groundwork is already done. You get to the sharp thinking faster, without paying for the education.</p>
+      </div>
+      <div class="why-cell">
+        <div class="why-cell-bar"></div>
+        <div class="why-cell-title">Sharper Creative</div>
+        <p class="why-cell-body">Ideas that land with your audience come from understanding what they value. Our sector experience means we know what motivates a property buyer, what earns a B2B client's trust, and what a luxury consumer expects before they see it.</p>
+      </div>
+      <div class="why-cell">
+        <div class="why-cell-bar"></div>
+        <div class="why-cell-title">Proven Track Record</div>
+        <p class="why-cell-body">We have worked in these three sectors continuously since 2003. That breadth of experience -- across brand, print, digital and web -- gives us a perspective that generalist agencies cannot match. The proof is in the client relationships that have lasted years.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="client-bar">
+  <div class="wrap">
+    <p class="client-bar-label">Clients across all three sectors</p>
+    <div class="client-grid">
+      <span class="client-name">Glenfiddich</span>
+      <span class="client-name">Strutt &amp; Parker</span>
+      <span class="client-name">Charters</span>
+      <span class="client-name">Stolichnaya</span>
+      <span class="client-name">Trinity Rose</span>
+      <span class="client-name">Wykeham Homes</span>
+      <span class="client-name">St Cross Homes</span>
+      <span class="client-name">Doswell</span>
+      <span class="client-name">Newman Cozens</span>
+      <span class="client-name">William Jarrod</span>
+      <span class="client-name">Charters Financial</span>
+      <span class="client-name">Steens Group</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2 class="cta-h">Work in one of these sectors?</h2>
+      <a href="/contact/" class="btn-white">Start a conversation</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <div>
+        <a href="/" class="footer-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+        <p class="footer-tagline-sub">Creative Marketing Agency</p>
+        <p class="footer-tagline">The Creative Hub, 7 Carisbrooke<br>Netley Abbey, Southampton<br>Hampshire, SO31 5GH<br><br>T: <a href="tel:07899792663" style="color:inherit;text-decoration:none;">07899 792663</a><br>E: <a href="mailto:hello@now-marketing.net" style="color:inherit;text-decoration:none;">hello@now-marketing.net</a></p>
+      </div>
+      <div>
+        <p class="footer-col-h">Services</p>
+        <div class="footer-links">
+          <a href="/services/branding-and-identity/">Branding &amp; Identity</a>
+          <a href="/services/web-design-southampton/">Web Design</a>
+          <a href="/services/web-development/">Web Development</a>
+          <a href="/services/digital-marketing/">Digital Marketing</a>
+          <a href="/services/print-and-advertising/">Print &amp; Advertising</a>
+          <a href="/services/copywriting/">Copywriting</a>
+          <a href="/services/exhibitions-and-signage/">Exhibitions &amp; Signage</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Sectors</p>
+        <div class="footer-links">
+          <a href="/sectors/property-marketing/">Property Marketing</a>
+          <a href="/sectors/professional-services/">Professional Services</a>
+          <a href="/sectors/luxury-brands/">Luxury &amp; Premium</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Studio</p>
+        <div class="footer-links">
+          <a href="/about/">About Us</a>
+          <a href="/work/">Our Work</a>
+          <a href="/insights/">Insights</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">&#169; 2025 Now Marketing. All rights reserved. Registered in England.</p>
+      <p class="footer-legal">Creative Marketing Agency &nbsp;·&nbsp; Southampton, Hampshire</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){var s=document.querySelectorAll('#heroSlides .hero-slide'),d=document.querySelectorAll('#heroDots .hero-dot'),c=0,t;function g(n){s[c].classList.remove('active');d[c].classList.remove('active');c=(n+s.length)%s.length;s[c].classList.add('active');d[c].classList.add('active');}function st(){t=setInterval(function(){g(c+1);},5000);}d.forEach(function(x,i){x.addEventListener('click',function(){clearInterval(t);g(i);st();});});st();})();
+</script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development Southampton | Website Development Hampshire | Now Marketing</title>
+  <meta name="description" content="Bespoke web development in Southampton and Hampshire. WordPress, WooCommerce, custom builds, CMS, e-commerce and integrations. Now Marketing." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.now-marketing.net/services/web-development/" />
+  <meta property="og:title" content="Web Development Southampton | Now Marketing" />
+  <meta property="og:description" content="Bespoke website development for businesses in Southampton, Hampshire and the South." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.now-marketing.net/services/web-development/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../shared.css" />
+  <style>
+    body { background: var(--white); color: #111; }
+    .page-hero { min-height: 65vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 var(--pad) 80px; position: relative; overflow: hidden; }
+    .hero-media { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+    .hero-slides { position: absolute; inset: 0; }
+    .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease; background-color: var(--dark-2); }
+    .hero-slide.active { opacity: 1; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,.3) 60%, rgba(0,0,0,.1) 100%); z-index: 1; }
+    .hero-dots { position: absolute; bottom: 32px; right: var(--pad); display: flex; gap: 8px; z-index: 3; }
+    .hero-dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,.35); cursor: pointer; transition: background .3s; }
+    .hero-dot.active { background: var(--blue); }
+    .hero-content { position: relative; z-index: 2; }
+    .page-hero-eyebrow { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .page-hero-eyebrow::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .page-hero-headline { font-family: var(--font-headline); font-size: clamp(52px,7vw,100px); font-weight: 300; line-height: .94; letter-spacing: -.01em; text-transform: uppercase; color: var(--white); max-width: 16ch; margin-bottom: 28px; }
+    .page-hero-headline .blue { color: var(--blue); }
+    .page-hero-sub { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: rgba(255,255,255,.88); max-width: 520px; }
+
+    .overview-section { background: var(--dark); padding: 100px 0; }
+    .overview-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 100px; }
+    .section-label { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .section-label::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .section-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; margin-bottom: 32px; }
+    .section-h2 em { font-family: var(--font-main); font-style: normal; font-weight: 300; color: var(--blue); }
+    .body-dark p { font-family: var(--font-body); font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.92); margin-bottom: 22px; }
+    .cap-list { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+    .cap-item { display: flex; align-items: flex-start; gap: 16px; }
+    .cap-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 6px; }
+    .cap-text { font-family: var(--font-body); font-size: 16px; line-height: 1.6; color: rgba(255,255,255,.82); }
+
+    .process-section { background: var(--white); padding: 100px 0; }
+    .process-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
+    .process-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 2px; background: var(--vapor); }
+    .process-card { background: var(--white); padding: 36px 28px; position: relative; }
+    .process-card-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--blue); }
+    .process-card-num { font-family: var(--font-headline); font-size: 40px; font-weight: 400; color: var(--blue); opacity: .45; margin-bottom: 12px; }
+    .process-card-title { font-family: var(--font-headline); font-size: 18px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 10px; }
+    .process-card-body { font-family: var(--font-body); font-size: 14px; line-height: 1.65; color: #555; }
+
+    .services-section { background: var(--ash); padding: 100px 0; }
+    .services-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--vapor); }
+    .service-card { background: var(--ash); padding: 44px 32px; }
+    .service-card-title { font-family: var(--font-headline); font-size: 22px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 14px; }
+    .service-card-body { font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: #444; }
+
+    .hosting-section { background: var(--dark-2); padding: 100px 0; }
+    .hosting-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    .hosting-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; margin-bottom: 24px; }
+    .hosting-body p { font-family: var(--font-body); font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.82); margin-bottom: 20px; }
+    .hosting-features { display: flex; flex-direction: column; gap: 2px; background: rgba(255,255,255,.35); }
+    .hosting-feat { background: var(--dark-2); padding: 20px 24px; display: flex; align-items: center; gap: 16px; }
+    .feat-tick { width: 20px; height: 20px; border-radius: 50%; background: var(--blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: var(--white); font-weight: 700; }
+    .feat-text { font-family: var(--font-main); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: rgba(255,255,255,.85); }
+
+    .cta-band { background: var(--blue); padding: 80px 0; }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .cta-h { font-family: var(--font-headline); font-size: clamp(28px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; }
+    .btn-white { display: inline-block; font-family: var(--font-main); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--blue); background: var(--white); border: none; padding: 18px 36px; border-radius: 4px; text-decoration: none; white-space: nowrap; transition: background .2s, color .2s; }
+    .btn-white:hover { background: var(--dark); color: var(--white); }
+
+    @media (max-width: 900px) {
+      .overview-inner, .hosting-inner { grid-template-columns: 1fr; gap: 40px; }
+      .process-grid, .services-grid { grid-template-columns: repeat(2,1fr); }
+      .cta-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="sitenav">
+  <a href="/" class="nav-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+  <ul class="nav-links">
+    <li class="nav-mega-trigger">
+      <a href="/services/" class="active">Services</a>
+      <div class="nav-mega-panel">
+        <div>
+          <a href="/services/branding-and-identity/" class="nav-mega-item"><span class="nav-mega-title">Branding &amp; Identity</span><span class="nav-mega-sub">Logo, brand strategy, guidelines</span></a>
+          <a href="/services/web-design-southampton/" class="nav-mega-item"><span class="nav-mega-title">Web Design</span><span class="nav-mega-sub">UX-led, mobile-first website design</span></a>
+          <a href="/services/web-development/" class="nav-mega-item"><span class="nav-mega-title">Web Development</span><span class="nav-mega-sub">Bespoke builds, CMS, e-commerce</span></a>
+          <a href="/services/digital-marketing/" class="nav-mega-item"><span class="nav-mega-title">Digital Marketing</span><span class="nav-mega-sub">SEO, PPC, social media</span></a>
+        </div>
+        <div>
+          <a href="/services/print-and-advertising/" class="nav-mega-item"><span class="nav-mega-title">Print &amp; Advertising</span><span class="nav-mega-sub">Brochures, press ads, direct mail</span></a>
+          <a href="/services/copywriting/" class="nav-mega-item"><span class="nav-mega-title">Copywriting</span><span class="nav-mega-sub">Brand copy, web content, SEO writing</span></a>
+          <a href="/services/exhibitions-and-signage/" class="nav-mega-item"><span class="nav-mega-title">Exhibitions &amp; Signage</span><span class="nav-mega-sub">Stands, banners, vehicle livery</span></a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/sectors/">Sectors</a>
+      <div class="nav-dropdown-panel">
+        <a href="/sectors/property-marketing/" class="nav-dd-item"><span class="nav-dd-num">01</span><span class="nav-dd-label">Property Marketing</span></a>
+        <a href="/sectors/professional-services/" class="nav-dd-item"><span class="nav-dd-num">02</span><span class="nav-dd-label">Professional Services</span></a>
+        <a href="/sectors/luxury-brands/" class="nav-dd-item"><span class="nav-dd-num">03</span><span class="nav-dd-label">Luxury &amp; Premium Brands</span></a>
+      </div>
+    </li>
+    <li><a href="/work/">Work</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/insights/">Insights</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:07899792663" class="nav-phone">07899 792663</a>
+    <a href="/contact/" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-media">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide active"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+    </div>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" data-slide="0"></button>
+    <button class="hero-dot" data-slide="1"></button>
+    <button class="hero-dot" data-slide="2"></button>
+  </div>
+  <div class="hero-content" style="padding-top:68px;">
+    <p class="page-hero-eyebrow">Web development Southampton</p>
+    <h1 class="page-hero-headline">Web development services in <em class="blue">Southampton.</em></h1>
+    <p class="page-hero-sub">Technically excellent website builds that are fast, secure, accessible and easy to manage. From WordPress CMS to fully bespoke development.</p>
+  </div>
+</section>
+
+<section class="overview-section">
+  <div class="wrap">
+    <div class="overview-inner">
+      <div>
+        <p class="section-label">Our capabilities</p>
+        <h2 class="section-h2">Built to perform, built to <em>last.</em></h2>
+        <div class="cap-list">
+          <div class="cap-item"><div class="cap-dot"></div><div class="cap-text">WordPress and CMS development</div></div>
+          <div class="cap-item"><div class="cap-dot"></div><div class="cap-text">WooCommerce and e-commerce</div></div>
+          <div class="cap-item"><div class="cap-dot"></div><div class="cap-text">Bespoke HTML, CSS and JavaScript</div></div>
+          <div class="cap-item"><div class="cap-dot"></div><div class="cap-text">API and third-party integrations</div></div>
+          <div class="cap-item"><div class="cap-dot"></div><div class="cap-text">Performance optimisation</div></div>
+          <div class="cap-item"><div class="cap-dot"></div><div class="cap-text">Accessibility compliance (WCAG)</div></div>
+          <div class="cap-item"><div class="cap-dot"></div><div class="cap-text">Hosting, domains and ongoing support</div></div>
+        </div>
+      </div>
+      <div class="body-dark">
+        <p>Good web design deserves good web development. The two disciplines are inseparable: a beautifully designed website built on slow, insecure or inaccessible code will underperform every time, regardless of how good it looks. We treat development as the foundation that the design sits on, and we hold it to the same high standards.</p>
+        <p>Our development work covers the full range: from WordPress builds with custom themes and plugins to fully bespoke front-end code, from simple brochure sites to complex e-commerce platforms with integrations into stock management, CRM and marketing automation tools. Whatever the brief, we build clean, well-commented code that other developers can understand and maintain.</p>
+        <p>Performance is built in from the start. Fast page load times reduce bounce rates, improve search engine rankings, and signal competence to visitors. We optimise images, minimise unnecessary code, leverage caching and choose hosting environments that support good performance. A score in the green on Google's Core Web Vitals is not an aspiration; it is a standard we work to.</p>
+        <p>We also take accessibility seriously. WCAG compliance is not just a legal consideration (though it is that too for many organisations) -- it is also good design practice. Sites built to accessibility standards are more usable for everyone, and search engines reward the clarity that accessibility requires.</p>
+        <p>Every site we build is handed over with training and documentation so your team can manage content confidently. We do not design sites that require a developer for every update; we build sites that empower the people using them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="wrap">
+    <p class="section-label">Development process</p>
+    <h2 class="process-h2">Five stages from brief to deployment.</h2>
+    <div class="process-grid">
+      <div class="process-card"><div class="process-card-bar"></div><div class="process-card-num">01</div><div class="process-card-title">Brief</div><p class="process-card-body">Technical requirements, integrations needed, CMS preferences, hosting arrangements, and any existing systems to connect with.</p></div>
+      <div class="process-card"><div class="process-card-bar"></div><div class="process-card-num">02</div><div class="process-card-title">Architecture</div><p class="process-card-body">Planning the technical structure: database, content model, page templates, plugin or dependency selection, and hosting environment.</p></div>
+      <div class="process-card"><div class="process-card-bar"></div><div class="process-card-num">03</div><div class="process-card-title">Build</div><p class="process-card-body">Front-end and back-end development in a staging environment. Regular progress reviews and an open channel for questions throughout.</p></div>
+      <div class="process-card"><div class="process-card-bar"></div><div class="process-card-num">04</div><div class="process-card-title">Test</div><p class="process-card-body">Cross-browser and cross-device QA. Performance benchmarking. Security review. Accessibility audit. Content entry and review.</p></div>
+      <div class="process-card"><div class="process-card-bar"></div><div class="process-card-num">05</div><div class="process-card-title">Deploy</div><p class="process-card-body">Careful migration to live hosting. DNS management. Analytics and Search Console setup. Post-launch monitoring and sign-off.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="wrap">
+    <p class="section-label">Development services</p>
+    <h2 class="services-h2">What we build.</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-title">CMS Websites</div>
+        <p class="service-card-body">WordPress-powered websites with custom themes, flexible page builders and carefully selected plugins. Built so your team can update content confidently without needing developer support for day-to-day tasks.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card-title">E-Commerce</div>
+        <p class="service-card-body">WooCommerce and bespoke e-commerce builds. Product catalogues, secure checkout, payment gateway integration, stock management, and the conversion-focused design that turns browsers into buyers.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card-title">Bespoke Development</div>
+        <p class="service-card-body">When an off-the-shelf platform will not do, we build from the ground up. Custom web applications, bespoke functionality and complex integrations with third-party APIs, CRMs and marketing platforms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hosting-section">
+  <div class="wrap">
+    <div class="hosting-inner">
+      <div>
+        <p class="section-label" style="color:var(--blue);">Hosting and support</p>
+        <h2 class="hosting-h2">We look after it for you.</h2>
+        <div class="hosting-body">
+          <p>A good website needs a reliable home and ongoing care. We can arrange managed hosting, domain management and SSL certificates, and we offer monthly support plans that cover updates, security monitoring and content changes.</p>
+          <p>We are also happy to take over the hosting and support of existing sites built by other agencies. If your site is on unreliable hosting or your current supplier is not responsive, we can migrate and manage it going forward.</p>
+        </div>
+      </div>
+      <div>
+        <div class="hosting-features">
+          <div class="hosting-feat"><div class="feat-tick">&#10003;</div><span class="feat-text">Managed hosting and domains</span></div>
+          <div class="hosting-feat"><div class="feat-tick">&#10003;</div><span class="feat-text">SSL certificates and security</span></div>
+          <div class="hosting-feat"><div class="feat-tick">&#10003;</div><span class="feat-text">WordPress updates and maintenance</span></div>
+          <div class="hosting-feat"><div class="feat-tick">&#10003;</div><span class="feat-text">Daily backups</span></div>
+          <div class="hosting-feat"><div class="feat-tick">&#10003;</div><span class="feat-text">Performance monitoring</span></div>
+          <div class="hosting-feat"><div class="feat-tick">&#10003;</div><span class="feat-text">Content updates and support</span></div>
+          <div class="hosting-feat"><div class="feat-tick">&#10003;</div><span class="feat-text">Site migration from other hosts</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2 class="cta-h">Tell us about your development project.</h2>
+      <a href="/contact/" class="btn-white">Get a Quote</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <div>
+        <a href="/" class="footer-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+        <p class="footer-tagline-sub">Creative Marketing Agency</p>
+        <p class="footer-tagline">The Creative Hub, 7 Carisbrooke<br>Netley Abbey, Southampton<br>Hampshire, SO31 5GH<br><br>T: <a href="tel:07899792663" style="color:inherit;text-decoration:none;">07899 792663</a><br>E: <a href="mailto:hello@now-marketing.net" style="color:inherit;text-decoration:none;">hello@now-marketing.net</a></p>
+      </div>
+      <div>
+        <p class="footer-col-h">Services</p>
+        <div class="footer-links">
+          <a href="/services/branding-and-identity/">Branding &amp; Identity</a>
+          <a href="/services/web-design-southampton/">Web Design</a>
+          <a href="/services/web-development/">Web Development</a>
+          <a href="/services/digital-marketing/">Digital Marketing</a>
+          <a href="/services/print-and-advertising/">Print &amp; Advertising</a>
+          <a href="/services/copywriting/">Copywriting</a>
+          <a href="/services/exhibitions-and-signage/">Exhibitions &amp; Signage</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Sectors</p>
+        <div class="footer-links">
+          <a href="/sectors/property-marketing/">Property Marketing</a>
+          <a href="/sectors/professional-services/">Professional Services</a>
+          <a href="/sectors/luxury-brands/">Luxury &amp; Premium</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Studio</p>
+        <div class="footer-links">
+          <a href="/about/">About Us</a>
+          <a href="/work/">Our Work</a>
+          <a href="/insights/">Insights</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">&#169; 2025 Now Marketing. All rights reserved. Registered in England.</p>
+      <p class="footer-legal">Creative Marketing Agency &nbsp;·&nbsp; Southampton, Hampshire</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){var s=document.querySelectorAll('#heroSlides .hero-slide'),d=document.querySelectorAll('#heroDots .hero-dot'),c=0,t;function g(n){s[c].classList.remove('active');d[c].classList.remove('active');c=(n+s.length)%s.length;s[c].classList.add('active');d[c].classList.add('active');}function st(){t=setInterval(function(){g(c+1);},5000);}d.forEach(function(x,i){x.addEventListener('click',function(){clearInterval(t);g(i);st();});});st();})();
+</script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing for Professional Services Hampshire | B2B Marketing Agency Southampton | Now Marketing</title>
+  <meta name="description" content="Marketing agency for professional services firms in Hampshire and Southampton. B2B brand, web, digital and print for law firms, financial advisers, consultancies and more. Now Marketing." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.now-marketing.net/sectors/professional-services/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../shared.css" />
+  <style>
+    body { background: var(--white); color: #111; }
+    .page-hero { min-height: 65vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 var(--pad) 80px; position: relative; overflow: hidden; }
+    .hero-media { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+    .hero-slides { position: absolute; inset: 0; }
+    .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease; background-color: var(--dark-2); }
+    .hero-slide.active { opacity: 1; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,.3) 60%, rgba(0,0,0,.1) 100%); z-index: 1; }
+    .hero-dots { position: absolute; bottom: 32px; right: var(--pad); display: flex; gap: 8px; z-index: 3; }
+    .hero-dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,.35); cursor: pointer; transition: background .3s; }
+    .hero-dot.active { background: var(--blue); }
+    .hero-content { position: relative; z-index: 2; }
+    .page-hero-eyebrow { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .page-hero-eyebrow::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .page-hero-headline { font-family: var(--font-headline); font-size: clamp(52px,7vw,100px); font-weight: 300; line-height: .94; letter-spacing: -.01em; text-transform: uppercase; color: var(--white); max-width: 16ch; margin-bottom: 28px; }
+    .page-hero-headline .blue { color: var(--blue); }
+    .page-hero-sub { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: rgba(255,255,255,.88); max-width: 520px; }
+
+    .understanding-section { background: var(--dark); padding: 100px 0; }
+    .understanding-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 100px; }
+    .section-label { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .section-label::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .section-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; margin-bottom: 32px; }
+    .section-h2 em { font-family: var(--font-main); font-style: normal; font-weight: 300; color: var(--blue); }
+    .body-dark p { font-family: var(--font-body); font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.92); margin-bottom: 22px; }
+
+    .services-section { background: var(--white); padding: 100px 0; }
+    .services-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--vapor); }
+    .svc-card { background: var(--white); padding: 40px 32px; }
+    .svc-title { font-family: var(--font-headline); font-size: 20px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 12px; }
+    .svc-body { font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: #555; }
+
+    .work-section { background: var(--ash); padding: 100px 0; }
+    .work-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
+    .work-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--vapor); }
+    .work-card { background: var(--ash); padding: 40px 28px; }
+    .work-thumb { width: 100%; aspect-ratio: 4/3; background: var(--vapor); border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
+    .work-thumb-label { font-family: var(--font-main); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--fog); }
+    .work-client { font-family: var(--font-headline); font-size: 22px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 8px; }
+    .work-proj { font-family: var(--font-body); font-size: 14px; color: #555; }
+
+    .cta-band { background: var(--blue); padding: 80px 0; }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .cta-h { font-family: var(--font-headline); font-size: clamp(28px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; }
+    .btn-white { display: inline-block; font-family: var(--font-main); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--blue); background: var(--white); border: none; padding: 18px 36px; border-radius: 4px; text-decoration: none; white-space: nowrap; transition: background .2s, color .2s; }
+    .btn-white:hover { background: var(--dark); color: var(--white); }
+
+    @media (max-width: 900px) {
+      .understanding-inner { grid-template-columns: 1fr; gap: 40px; }
+      .services-grid, .work-grid { grid-template-columns: 1fr; }
+      .cta-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="sitenav">
+  <a href="/" class="nav-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+  <ul class="nav-links">
+    <li class="nav-mega-trigger">
+      <a href="/services/">Services</a>
+      <div class="nav-mega-panel">
+        <div>
+          <a href="/services/branding-and-identity/" class="nav-mega-item"><span class="nav-mega-title">Branding &amp; Identity</span><span class="nav-mega-sub">Logo, brand strategy, guidelines</span></a>
+          <a href="/services/web-design-southampton/" class="nav-mega-item"><span class="nav-mega-title">Web Design</span><span class="nav-mega-sub">UX-led, mobile-first website design</span></a>
+          <a href="/services/web-development/" class="nav-mega-item"><span class="nav-mega-title">Web Development</span><span class="nav-mega-sub">Bespoke builds, CMS, e-commerce</span></a>
+          <a href="/services/digital-marketing/" class="nav-mega-item"><span class="nav-mega-title">Digital Marketing</span><span class="nav-mega-sub">SEO, PPC, social media</span></a>
+        </div>
+        <div>
+          <a href="/services/print-and-advertising/" class="nav-mega-item"><span class="nav-mega-title">Print &amp; Advertising</span><span class="nav-mega-sub">Brochures, press ads, direct mail</span></a>
+          <a href="/services/copywriting/" class="nav-mega-item"><span class="nav-mega-title">Copywriting</span><span class="nav-mega-sub">Brand copy, web content, SEO writing</span></a>
+          <a href="/services/exhibitions-and-signage/" class="nav-mega-item"><span class="nav-mega-title">Exhibitions &amp; Signage</span><span class="nav-mega-sub">Stands, banners, vehicle livery</span></a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/sectors/" class="active">Sectors</a>
+      <div class="nav-dropdown-panel">
+        <a href="/sectors/property-marketing/" class="nav-dd-item"><span class="nav-dd-num">01</span><span class="nav-dd-label">Property Marketing</span></a>
+        <a href="/sectors/professional-services/" class="nav-dd-item"><span class="nav-dd-num">02</span><span class="nav-dd-label">Professional Services</span></a>
+        <a href="/sectors/luxury-brands/" class="nav-dd-item"><span class="nav-dd-num">03</span><span class="nav-dd-label">Luxury &amp; Premium Brands</span></a>
+      </div>
+    </li>
+    <li><a href="/work/">Work</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/insights/">Insights</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:07899792663" class="nav-phone">07899 792663</a>
+    <a href="/contact/" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-media">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide active"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+    </div>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" data-slide="0"></button>
+    <button class="hero-dot" data-slide="1"></button>
+    <button class="hero-dot" data-slide="2"></button>
+  </div>
+  <div class="hero-content" style="padding-top:68px;">
+    <p class="page-hero-eyebrow">Professional services marketing</p>
+    <h1 class="page-hero-headline">Marketing for professional services in <em class="blue">Hampshire.</em></h1>
+    <p class="page-hero-sub">Credible, authoritative marketing for professional services firms. B2B brand, web, digital and print for businesses that need to earn trust before they earn clients.</p>
+  </div>
+</section>
+
+<section class="understanding-section">
+  <div class="wrap">
+    <div class="understanding-inner">
+      <div>
+        <p class="section-label">Understanding the sector</p>
+        <h2 class="section-h2">Marketing that earns <em>trust first.</em></h2>
+      </div>
+      <div class="body-dark">
+        <p>Professional services marketing is different from consumer marketing in one fundamental way: the purchase decision is rarely impulsive. A business choosing a financial adviser, a solicitor, a management consultant or an accountant is making a significant commitment -- one that involves handing over sensitive information, relying on expert advice and often paying substantial fees. The marketing that precedes and supports that decision has to inspire confidence, not just interest.</p>
+        <p>This means that professional services marketing is, above almost everything else, about credibility. The quality of your brand signals the quality of your service. The clarity of your website copy communicates the quality of your thinking. The production quality of your print materials tells a prospect whether you are the kind of firm they can trust with important matters. Every marketing touchpoint is carrying implicit information about what it would be like to work with you.</p>
+        <p>We have worked with professional services firms across Hampshire -- from Trinity Rose and Charters Financial Services to William Jarrod and others -- and we understand this dynamic well. We produce marketing that is authoritative without being stiff, approachable without being informal, and consistently reflective of the expertise and professionalism that these businesses offer their clients.</p>
+        <p>The B2B purchase cycle is also longer than B2C, which means marketing needs to support awareness building, consideration and conversion over an extended period. We think about the full journey from initial brand awareness through to an active proposal stage, and design marketing programmes that play the right role at each stage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="wrap">
+    <p class="section-label">How we help professional services firms</p>
+    <h2 class="services-h2">Services that support B2B growth.</h2>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-title">Brand Identity</div>
+        <p class="svc-body">A professional services brand needs to communicate expertise and trustworthiness at a glance. We build identities that are distinctive, credible and appropriately positioned for the audience being addressed -- whether that is individual high-net-worth clients or corporate procurement teams.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-title">Website Design</div>
+        <p class="svc-body">Clear, well-structured websites that explain what you do, demonstrate your expertise and make it easy for prospective clients to get in touch. Professional services websites live or die on clarity: visitors should never have to work to understand what you offer or why you are the right choice.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-title">Capability Brochures</div>
+        <p class="svc-body">High-quality print literature that supports new business conversations, pitch processes and client meetings. A well-produced capability brochure or credentials document communicates the quality of your firm before you say a word. We design and produce print literature that reflects the standard your clients expect.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-title">Thought Leadership Content</div>
+        <p class="svc-body">Articles, insights, white papers and email newsletters that demonstrate expertise and keep your firm front of mind with existing and prospective clients. Thought leadership content serves both an SEO purpose and a relationship purpose -- and we can help with both the strategy and the writing.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-title">Digital Marketing</div>
+        <p class="svc-body">SEO, LinkedIn advertising and email marketing to reach professional audiences at the right moment. Professional services clients search for specific expertise, often in specific locations. We help firms appear prominently for the searches that drive genuinely qualified enquiries.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-title">Copywriting</div>
+        <p class="svc-body">Professional services copywriting that communicates expertise clearly without lapsing into impenetrable jargon. We write for the intelligent, time-pressed professional audience that professional services firms are typically addressing -- people who want clarity and substance, not padding.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work-section">
+  <div class="wrap">
+    <p class="section-label">Featured work</p>
+    <h2 class="work-h2">Professional services projects.</h2>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
+        <div class="work-client">Trinity Rose</div>
+        <p class="work-proj">Full brand creation from scratch. Logo, identity system, brand guidelines, website, stationery and capability literature for a growing Hampshire professional services firm.</p>
+      </div>
+      <div class="work-card">
+        <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
+        <div class="work-client">Charters Financial</div>
+        <p class="work-proj">Brand alignment and marketing materials for the financial services arm of the Charters group. Credible, compliant marketing that reflects the quality of the parent brand.</p>
+      </div>
+      <div class="work-card">
+        <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
+        <div class="work-client">William Jarrod</div>
+        <p class="work-proj">Brand refresh and web redesign for a Hampshire professional firm. New identity, website and updated marketing collateral aligned with the firm's repositioning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2 class="cta-h">Talk to us about your professional services marketing.</h2>
+      <a href="/contact/" class="btn-white">Get a Quote</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <div>
+        <a href="/" class="footer-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+        <p class="footer-tagline-sub">Creative Marketing Agency</p>
+        <p class="footer-tagline">The Creative Hub, 7 Carisbrooke<br>Netley Abbey, Southampton<br>Hampshire, SO31 5GH<br><br>T: <a href="tel:07899792663" style="color:inherit;text-decoration:none;">07899 792663</a><br>E: <a href="mailto:hello@now-marketing.net" style="color:inherit;text-decoration:none;">hello@now-marketing.net</a></p>
+      </div>
+      <div>
+        <p class="footer-col-h">Services</p>
+        <div class="footer-links">
+          <a href="/services/branding-and-identity/">Branding &amp; Identity</a>
+          <a href="/services/web-design-southampton/">Web Design</a>
+          <a href="/services/web-development/">Web Development</a>
+          <a href="/services/digital-marketing/">Digital Marketing</a>
+          <a href="/services/print-and-advertising/">Print &amp; Advertising</a>
+          <a href="/services/copywriting/">Copywriting</a>
+          <a href="/services/exhibitions-and-signage/">Exhibitions &amp; Signage</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Sectors</p>
+        <div class="footer-links">
+          <a href="/sectors/property-marketing/">Property Marketing</a>
+          <a href="/sectors/professional-services/">Professional Services</a>
+          <a href="/sectors/luxury-brands/">Luxury &amp; Premium</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Studio</p>
+        <div class="footer-links">
+          <a href="/about/">About Us</a>
+          <a href="/work/">Our Work</a>
+          <a href="/insights/">Insights</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">&#169; 2025 Now Marketing. All rights reserved. Registered in England.</p>
+      <p class="footer-legal">Creative Marketing Agency &nbsp;·&nbsp; Southampton, Hampshire</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){var s=document.querySelectorAll('#heroSlides .hero-slide'),d=document.querySelectorAll('#heroDots .hero-dot'),c=0,t;function g(n){s[c].classList.remove('active');d[c].classList.remove('active');c=(n+s.length)%s.length;s[c].classList.add('active');d[c].classList.add('active');}function st(){t=setInterval(function(){g(c+1);},5000);}d.forEach(function(x,i){x.addEventListener('click',function(){clearInterval(t);g(i);st();});});st();})();
+</script>
+</body>
+</html>

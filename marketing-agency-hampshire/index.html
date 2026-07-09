@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing Agency Hampshire | Now Marketing</title>
+  <meta name="description" content="Now Marketing is a creative marketing agency serving businesses across Hampshire. Branding, web design, SEO, digital marketing and print for Hampshire businesses since 2003." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.now-marketing.net/marketing-agency-hampshire/" />
+  <meta property="og:title" content="Marketing Agency Hampshire | Now Marketing" />
+  <meta property="og:description" content="Hampshire marketing agency offering branding, web design, SEO, digital marketing, print and copywriting for businesses across the county." />
+  <meta property="og:url" content="https://www.now-marketing.net/marketing-agency-hampshire/" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Now Marketing",
+    "description": "Creative marketing agency in Hampshire offering branding, web design, SEO, digital marketing, print and copywriting.",
+    "url": "https://www.now-marketing.net",
+    "telephone": "07899792663",
+    "email": "hello@now-marketing.net",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "The Creative Hub, 7 Carisbrooke, Netley Abbey",
+      "addressLocality": "Southampton",
+      "addressRegion": "Hampshire",
+      "postalCode": "SO31 5GH",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "50.8834",
+      "longitude": "-1.3274"
+    },
+    "areaServed": [
+      "Hampshire",
+      "Southampton",
+      "Winchester",
+      "Fareham",
+      "Basingstoke",
+      "Andover",
+      "South of England"
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:30"
+      }
+    ]
+  }
+  </script>
+  <style>
+    body { background: var(--white); color: #111; }
+    .page-hero { min-height: 65vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 var(--pad) 80px; position: relative; overflow: hidden; }
+    .hero-media { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+    .hero-slides { position: absolute; inset: 0; }
+    .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease; background-color: var(--dark-2); }
+    .hero-slide.active { opacity: 1; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,.3) 60%, rgba(0,0,0,.1) 100%); z-index: 1; }
+    .hero-dots { position: absolute; bottom: 32px; right: var(--pad); display: flex; gap: 8px; z-index: 3; }
+    .hero-dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,.35); cursor: pointer; transition: background .3s; }
+    .hero-dot.active { background: var(--blue); }
+    .hero-content { position: relative; z-index: 2; }
+    .page-hero-eyebrow { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .page-hero-eyebrow::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .page-hero-headline { font-family: var(--font-headline); font-size: clamp(52px,7vw,100px); font-weight: 300; line-height: .94; letter-spacing: -.01em; text-transform: uppercase; color: var(--white); max-width: 18ch; margin-bottom: 28px; }
+    .page-hero-headline em { font-family: var(--font-main); font-style: normal; font-weight: 300; color: var(--blue); }
+    .page-hero-sub { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: rgba(255,255,255,.88); max-width: 520px; }
+
+    /* INTRO */
+    .intro-section { background: var(--dark); padding: 100px 0; }
+    .intro-inner { display: grid; grid-template-columns: 1fr 1.6fr; gap: 100px; align-items: start; }
+    .section-label { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .section-label::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .section-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; margin-bottom: 0; }
+    .section-h2 em { font-family: var(--font-main); font-style: normal; font-weight: 300; color: var(--blue); }
+    .intro-body p { font-family: var(--font-body); font-size: 16px; line-height: 1.75; color: rgba(255,255,255,.85); margin-bottom: 20px; }
+    .intro-body p:last-child { margin-bottom: 0; }
+    .detail-strip { margin-top: 40px; display: flex; flex-direction: column; gap: 12px; }
+    .detail-row { display: flex; gap: 14px; align-items: flex-start; }
+    .detail-icon { color: var(--blue); font-size: 16px; margin-top: 2px; flex-shrink: 0; }
+    .detail-text { font-family: var(--font-body); font-size: 15px; color: rgba(255,255,255,.75); line-height: 1.5; }
+
+    /* AREAS */
+    .areas-section { background: var(--white); padding: 100px 0; }
+    .areas-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
+    .areas-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--vapor); margin-bottom: 60px; }
+    .area-card { background: var(--white); padding: 36px 28px; }
+    .area-name { font-family: var(--font-headline); font-size: 20px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 12px; }
+    .area-desc { font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: #555; }
+
+    /* SERVICES */
+    .services-section { background: var(--ash); padding: 100px 0; }
+    .services-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(0,0,0,.05); }
+    .svc-card { background: var(--ash); padding: 36px 28px; }
+    .svc-num { font-family: var(--font-main); font-size: 11px; font-weight: 700; letter-spacing: .1em; color: var(--blue); margin-bottom: 16px; }
+    .svc-name { font-family: var(--font-headline); font-size: 20px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 12px; }
+    .svc-desc { font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: #555; margin-bottom: 20px; }
+    .svc-link { font-family: var(--font-main); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--blue); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .svc-link:hover { color: var(--dark); }
+
+    /* CLIENTS */
+    .clients-section { background: var(--white); padding: 80px 0; }
+    .clients-h { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--mid); text-align: center; margin-bottom: 48px; display: flex; align-items: center; justify-content: center; gap: 16px; }
+    .clients-h::before, .clients-h::after { content: ''; flex: 1; height: 1px; background: var(--vapor); }
+    .logo-strip { display: grid; grid-template-columns: repeat(6,1fr); border: 1px solid var(--vapor); border-radius: var(--r); overflow: hidden; }
+    .logo-cell { height: 200px; display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--vapor); padding: 20px; box-sizing: border-box; transition: background .25s; }
+    .logo-cell:last-child { border-right: none; }
+    .logo-cell:hover { background: var(--ash); }
+    .logo-cell img { max-height: 160px; max-width: 100%; width: auto; height: auto; display: block; object-fit: contain; filter: grayscale(100%) opacity(0.45); transition: filter .35s ease; }
+    .logo-cell:hover img { filter: grayscale(0%) opacity(1); }
+    .logo-fallback { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--mid); }
+
+    /* LOCAL */
+    .local-section { background: var(--white); padding: 100px 0; }
+    .local-inner { display: grid; grid-template-columns: 1.6fr 1fr; gap: 100px; align-items: start; }
+    .local-h2 { font-family: var(--font-headline); font-size: clamp(28px,3vw,44px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 28px; }
+    .local-body p { font-family: var(--font-body); font-size: 16px; line-height: 1.75; color: #444; margin-bottom: 18px; }
+    .local-body p:last-child { margin-bottom: 0; }
+    .local-aside { background: var(--ash); border-radius: var(--r); padding: 36px 28px; border: 1px solid var(--vapor); }
+    .local-aside h3 { font-family: var(--font-headline); font-size: 20px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 20px; }
+    .local-aside-item { padding: 14px 0; border-bottom: 1px solid var(--vapor); display: flex; flex-direction: column; gap: 2px; }
+    .local-aside-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .local-aside-label { font-family: var(--font-main); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--mid); }
+    .local-aside-value { font-family: var(--font-body); font-size: 15px; color: var(--dark); line-height: 1.5; }
+
+    /* CTA */
+    .cta-band { background: var(--blue); padding: 80px 0; }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .cta-h { font-family: var(--font-headline); font-size: clamp(28px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; }
+    .btn-white { display: inline-block; font-family: var(--font-main); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--blue); background: var(--white); border: none; padding: 18px 36px; border-radius: 4px; text-decoration: none; white-space: nowrap; transition: background .2s, color .2s; }
+    .btn-white:hover { background: var(--dark); color: var(--white); }
+
+    @media (max-width: 900px) {
+      .intro-inner, .local-inner { grid-template-columns: 1fr; gap: 40px; }
+      .areas-grid, .services-grid, .clients-grid { grid-template-columns: 1fr 1fr; }
+      .cta-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .areas-grid, .services-grid, .clients-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="sitenav">
+  <a href="/" class="nav-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+  <ul class="nav-links">
+    <li class="nav-mega-trigger">
+      <a href="/services/">Services</a>
+      <div class="nav-mega-panel">
+        <div>
+          <a href="/services/branding-and-identity/" class="nav-mega-item"><span class="nav-mega-title">Branding &amp; Identity</span><span class="nav-mega-sub">Logo, brand strategy, guidelines</span></a>
+          <a href="/services/web-design-southampton/" class="nav-mega-item"><span class="nav-mega-title">Web Design</span><span class="nav-mega-sub">UX-led, mobile-first website design</span></a>
+          <a href="/services/web-development/" class="nav-mega-item"><span class="nav-mega-title">Web Development</span><span class="nav-mega-sub">Bespoke builds, CMS, e-commerce</span></a>
+          <a href="/services/digital-marketing/" class="nav-mega-item"><span class="nav-mega-title">Digital Marketing</span><span class="nav-mega-sub">SEO, PPC, social media</span></a>
+        </div>
+        <div>
+          <a href="/services/print-and-advertising/" class="nav-mega-item"><span class="nav-mega-title">Print &amp; Advertising</span><span class="nav-mega-sub">Brochures, press ads, direct mail</span></a>
+          <a href="/services/copywriting/" class="nav-mega-item"><span class="nav-mega-title">Copywriting</span><span class="nav-mega-sub">Brand copy, web content, SEO writing</span></a>
+          <a href="/services/exhibitions-and-signage/" class="nav-mega-item"><span class="nav-mega-title">Exhibitions &amp; Signage</span><span class="nav-mega-sub">Stands, banners, vehicle livery</span></a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/sectors/">Sectors</a>
+      <div class="nav-dropdown-panel">
+        <a href="/sectors/property-marketing/" class="nav-dd-item"><span class="nav-dd-num">01</span><span class="nav-dd-label">Property Marketing</span></a>
+        <a href="/sectors/professional-services/" class="nav-dd-item"><span class="nav-dd-num">02</span><span class="nav-dd-label">Professional Services</span></a>
+        <a href="/sectors/luxury-brands/" class="nav-dd-item"><span class="nav-dd-num">03</span><span class="nav-dd-label">Luxury &amp; Premium Brands</span></a>
+      </div>
+    </li>
+    <li><a href="/work/">Work</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/insights/">Insights</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:07899792663" class="nav-phone">07899 792663</a>
+    <a href="/contact/" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-media">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide active"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+    </div>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" data-slide="0"></button>
+    <button class="hero-dot" data-slide="1"></button>
+    <button class="hero-dot" data-slide="2"></button>
+  </div>
+  <div class="hero-content" style="padding-top:68px;">
+    <p class="page-hero-eyebrow">Creative marketing across Hampshire</p>
+    <h1 class="page-hero-headline">Marketing agency <em>in Hampshire.</em></h1>
+    <p class="page-hero-sub">Now Marketing works with businesses across Hampshire -- from Southampton and Winchester to Basingstoke and the rural South. Full-service creative marketing, built around your business.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="wrap">
+    <div class="intro-inner">
+      <div>
+        <p class="section-label">About Now Marketing</p>
+        <h2 class="section-h2">Hampshire marketing expertise <em>without</em> the London price tag.</h2>
+        <div class="detail-strip">
+          <div class="detail-row"><span class="detail-icon">&#9679;</span><span class="detail-text">Studio based in Netley Abbey, Southampton, SO31 5GH</span></div>
+          <div class="detail-row"><span class="detail-icon">&#9679;</span><span class="detail-text">Covering all of Hampshire and the South of England</span></div>
+          <div class="detail-row"><span class="detail-icon">&#9679;</span><span class="detail-text">Over 20 years of creative and strategic marketing experience</span></div>
+          <div class="detail-row"><span class="detail-icon">&#9679;</span><span class="detail-text">T: 07899 792663 &nbsp;|&nbsp; hello@now-marketing.net</span></div>
+        </div>
+      </div>
+      <div class="intro-body">
+        <p>Hampshire is one of the most commercially diverse counties in the South of England. From the city economy of Southampton to the market towns of Winchester, Alresford and Petersfield, from the commuter belt of Basingstoke to the coastal communities of Fareham and Lee-on-the-Solent -- it is a county with real economic breadth. Serving it well as a marketing agency requires genuine understanding of its different markets and audiences.</p>
+        <p>Now Marketing is based in Netley Abbey, within the Southampton city boundary, and we work with businesses right across Hampshire. Our clients include property developers, estate agents, professional services firms, hospitality businesses, local retailers and B2B companies. Some of them are household names within Hampshire. Others are ambitious smaller businesses that want marketing of a quality that reflects their ambitions.</p>
+        <p>What sets us apart is the combination of creative quality and strategic clarity. We do not produce marketing for marketing's sake. Everything we do is grounded in a clear understanding of what a business is trying to achieve, who it is trying to reach, and what will actually move those people to act. That sounds obvious, but in practice it requires a level of rigour that many agencies skip in favour of generating impressive-looking output.</p>
+        <p>Our founder and creative director, Mike Lewis, has worked with Hampshire businesses for more than two decades. His work spans brand identity, web design, print, advertising, SEO and digital marketing. That breadth of experience means we can give genuinely joined-up advice across all of these disciplines, rather than pushing clients towards whatever service happens to be most profitable for the agency that month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="areas-section">
+  <div class="wrap">
+    <p class="section-label">Where we work</p>
+    <h2 class="areas-h2">Hampshire areas we serve.</h2>
+    <div class="areas-grid">
+      <div class="area-card">
+        <div class="area-name">Southampton</div>
+        <p class="area-desc">City centre, Shirley, Hedge End, Totton, Eastleigh, Chandler's Ford, Bitterne, Bitterne Park and surrounding areas.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-name">Winchester</div>
+        <p class="area-desc">Winchester city, New Alresford, Bishops Waltham, Twyford, Colden Common and the Test Valley.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-name">Fareham and Gosport</div>
+        <p class="area-desc">Fareham, Gosport, Lee-on-the-Solent, Portchester, Stubbington, Hill Head and the Meon Valley.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-name">Basingstoke and North Hampshire</div>
+        <p class="area-desc">Basingstoke, Andover, Whitchurch, Kingsclere and the rural north of the county.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-name">New Forest</div>
+        <p class="area-desc">Lyndhurst, Brockenhurst, Ringwood, Fordingbridge, Burley and the wider New Forest district.</p>
+      </div>
+      <div class="area-card">
+        <div class="area-name">East Hampshire</div>
+        <p class="area-desc">Petersfield, Alton, Bordon, Liphook and the rural communities of the South Downs National Park.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="wrap">
+    <p class="section-label">What we do</p>
+    <h2 class="services-h2">Marketing services for Hampshire businesses.</h2>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-num">01</div>
+        <div class="svc-name">Branding and Identity</div>
+        <p class="svc-desc">Logo design, brand strategy and visual identity systems for Hampshire businesses. We create brands that communicate quality and hold up over time.</p>
+        <a href="/services/branding-and-identity/" class="svc-link">Learn more &#8594;</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">02</div>
+        <div class="svc-name">Web Design</div>
+        <p class="svc-desc">UX-led, mobile-first website design and development. We build websites that convert visitors into enquiries and are easy to manage day to day.</p>
+        <a href="/services/web-design-southampton/" class="svc-link">Learn more &#8594;</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">03</div>
+        <div class="svc-name">SEO Hampshire</div>
+        <p class="svc-desc">Local and national SEO for Hampshire businesses. We help you appear in search results where it counts -- for the terms your customers are actually searching.</p>
+        <a href="/services/digital-marketing/seo/" class="svc-link">Learn more &#8594;</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">04</div>
+        <div class="svc-name">Digital Marketing</div>
+        <p class="svc-desc">Google Ads, PPC, social media advertising and paid social campaigns managed for measurable return on investment across Hampshire and beyond.</p>
+        <a href="/services/digital-marketing/" class="svc-link">Learn more &#8594;</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">05</div>
+        <div class="svc-name">Print and Advertising</div>
+        <p class="svc-desc">Brochures, press advertising, direct mail and corporate print for Hampshire businesses. Creative design and production management from concept to delivery.</p>
+        <a href="/services/print-and-advertising/" class="svc-link">Learn more &#8594;</a>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">06</div>
+        <div class="svc-name">Exhibitions and Signage</div>
+        <p class="svc-desc">Exhibition stands, pop-up displays, office signage, vehicle livery and wayfinding systems for Hampshire businesses and organisations.</p>
+        <a href="/services/exhibitions-and-signage/" class="svc-link">Learn more &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="clients-section">
+  <div class="wrap">
+    <p class="clients-h">Trusted by</p>
+    <div class="logo-strip">
+      <div class="logo-cell"><img src="../images/logos/spencers.png" alt="Spencers" onerror="this.outerHTML='<span class=logo-fallback>Spencers</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/dh-holdings.png" alt="DH Holdings" onerror="this.outerHTML='<span class=logo-fallback>DH Holdings</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/bargate-homes.png" alt="Bargate Homes" onerror="this.outerHTML='<span class=logo-fallback>Bargate Homes</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/mortgage-decisions.png" alt="Mortgage Decisions" onerror="this.outerHTML='<span class=logo-fallback>Mortgage Decisions</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/olive-homes.png" alt="Olive Homes" onerror="this.outerHTML='<span class=logo-fallback>Olive Homes</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/austin-hughes.png" alt="Austin Hughes" onerror="this.outerHTML='<span class=logo-fallback>Austin Hughes</span>'"></div>
+    </div>
+    <div style="margin-top:1px;">
+      <div class="logo-strip">
+        <div class="logo-cell"><img src="../images/logos/glenfiddich.png" alt="Glenfiddich" onerror="this.outerHTML='<span class=logo-fallback>Glenfiddich</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/strutt-and-parker.png" alt="Strutt &amp; Parker" onerror="this.outerHTML='<span class=logo-fallback>Strutt &amp; Parker</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/charters.png" alt="Charters" onerror="this.outerHTML='<span class=logo-fallback>Charters</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/stolichnaya.png" alt="Stolichnaya" onerror="this.outerHTML='<span class=logo-fallback>Stolichnaya</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/trinity-rose.png" alt="Trinity Rose" onerror="this.outerHTML='<span class=logo-fallback>Trinity Rose</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/wykeham-homes.png" alt="Wykeham Homes" onerror="this.outerHTML='<span class=logo-fallback>Wykeham Homes</span>'"></div>
+      </div>
+    </div>
+    <div style="margin-top:1px;">
+      <div class="logo-strip">
+        <div class="logo-cell"><img src="../images/logos/steens-group.png" alt="Steens Group" onerror="this.outerHTML='<span class=logo-fallback>Steens Group</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/newman-cozens.png" alt="Newman Cozens" onerror="this.outerHTML='<span class=logo-fallback>Newman Cozens</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/doswell.png" alt="Doswell" onerror="this.outerHTML='<span class=logo-fallback>Doswell</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/st-cross-homes.png" alt="St Cross Homes" onerror="this.outerHTML='<span class=logo-fallback>St Cross Homes</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/william-jarrod.png" alt="William Jarrod" onerror="this.outerHTML='<span class=logo-fallback>William Jarrod</span>'"></div>
+        <div class="logo-cell"><img src="../images/logos/charters-financial.png" alt="Charters Financial" onerror="this.outerHTML='<span class=logo-fallback>Charters Financial</span>'"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="local-section">
+  <div class="wrap">
+    <div class="local-inner">
+      <div>
+        <p class="section-label">Why choose a Hampshire agency</p>
+        <h2 class="local-h2">We know the Hampshire market because we work in it every day.</h2>
+        <div class="local-body">
+          <p>Hampshire has a particular commercial character that national agencies based in London or Manchester do not always understand. The county has a significant number of premium and affluent consumers -- particularly in Winchester, the Meon Valley, the New Forest and the South Downs -- which means the bar for quality in marketing is often higher than it might be elsewhere. At the same time, it has a thriving community of ambitious smaller businesses that do not have large marketing budgets but want results that are proportionate to their investment.</p>
+          <p>We have spent more than two decades working with Hampshire businesses across both of those groups. We understand the local property market, the professional services landscape, the retail and hospitality sector, and the B2B economy that underpins much of the county's commercial activity. That local knowledge informs everything we do, from the way we approach a brand strategy to the keywords we target in an SEO campaign.</p>
+          <p>We are also well positioned geographically. Our studio in Netley Abbey puts us within easy reach of Southampton, Fareham, Eastleigh and Winchester -- and we are always happy to travel further afield within the county for client meetings, site visits and project presentations. Good client relationships are built face to face, and we believe in that.</p>
+          <p>For businesses outside Hampshire who have found their way to this page -- we work nationally too. Many of our clients are based outside the county and work with us remotely. The quality of the work is the same wherever you are.</p>
+        </div>
+      </div>
+      <div>
+        <div class="local-aside">
+          <h3>Studio details</h3>
+          <div class="local-aside-item">
+            <span class="local-aside-label">Address</span>
+            <span class="local-aside-value">The Creative Hub, 7 Carisbrooke, Netley Abbey, Southampton, SO31 5GH</span>
+          </div>
+          <div class="local-aside-item">
+            <span class="local-aside-label">Phone</span>
+            <span class="local-aside-value"><a href="tel:07899792663" style="color:inherit;text-decoration:none;">07899 792663</a></span>
+          </div>
+          <div class="local-aside-item">
+            <span class="local-aside-label">Email</span>
+            <span class="local-aside-value"><a href="mailto:hello@now-marketing.net" style="color:inherit;text-decoration:none;">hello@now-marketing.net</a></span>
+          </div>
+          <div class="local-aside-item">
+            <span class="local-aside-label">Coverage</span>
+            <span class="local-aside-value">All of Hampshire including Southampton, Winchester, Fareham, Basingstoke, Andover, Alton, Petersfield, Ringwood, Lyndhurst and surrounding areas</span>
+          </div>
+          <div class="local-aside-item">
+            <span class="local-aside-label">Studio hours</span>
+            <span class="local-aside-value">Monday to Friday, 9:00am to 5:30pm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2 class="cta-h">Talk to a Hampshire marketing agency that gets results.</h2>
+      <a href="/contact/" class="btn-white">Get in touch today</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <div>
+        <a href="/" class="footer-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+        <p class="footer-tagline-sub">Creative Marketing Agency</p>
+        <p class="footer-tagline">The Creative Hub, 7 Carisbrooke<br>Netley Abbey, Southampton<br>Hampshire, SO31 5GH<br><br>T: <a href="tel:07899792663" style="color:inherit;text-decoration:none;">07899 792663</a><br>E: <a href="mailto:hello@now-marketing.net" style="color:inherit;text-decoration:none;">hello@now-marketing.net</a></p>
+      </div>
+      <div>
+        <p class="footer-col-h">Services</p>
+        <div class="footer-links">
+          <a href="/services/branding-and-identity/">Branding &amp; Identity</a>
+          <a href="/services/web-design-southampton/">Web Design</a>
+          <a href="/services/web-development/">Web Development</a>
+          <a href="/services/digital-marketing/">Digital Marketing</a>
+          <a href="/services/print-and-advertising/">Print &amp; Advertising</a>
+          <a href="/services/copywriting/">Copywriting</a>
+          <a href="/services/exhibitions-and-signage/">Exhibitions &amp; Signage</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Sectors</p>
+        <div class="footer-links">
+          <a href="/sectors/property-marketing/">Property Marketing</a>
+          <a href="/sectors/professional-services/">Professional Services</a>
+          <a href="/sectors/luxury-brands/">Luxury &amp; Premium</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Studio</p>
+        <div class="footer-links">
+          <a href="/about/">About Us</a>
+          <a href="/work/">Our Work</a>
+          <a href="/insights/">Insights</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">&#169; 2025 Now Marketing. All rights reserved. Registered in England.</p>
+      <p class="footer-legal">Creative Marketing Agency &nbsp;·&nbsp; Hampshire, South of England</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){var s=document.querySelectorAll('#heroSlides .hero-slide'),d=document.querySelectorAll('#heroDots .hero-dot'),c=0,t;function g(n){s[c].classList.remove('active');d[c].classList.remove('active');c=(n+s.length)%s.length;s[c].classList.add('active');d[c].classList.add('active');}function st(){t=setInterval(function(){g(c+1);},5000);}d.forEach(function(x,i){x.addEventListener('click',function(){clearInterval(t);g(i);st();});});st();})();
+</script>
+</body>
+</html>

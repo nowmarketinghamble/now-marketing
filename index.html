@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Now Marketing | Creative Marketing Agency Southampton &amp; Hampshire</title>
+  <meta name="description" content="Now Marketing is a full-service creative marketing agency in Southampton, Hampshire. Brand identity, web design, digital marketing, print and social media for businesses across Hampshire, Dorset, Wiltshire and West Sussex since 2003." />
+  <meta name="keywords" content="marketing agency Southampton, marketing agency Hampshire, branding agency Southampton, web design Hampshire, digital marketing Southampton, creative agency Hampshire, graphic design Southampton" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.now-marketing.net/" />
+  <meta property="og:title" content="Now Marketing | Creative Marketing Agency, Southampton" />
+  <meta property="og:description" content="Full-service brand, web and digital marketing agency. Southampton, Hampshire since 2003." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.now-marketing.net/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"MarketingAgency","name":"Now Marketing","description":"Full-service creative marketing agency in Southampton, Hampshire","url":"https://www.now-marketing.net","telephone":"07899 792663","foundingDate":"2003","address":{"@type":"PostalAddress","streetAddress":"The Creative Hub, 7 Carisbrooke, Netley Abbey","addressLocality":"Southampton","addressRegion":"Hampshire","postalCode":"SO31 5GH","addressCountry":"GB"},"areaServed":["Southampton","Hampshire","Dorset","Wiltshire","West Sussex"],"serviceType":["Branding","Corporate Identity","Web Design","Web Development","Digital Marketing","SEO","PPC","Social Media Marketing","Print and Advertising","Copywriting","Exhibitions and Signage"]}
+  </script>
+  <style>
+    body { background: var(--dark); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column;
+      justify-content: flex-end; padding: 0 var(--pad) 100px;
+      position: relative; overflow: hidden;
+    }
+    /* Progress bar */
+    .hero-progress { position:absolute; top:0; left:0; right:0; height:3px; z-index:10; background:rgba(255,255,255,.08); }
+    .hero-progress-bar { height:100%; background:var(--blue); width:0; transition:none; }
+    .hero-progress-bar.running { transition:width 6s linear; width:100%; }
+    /* Client badge per slide */
+    .hero-client-badge {
+      position:absolute; bottom:108px; right:var(--pad); z-index:6;
+      font-family:var(--font-main); font-size:10px; font-weight:700;
+      text-transform:uppercase; letter-spacing:.14em;
+      color:rgba(255,255,255,.5); display:flex; align-items:center; gap:10px;
+      opacity:0; transition:opacity .4s .3s;
+    }
+    .hero-client-badge.active { opacity:1; }
+    .hero-client-badge::before { content:''; display:block; width:20px; height:1px; background:var(--blue); }
+    /* Slide-specific background colours — swap for background-image when photos are ready */
+    .hero-slide-1 { background:linear-gradient(135deg,#1a1008 0%,#2a1800 60%,#0f0a00 100%); }
+    .hero-slide-2 { background:linear-gradient(135deg,#08101a 0%,#001428 60%,#000a14 100%); }
+    .hero-slide-3 { background:linear-gradient(135deg,#081008 0%,#001a00 60%,#000a00 100%); }
+    .hero-slide-4 { background:linear-gradient(135deg,#161008 0%,#201400 60%,#0a0800 100%); }
+    .hero-slide-5 { background:linear-gradient(135deg,#061214 0%,#001a1e 60%,#000a0c 100%); }
+    .hero-eyebrow {
+      font-family: var(--font-main); font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--blue);
+      margin-bottom: 24px; display: flex; align-items: center; gap: 12px;
+      position: relative; z-index: 2;
+    }
+    .hero-eyebrow::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .hero-headline {
+      font-family: var(--font-headline); font-size: clamp(52px,7.5vw,110px);
+      font-weight: 700; line-height: .94; letter-spacing: -.01em;
+      text-transform: uppercase; color: var(--white);
+      margin-bottom: 52px; max-width: 15ch;
+      position: relative; z-index: 2;
+      transition: opacity .25s ease;
+    }
+    .hero-headline.fading { opacity: 0; }
+    .hero-headline .blue { color: var(--blue); }
+    .hero-bottom {
+      display: flex; align-items: flex-end;
+      justify-content: space-between; gap: 48px;
+      position: relative; z-index: 2;
+    }
+    .hero-desc {
+      font-family: var(--font-body); font-size: 17px; font-weight: 400;
+      line-height: 1.7; color: rgba(255,255,255,.88); max-width: 420px;
+    }
+    .hero-ctas { display: flex; gap: 14px; flex-shrink: 0; align-items: center; }
+    .hero-stat-row { display: flex; gap: 48px; }
+    .hero-stat { display: flex; flex-direction: column; gap: 5px; }
+    .hero-stat-n {
+      font-family: var(--font-headline); font-size: 44px; font-weight: 400;
+      letter-spacing: -.01em; line-height: 1; color: var(--white);
+    }
+    .hero-stat-l {
+      font-family: var(--font-main); font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--blue);
+    }
+
+    /* SERVICES OVERVIEW */
+    .services-overview { background: var(--white); padding: 100px 0; }
+    .section-2col {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: end; margin-bottom: 56px;
+    }
+    .svc-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); }
+    .svc-grid-3 .svc-card:nth-child(3n) { border-right: none; }
+
+    /* FEATURED WORK */
+    .featured-work { background: var(--ash); padding: 100px 0; }
+    .work-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 2px; background: var(--vapor);
+      border-radius: var(--r); overflow: hidden;
+    }
+    .work-tile {
+      background: var(--white);
+      display: flex; flex-direction: column;
+      overflow: hidden; text-decoration: none;
+      transition: background .2s;
+    }
+    .work-tile:hover { background: var(--ash-2); }
+    .work-tile-img {
+      width: 100%; aspect-ratio: 16/10;
+      background: var(--dark-3); position: relative; overflow: hidden;
+    }
+    .work-tile-img-inner {
+      width: 100%; height: 100%;
+      background: var(--dark-3); display: flex; align-items: center; justify-content: center;
+    }
+    .work-tile-placeholder {
+      font-family: var(--font-main); font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.2);
+    }
+    .work-tile-cat {
+      position: absolute; top: 16px; left: 16px;
+      font-family: var(--font-main); font-size: 9px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em;
+      color: var(--white); background: var(--blue);
+      border-radius: var(--rb); padding: 4px 12px;
+    }
+    .work-tile-body { padding: 28px; }
+    .work-tile-client {
+      font-family: var(--font-main); font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em; color: var(--blue);
+      margin-bottom: 6px;
+    }
+    .work-tile-title {
+      font-family: var(--font-headline); font-size: 18px; font-weight: 400;
+      text-transform: uppercase; color: #111; line-height: 1.15; margin-bottom: 8px;
+    }
+    .work-tile-outcome {
+      font-family: var(--font-body); font-size: 13px; color: var(--mid); line-height: 1.6;
+    }
+    .work-cta-row { margin-top: 48px; display: flex; justify-content: flex-end; }
+
+    /* SECTORS */
+    .sectors { background: var(--dark-3); padding: 100px 0; }
+    .sectors-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
+      background: rgba(255,255,255,.35); border-radius: var(--r); overflow: hidden;
+      margin-top: 56px;
+    }
+    .sector-card {
+      background: var(--dark-3); padding: 52px 44px;
+      text-decoration: none; position: relative; overflow: hidden;
+      transition: background .25s;
+    }
+    .sector-card::before {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: var(--blue);
+      transform: scaleX(0); transform-origin: left; transition: transform .3s;
+    }
+    .sector-card:hover { background: var(--dark-4); }
+    .sector-card:hover::before { transform: scaleX(1); }
+    .sector-n {
+      font-family: var(--font-main); font-size: 9px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--blue);
+      margin-bottom: 20px;
+    }
+    .sector-title {
+      font-family: var(--font-headline); font-size: 26px; font-weight: 400;
+      text-transform: uppercase; color: var(--white); line-height: 1.05;
+      margin-bottom: 16px;
+    }
+    .sector-desc {
+      font-family: var(--font-body); font-size: 14px; line-height: 1.7;
+      color: rgba(255,255,255,.65); margin-bottom: 28px;
+    }
+    .sector-clients {
+      font-family: var(--font-main); font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .09em; color: rgba(255,255,255,.35);
+    }
+
+    /* CLIENT LOGOS */
+    .clients { background: var(--white); padding: 80px 0; }
+    .clients-label {
+      font-family: var(--font-main); font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .14em; color: var(--mid);
+      text-align: center; margin-bottom: 44px;
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+    }
+    .clients-label::before, .clients-label::after {
+      content: ''; flex: 1; height: 1px; background: var(--vapor);
+    }
+    .logo-strip {
+      display: grid; grid-template-columns: repeat(6,1fr);
+      border: 1px solid var(--vapor); border-radius: var(--r); overflow: hidden;
+    }
+    .logo-cell {
+      height: 200px; display: flex; align-items: center; justify-content: center;
+      border-right: 1px solid var(--vapor); padding: 20px;
+      box-sizing: border-box; transition: background .25s;
+    }
+    .logo-cell:last-child { border-right: none; }
+    .logo-cell:hover { background: var(--ash); }
+    .logo-cell img {
+      max-height: 160px; max-width: 100%;
+      width: auto; height: auto; display: block;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(0.45);
+      transition: filter .35s ease;
+    }
+    .logo-cell:hover img { filter: grayscale(0%) opacity(1); }
+    .logo-fallback {
+      font-family: var(--font-main); font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .06em; color: var(--mid);
+    }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--dark-2); padding: 100px 0; }
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
+      background: rgba(255,255,255,.35); border-radius: var(--r); overflow: hidden;
+      margin-top: 56px;
+    }
+    .testi-card {
+      background: var(--dark-2); padding: 44px; position: relative;
+    }
+    .testi-card::before {
+      content: '\201C';
+      font-family: var(--font-headline); font-size: 72px; font-weight: 400;
+      color: var(--blue); opacity: .12;
+      position: absolute; top: 16px; left: 32px; line-height: 1;
+    }
+    .testi-q {
+      font-family: var(--font-body); font-size: 16px; font-weight: 400;
+      line-height: 1.7; color: rgba(255,255,255,.9);
+      margin-bottom: 28px; position: relative; z-index: 1;
+    }
+    .testi-name {
+      font-family: var(--font-main); font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em; color: var(--white); margin-bottom: 3px;
+    }
+    .testi-co {
+      font-family: var(--font-main); font-size: 11px; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--blue); font-weight: 700;
+    }
+
+    /* ABOUT SNIPPET */
+    .about-snippet { background: var(--ash); padding: 100px 0; }
+    .about-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 100px; align-items: center;
+    }
+    .about-body-large {
+      font-family: var(--font-body); font-size: 22px; font-weight: 400;
+      line-height: 1.6; color: #111; margin-bottom: 20px;
+    }
+    .about-body {
+      font-family: var(--font-body); font-size: 15px; line-height: 1.85; color: var(--mid);
+      margin-bottom: 40px;
+    }
+    .trust-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .trust-badge {
+      font-family: var(--font-main); font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em; color: var(--blue);
+      border: 2px solid var(--blue); border-radius: var(--rb); padding: 8px 18px;
+    }
+    .about-visual {
+      width: 100%; aspect-ratio: 1;
+      background: var(--dark); border-radius: var(--r);
+      display: flex; align-items: flex-end; padding: 32px; overflow: hidden; position: relative;
+    }
+    .about-visual::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:var(--blue); }
+    .about-visual-label {
+      font-family: var(--font-main); font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.35);
+    }
+
+    /* INSIGHTS */
+    .insights { background: var(--white); padding: 100px 0; }
+    .insights-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
+      background: var(--vapor); border-radius: var(--r); overflow: hidden; margin-top: 56px;
+    }
+    .insight-card {
+      background: var(--white); padding: 36px; text-decoration: none;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: background .2s;
+    }
+    .insight-card:hover { background: var(--ash-2); }
+    .insight-tag {
+      font-family: var(--font-main); font-size: 9px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--blue);
+    }
+    .insight-title {
+      font-family: var(--font-headline); font-size: 19px; font-weight: 400;
+      text-transform: uppercase; color: #111; line-height: 1.15;
+    }
+    .insight-excerpt {
+      font-family: var(--font-body); font-size: 14px; line-height: 1.7; color: var(--mid);
+      flex: 1;
+    }
+    .insight-date {
+      font-family: var(--font-main); font-size: 10px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em; color: var(--fog);
+    }
+
+    /* AREAS */
+    .areas { background: var(--dark-2); padding: 88px 0; }
+    .areas-grid {
+      display: grid; grid-template-columns: repeat(5,1fr);
+      border: 1px solid rgba(255,255,255,.35); border-radius: var(--r); overflow: hidden;
+      margin-top: 48px;
+    }
+    .area-cell {
+      padding: 36px 24px; border-right: 1px solid rgba(255,255,255,.35); position: relative;
+    }
+    .area-cell:last-child { border-right: none; }
+    .area-cell::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--blue); transform: scaleX(0); transition: transform .3s;
+    }
+    .area-cell:hover::after { transform: scaleX(1); }
+    .area-name {
+      font-family: var(--font-headline); font-size: 17px; font-weight: 400;
+      text-transform: uppercase; color: var(--white); margin-bottom: 8px;
+    }
+    .area-desc {
+      font-family: var(--font-body); font-size: 12px; line-height: 1.65;
+      color: rgba(255,255,255,.52);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:1024px) {
+      .section-2col, .about-inner { grid-template-columns:1fr; gap:48px; }
+      .svc-grid-3, .work-grid, .sectors-grid, .testi-grid, .insights-grid { grid-template-columns:1fr 1fr; }
+      .logo-strip { grid-template-columns: repeat(3,1fr); }
+      .logo-cell:nth-child(3n) { border-right:none; }
+      .areas-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .area-cell:nth-child(3) { border-right:none; }
+    }
+    @media (max-width:640px) {
+      .hero { padding-bottom:72px; }
+      .hero-headline { font-size:42px; }
+      .hero-bottom { flex-direction:column; align-items:flex-start; gap:28px; }
+      .hero-ctas { flex-direction:column; align-items:flex-start; }
+      .svc-grid-3, .work-grid, .sectors-grid, .testi-grid, .insights-grid { grid-template-columns:1fr; }
+      .logo-strip { grid-template-columns:1fr 1fr; }
+      .areas-grid { grid-template-columns:1fr; }
+      .area-cell { border-right:none; border-bottom: 1px solid rgba(255,255,255,.35); }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="sitenav">
+  <a href="/" class="nav-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+  <ul class="nav-links">
+    <li class="nav-mega-trigger">
+      <a href="/services/">Services</a>
+      <div class="nav-mega-panel">
+        <div>
+          <a href="/services/branding-and-identity/" class="nav-mega-item"><span class="nav-mega-title">Branding &amp; Identity</span><span class="nav-mega-sub">Logo, brand strategy, guidelines</span></a>
+          <a href="/services/web-design-southampton/" class="nav-mega-item"><span class="nav-mega-title">Web Design</span><span class="nav-mega-sub">UX-led, mobile-first website design</span></a>
+          <a href="/services/web-development/" class="nav-mega-item"><span class="nav-mega-title">Web Development</span><span class="nav-mega-sub">Bespoke builds, CMS, e-commerce</span></a>
+          <a href="/services/digital-marketing/" class="nav-mega-item"><span class="nav-mega-title">Digital Marketing</span><span class="nav-mega-sub">SEO, PPC, social media</span></a>
+        </div>
+        <div>
+          <a href="/services/print-and-advertising/" class="nav-mega-item"><span class="nav-mega-title">Print &amp; Advertising</span><span class="nav-mega-sub">Brochures, press ads, direct mail</span></a>
+          <a href="/services/copywriting/" class="nav-mega-item"><span class="nav-mega-title">Copywriting</span><span class="nav-mega-sub">Brand copy, web content, SEO writing</span></a>
+          <a href="/services/exhibitions-and-signage/" class="nav-mega-item"><span class="nav-mega-title">Exhibitions &amp; Signage</span><span class="nav-mega-sub">Stands, banners, vehicle livery</span></a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/sectors/">Sectors</a>
+      <div class="nav-dropdown-panel">
+        <a href="/sectors/property-marketing/" class="nav-dd-item"><span class="nav-dd-num">01</span><span class="nav-dd-label">Property Marketing</span></a>
+        <a href="/sectors/professional-services/" class="nav-dd-item"><span class="nav-dd-num">02</span><span class="nav-dd-label">Professional Services</span></a>
+        <a href="/sectors/luxury-brands/" class="nav-dd-item"><span class="nav-dd-num">03</span><span class="nav-dd-label">Luxury &amp; Premium Brands</span></a>
+      </div>
+    </li>
+    <li><a href="/work/">Work</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/insights/">Insights</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:07899792663" class="nav-phone">07899 792663</a>
+    <a href="/contact/" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-media">
+    <div class="hero-slides" id="heroSlides">
+      <!-- IMAGE FILE: now-marketing/images/hero-bargate.jpg (1920 x 1080px) -->
+      <div class="hero-slide hero-slide-1 active" data-client="Bargate Homes"
+           style="background-image:url('images/hero-bargate.jpg');background-size:cover;background-position:center;background-repeat:no-repeat">
+        <template class="slide-headline">New homes<br>marketed with<br>care and<br><span class="blue">precision.</span></template>
+      </div>
+      <!-- IMAGE FILE: now-marketing/images/hero-charters.jpg (1920 x 1080px) -->
+      <div class="hero-slide hero-slide-2" data-client="Charters Estate Agents"
+           style="background-image:url('images/hero-charters.jpg');background-size:cover;background-position:center;background-repeat:no-repeat">
+        <template class="slide-headline">Brand identity<br>for a premium<br><span class="blue">estate agent.</span></template>
+      </div>
+      <!-- IMAGE FILE: now-marketing/images/hero-spencers.jpg (1920 x 1080px) -->
+      <div class="hero-slide hero-slide-3" data-client="Spencers of the New Forest"
+           style="background-image:url('images/hero-spencers.jpg');background-size:cover;background-position:center;background-repeat:no-repeat">
+        <template class="slide-headline">Luxury brand<br>work for the<br><span class="blue">New Forest.</span></template>
+      </div>
+      <!-- IMAGE FILE: now-marketing/images/hero-st-cross.jpg (1920 x 1080px) -->
+      <div class="hero-slide hero-slide-4" data-client="St Cross Homes"
+           style="background-image:url('images/hero-st-cross.jpg');background-size:cover;background-position:center;background-repeat:no-repeat">
+        <template class="slide-headline">Creating desire<br>for boutique<br><span class="blue">new homes.</span></template>
+      </div>
+      <!-- IMAGE FILE: now-marketing/images/hero-steens.jpg (1920 x 1080px) -->
+      <div class="hero-slide hero-slide-5" data-client="Steens Group"
+           style="background-image:url('images/hero-steens.jpg');background-size:cover;background-position:center;background-repeat:no-repeat">
+        <template class="slide-headline">Brand and marketing<br>for a leading<br><span class="blue">furniture maker.</span></template>
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-progress"><div class="hero-progress-bar" id="heroProgress"></div></div>
+
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+    <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+    <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+    <button class="hero-dot" data-slide="3" aria-label="Slide 4"></button>
+    <button class="hero-dot" data-slide="4" aria-label="Slide 5"></button>
+  </div>
+  <div class="hero-content" style="padding-top:68px;">
+    <p class="hero-eyebrow">Southampton &amp; Hampshire &nbsp;·&nbsp; Full-service creative agency &nbsp;·&nbsp; Est. 2003</p>
+    <h1 class="hero-headline" id="heroHeadline">New homes<br>marketed with<br>care and<br><span class="blue">precision.</span></h1>
+    <div class="hero-bottom">
+      <div>
+        <p class="hero-desc">Full-service brand, web and digital marketing since 2003. Trusted by businesses across Hampshire, Dorset, Wiltshire and West Sussex.</p>
+      </div>
+      <div class="hero-ctas">
+        <a href="/work/" class="btn-outline-light">See Our Work</a>
+        <a href="/contact/" class="btn-primary">Get a Quote &nbsp;&#8594;</a>
+      </div>
+      <div class="hero-stat-row">
+        <div class="hero-stat"><span class="hero-stat-n">20+</span><span class="hero-stat-l">Years</span></div>
+        <div class="hero-stat"><span class="hero-stat-n">200+</span><span class="hero-stat-l">Projects</span></div>
+        <div class="hero-stat"><span class="hero-stat-n">5</span><span class="hero-stat-l">Counties</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Branding <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Web Design <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Digital Marketing <span class="marquee-dot"></span></span>
+    <span class="marquee-item">SEO Southampton <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Print &amp; Advertising <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Copywriting <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Exhibitions &amp; Signage <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Hampshire &nbsp;·&nbsp; Dorset &nbsp;·&nbsp; Wiltshire &nbsp;·&nbsp; West Sussex <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Branding <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Web Design <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Digital Marketing <span class="marquee-dot"></span></span>
+    <span class="marquee-item">SEO Southampton <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Print &amp; Advertising <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Copywriting <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Exhibitions &amp; Signage <span class="marquee-dot"></span></span>
+    <span class="marquee-item">Hampshire &nbsp;·&nbsp; Dorset &nbsp;·&nbsp; Wiltshire &nbsp;·&nbsp; West Sussex <span class="marquee-dot"></span></span>
+  </div>
+</div>
+
+<!-- SERVICES OVERVIEW -->
+<section class="services-overview">
+  <div class="wrap">
+    <div class="section-2col">
+      <div>
+        <p class="eyebrow eyebrow-dark">What we do</p>
+        <h2 class="section-h section-h-dark">Full-service<br><em>creative agency.</em></h2>
+      </div>
+      <p class="section-sub">From brand strategy and web design to digital marketing and print, we handle every touchpoint of your brand communications under one roof.</p>
+    </div>
+    <div class="svc-grid-3">
+      <div class="svc-card">
+        <p class="svc-n">Brand &amp; Identity</p>
+        <h3 class="svc-card-title">Corporate identity, branding &amp; strategy</h3>
+        <p class="svc-card-desc">Logo systems, brand guidelines, positioning and visual identity built to stand out and last.</p>
+        <div class="tags"><span class="tag tag-dark">Logo Design</span><span class="tag tag-dark">Brand Strategy</span><span class="tag tag-dark">Guidelines</span></div>
+        <div style="margin-top:24px;"><a href="/services/branding-and-identity/" class="link-arrow">Learn more &nbsp;&#8594;</a></div>
+      </div>
+      <div class="svc-card">
+        <p class="svc-n">Web &amp; Digital</p>
+        <h3 class="svc-card-title">Web design, development &amp; digital marketing</h3>
+        <p class="svc-card-desc">SEO-optimised websites and results-driven digital campaigns that convert visitors into customers.</p>
+        <div class="tags"><span class="tag tag-dark">Web Design</span><span class="tag tag-dark">SEO</span><span class="tag tag-dark">PPC</span></div>
+        <div style="margin-top:24px;"><a href="/services/web-design-southampton/" class="link-arrow">Learn more &nbsp;&#8594;</a></div>
+      </div>
+      <div class="svc-card">
+        <p class="svc-n">Print &amp; Creative</p>
+        <h3 class="svc-card-title">Print, copywriting, exhibitions &amp; signage</h3>
+        <p class="svc-card-desc">Everything from brochures and press advertising to exhibition stands and office signage.</p>
+        <div class="tags"><span class="tag tag-dark">Brochures</span><span class="tag tag-dark">Copywriting</span><span class="tag tag-dark">Exhibitions</span></div>
+        <div style="margin-top:24px;"><a href="/services/print-and-advertising/" class="link-arrow">Learn more &nbsp;&#8594;</a></div>
+      </div>
+    </div>
+    <div style="margin-top:48px;display:flex;justify-content:flex-end;">
+      <a href="/services/" class="btn-outline-dark">View all services &nbsp;&#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED WORK -->
+<section class="featured-work" id="work">
+  <div class="wrap">
+    <div class="section-2col">
+      <div>
+        <p class="eyebrow eyebrow-dark">Selected projects</p>
+        <h2 class="section-h section-h-dark">Work we are<br><em>proud of.</em></h2>
+      </div>
+      <p class="section-sub">200+ projects delivered across Hampshire and the South since 2003. From start-ups to established regional names.</p>
+    </div>
+    <div class="work-grid">
+      <a href="/work/" class="work-tile">
+        <div class="work-tile-img">
+          <div class="work-tile-img-inner"><span class="work-tile-placeholder">Add project image</span></div>
+          <span class="work-tile-cat">Branding</span>
+        </div>
+        <div class="work-tile-body">
+          <p class="work-tile-client">Charters Estate Agents</p>
+          <h3 class="work-tile-title">Complete brand identity and marketing suite</h3>
+          <p class="work-tile-outcome">Brand strategy, identity, print suite and ongoing marketing support across Hampshire.</p>
+        </div>
+      </a>
+      <a href="/work/" class="work-tile">
+        <div class="work-tile-img">
+          <div class="work-tile-img-inner"><span class="work-tile-placeholder">Add project image</span></div>
+          <span class="work-tile-cat">Web Design</span>
+        </div>
+        <div class="work-tile-body">
+          <p class="work-tile-client">Glenfiddich</p>
+          <h3 class="work-tile-title">Luxury brand digital presence</h3>
+          <p class="work-tile-outcome">Premium digital and print campaign for one of the world's best-known whisky brands.</p>
+        </div>
+      </a>
+      <a href="/work/" class="work-tile">
+        <div class="work-tile-img">
+          <div class="work-tile-img-inner"><span class="work-tile-placeholder">Add project image</span></div>
+          <span class="work-tile-cat">Digital Marketing</span>
+        </div>
+        <div class="work-tile-body">
+          <p class="work-tile-client">Strutt &amp; Parker</p>
+          <h3 class="work-tile-title">Property marketing and SEO campaign</h3>
+          <p class="work-tile-outcome">Multi-channel property marketing campaign generating increased leads across the South Coast.</p>
+        </div>
+      </a>
+    </div>
+    <div class="work-cta-row"><a href="/work/" class="link-arrow">View all work &nbsp;&#8594;</a></div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sectors">
+  <div class="wrap">
+    <div class="section-2col">
+      <div>
+        <p class="eyebrow eyebrow-light">Sectors we serve</p>
+        <h2 class="section-h section-h-light">Specialists in<br><em>your industry.</em></h2>
+      </div>
+      <p class="section-sub section-sub-light">Deep sector knowledge means we communicate with your audience the way they expect, with credibility and precision.</p>
+    </div>
+    <div class="sectors-grid">
+      <a href="/sectors/property-marketing/" class="sector-card">
+        <p class="sector-n">01 · Sector</p>
+        <h3 class="sector-title">Property Marketing</h3>
+        <p class="sector-desc">Branding, web, print and digital for estate agents, developers and property professionals across Hampshire and the South Coast.</p>
+        <p class="sector-clients">Charters &nbsp;·&nbsp; Strutt &amp; Parker &nbsp;·&nbsp; Wykeham Homes</p>
+      </a>
+      <a href="/sectors/professional-services/" class="sector-card">
+        <p class="sector-n">02 · Sector</p>
+        <h3 class="sector-title">Professional Services</h3>
+        <p class="sector-desc">B2B marketing for solicitors, surveyors, accountants and financial services businesses that need to build trust and authority.</p>
+        <p class="sector-clients">Trinity Rose &nbsp;·&nbsp; Charters Financial &nbsp;·&nbsp; William Jarrod</p>
+      </a>
+      <a href="/sectors/luxury-brands/" class="sector-card">
+        <p class="sector-n">03 · Sector</p>
+        <h3 class="sector-title">Luxury &amp; Premium Brands</h3>
+        <p class="sector-desc">Premium brand marketing that communicates quality, heritage and exclusivity for the most discerning audiences.</p>
+        <p class="sector-clients">Glenfiddich &nbsp;·&nbsp; Stolichnaya &nbsp;·&nbsp; High-end property</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT LOGOS -->
+<section class="clients">
+  <div class="wrap">
+    <p class="clients-label">Trusted by</p>
+    <div class="logo-strip">
+      <div class="logo-cell">
+        <img src="images/logos/spencers.png" alt="Spencers" onerror="this.outerHTML='<span class=logo-fallback>Spencers</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/dh-holdings.png" alt="DH Holdings" onerror="this.outerHTML='<span class=logo-fallback>DH Holdings</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/bargate-homes.png" alt="Bargate Homes" onerror="this.outerHTML='<span class=logo-fallback>Bargate Homes</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/mortgage-decisions.png" alt="Mortgage Decisions" onerror="this.outerHTML='<span class=logo-fallback>Mortgage Decisions</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/olive-homes.png" alt="Olive Homes" onerror="this.outerHTML='<span class=logo-fallback>Olive Homes</span>'">
+      </div>
+      <div class="logo-cell">
+        <img src="images/logos/austin-hughes.png" alt="Austin Hughes" onerror="this.outerHTML='<span class=logo-fallback>Austin Hughes</span>'">
+      </div>
+    </div>
+    <div style="margin-top:1px;">
+      <div class="logo-strip">
+        <div class="logo-cell">
+          <img src="images/logos/glenfiddich.png" alt="Glenfiddich" onerror="this.outerHTML='<span class=logo-fallback>Glenfiddich</span>'">
+        </div>
+        <div class="logo-cell">
+          <img src="images/logos/strutt-and-parker.png" alt="Strutt &amp; Parker" onerror="this.outerHTML='<span class=logo-fallback>Strutt &amp; Parker</span>'">
+        </div>
+        <div class="logo-cell">
+          <img src="images/logos/charters.png" alt="Charters" onerror="this.outerHTML='<span class=logo-fallback>Charters</span>'">
+        </div>
+        <div class="logo-cell">
+          <img src="images/logos/stolichnaya.png" alt="Stolichnaya" onerror="this.outerHTML='<span class=logo-fallback>Stolichnaya</span>'">
+        </div>
+        <div class="logo-cell">
+          <img src="images/logos/trinity-rose.png" alt="Trinity Rose" onerror="this.outerHTML='<span class=logo-fallback>Trinity Rose</span>'">
+        </div>
+        <div class="logo-cell">
+          <img src="images/logos/wykeham-homes.png" alt="Wykeham Homes" onerror="this.outerHTML='<span class=logo-fallback>Wykeham Homes</span>'">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:1px;">
+      <div class="logo-strip">
+        <div class="logo-cell">
+          <img src="images/logos/steens-group.png" alt="Steens Group" onerror="this.outerHTML='<span class=logo-fallback>Steens Group</span>'">
+        </div>
+        <div class="logo-cell">
+          <img src="images/logos/newman-cozens.png" alt="Newman Cozens" onerror="this.outerHTML='<span class=logo-fallback>Newman Cozens</span>'">
+        </div>
+        <div class="logo-cell">
+          <img src="images/logos/doswell.png" alt="Doswell" onerror="this.outerHTML='<span class=logo-fallback>Doswell</span>'">
+        </div>
+        <div class="logo-cell">
+          <img src="images/logos/st-cross-homes.png" alt="St Cross Homes" onerror="this.outerHTML='<span class=logo-fallback>St Cross Homes</span>'">
+        </div>
+        <div class="logo-cell">
+          <img src="images/logos/william-jarrod.png" alt="William Jarrod" onerror="this.outerHTML='<span class=logo-fallback>William Jarrod</span>'">
+        </div>
+        <div class="logo-cell">
+          <img src="images/logos/charters-financial.png" alt="Charters Financial" onerror="this.outerHTML='<span class=logo-fallback>Charters Financial</span>'">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="wrap">
+    <div class="section-2col">
+      <div>
+        <p class="eyebrow eyebrow-light">What clients say</p>
+        <h2 class="section-h section-h-light">Results that<br><em>speak for themselves.</em></h2>
+      </div>
+      <p class="section-sub section-sub-light">Over twenty years we have built lasting relationships with businesses of every size across Hampshire and beyond.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p class="testi-q">An exceptional service, approachable, a pleasure to work with, backed by unquestionable design prowess and wide industry knowledge.</p>
+        <p class="testi-name">Director, Technology Sector</p>
+        <p class="testi-co">Hampshire</p>
+      </div>
+      <div class="testi-card">
+        <p class="testi-q">Mike was instrumental in establishing our brand design from inception right through to delivery, all on time and within budget.</p>
+        <p class="testi-name">Director, Property Sector</p>
+        <p class="testi-co">South Coast</p>
+      </div>
+      <div class="testi-card">
+        <p class="testi-q">A fantastic, friendly and professional service with quick turnaround times at a cost-effective price. We would not hesitate to recommend Now Marketing.</p>
+        <p class="testi-name">Director, Retail Sector</p>
+        <p class="testi-co">Southampton</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SNIPPET -->
+<section class="about-snippet" id="about">
+  <div class="wrap">
+    <div class="about-inner">
+      <div>
+        <p class="eyebrow eyebrow-dark">About Now Marketing</p>
+        <p class="about-body-large">We have been helping businesses grow through creative marketing since 2003. Based in Southampton, working across the South.</p>
+        <p class="about-body">Approachable, professional and known for delivering on time and within budget, every time. We genuinely care about our clients' success and treat every project with the same level of attention to detail, whether it is a single logo or a complete rebrand.</p>
+        <div class="trust-row">
+          <span class="trust-badge">Est. 2003</span>
+          <span class="trust-badge">Southampton Based</span>
+          <span class="trust-badge">South Coast Coverage</span>
+        </div>
+        <div style="margin-top:40px;"><a href="/about/" class="link-arrow">More about us &nbsp;&#8594;</a></div>
+      </div>
+      <div class="about-visual">
+        <p class="about-visual-label">The Creative Hub, Netley Abbey, Southampton</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="insights">
+  <div class="wrap">
+    <div class="section-2col">
+      <div>
+        <p class="eyebrow eyebrow-dark">Latest insights</p>
+        <h2 class="section-h section-h-dark">Ideas and<br><em>thinking.</em></h2>
+      </div>
+      <p class="section-sub">Practical marketing advice for Hampshire and South Coast businesses, from brand and web to digital and beyond.</p>
+    </div>
+    <div class="insights-grid">
+      <a href="/insights/" class="insight-card">
+        <p class="insight-tag">Branding</p>
+        <h3 class="insight-title">Why a brand refresh could be the best investment your business makes in 2025</h3>
+        <p class="insight-excerpt">If your brand was created more than five years ago, the chances are it is working against you. Here is how to know when it is time.</p>
+        <p class="insight-date">June 2025</p>
+      </a>
+      <a href="/insights/" class="insight-card">
+        <p class="insight-tag">SEO</p>
+        <h3 class="insight-title">Local SEO for Hampshire businesses: what actually moves the needle in 2025</h3>
+        <p class="insight-excerpt">Local search is more competitive than ever. These are the tactics that consistently deliver results for our clients across Hampshire.</p>
+        <p class="insight-date">May 2025</p>
+      </a>
+      <a href="/insights/" class="insight-card">
+        <p class="insight-tag">Web Design</p>
+        <h3 class="insight-title">Five signs your website is costing you business, and how to fix them</h3>
+        <p class="insight-excerpt">Most website problems are invisible to their owners. Here are the five most common issues we find when auditing Hampshire business websites.</p>
+        <p class="insight-date">April 2025</p>
+      </a>
+    </div>
+    <div style="margin-top:44px;display:flex;justify-content:flex-end;">
+      <a href="/insights/" class="link-arrow">All insights &nbsp;&#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="areas">
+  <div class="wrap">
+    <div class="section-2col">
+      <div>
+        <p class="eyebrow eyebrow-light">Where we work</p>
+        <h2 class="section-h section-h-light">Covering the<br><em>South of England.</em></h2>
+      </div>
+      <p class="section-sub section-sub-light">Based in Southampton, we work with clients across the South. From start-ups to established regional names.</p>
+    </div>
+    <div class="areas-grid">
+      <div class="area-cell"><p class="area-name">Southampton</p><p class="area-desc">Our home base since 2003. Serving Southampton businesses across every sector.</p></div>
+      <div class="area-cell"><p class="area-name">Hampshire</p><p class="area-desc">Branding, web design and marketing across the county.</p></div>
+      <div class="area-cell"><p class="area-name">Dorset</p><p class="area-desc">Creative and digital services for growing Dorset businesses.</p></div>
+      <div class="area-cell"><p class="area-name">Wiltshire</p><p class="area-desc">Strategy-led brand and web projects for Wiltshire organisations.</p></div>
+      <div class="area-cell"><p class="area-name">West Sussex</p><p class="area-desc">Full-service creative agency support across West Sussex.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-band-inner">
+      <h2 class="cta-band-h">Ready to grow your brand?</h2>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="/contact/" class="btn-white">Get a Quote &nbsp;&#8594;</a>
+        <a href="tel:07899792663" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-main);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.85);text-decoration:none;">&#9742; 07899 792663</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <div>
+        <a href="/" class="footer-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+        <p class="footer-tagline-sub">Creative Marketing Agency</p>
+        <p class="footer-tagline">The Creative Hub, 7 Carisbrooke<br>Netley Abbey, Southampton<br>Hampshire, SO31 5GH<br><br>T: <a href="tel:07899792663" style="color:inherit;text-decoration:none;">07899 792663</a><br>E: <a href="mailto:hello@now-marketing.net" style="color:inherit;text-decoration:none;">hello@now-marketing.net</a></p>
+      </div>
+      <div>
+        <p class="footer-col-h">Services</p>
+        <div class="footer-links">
+          <a href="/services/branding-and-identity/">Branding &amp; Identity</a>
+          <a href="/services/web-design-southampton/">Web Design</a>
+          <a href="/services/web-development/">Web Development</a>
+          <a href="/services/digital-marketing/">Digital Marketing</a>
+          <a href="/services/print-and-advertising/">Print &amp; Advertising</a>
+          <a href="/services/copywriting/">Copywriting</a>
+          <a href="/services/exhibitions-and-signage/">Exhibitions &amp; Signage</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Sectors</p>
+        <div class="footer-links">
+          <a href="/sectors/property-marketing/">Property Marketing</a>
+          <a href="/sectors/professional-services/">Professional Services</a>
+          <a href="/sectors/luxury-brands/">Luxury &amp; Premium</a>
+        </div>
+        <p class="footer-col-h" style="margin-top:32px;">Location Pages</p>
+        <div class="footer-links">
+          <a href="/marketing-agency-southampton/">Agency in Southampton</a>
+          <a href="/marketing-agency-hampshire/">Agency in Hampshire</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Studio</p>
+        <div class="footer-links">
+          <a href="/about/">About Us</a>
+          <a href="/work/">Our Work</a>
+          <a href="/insights/">Insights</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">&#169; 2025 Now Marketing. All rights reserved. Registered in England.</p>
+      <p class="footer-legal">Creative Marketing Agency &nbsp;·&nbsp; Southampton, Hampshire</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var slides=document.querySelectorAll('#heroSlides .hero-slide'),
+      dots=document.querySelectorAll('#heroDots .hero-dot'),
+      badge=document.getElementById('heroClientBadge'),
+      bar=document.getElementById('heroProgress'),
+      headline=document.getElementById('heroHeadline'),
+      cur=0,t;
+  function resetBar(){if(!bar)return;bar.classList.remove('running');void bar.offsetWidth;bar.classList.add('running');}
+  function swapHeadline(){
+    var tpl=slides[cur].querySelector('.slide-headline');
+    if(!headline||!tpl)return;
+    headline.classList.add('fading');
+    setTimeout(function(){headline.innerHTML=tpl.innerHTML;headline.classList.remove('fading');},250);
+  }
+  function go(n){
+    slides[cur].classList.remove('active');dots[cur].classList.remove('active');
+    cur=(n+slides.length)%slides.length;
+    slides[cur].classList.add('active');dots[cur].classList.add('active');
+    if(badge){badge.classList.remove('active');void badge.offsetWidth;badge.textContent=slides[cur].dataset.client||'';badge.classList.add('active');}
+    swapHeadline();
+    resetBar();
+  }
+  function start(){t=setInterval(function(){go(cur+1);},6000);}
+  dots.forEach(function(d,i){d.addEventListener('click',function(){clearInterval(t);go(i);start();});});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'){clearInterval(t);go(cur+1);start();}
+    if(e.key==='ArrowLeft'){clearInterval(t);go(cur-1);start();}
+  });
+  if(badge){badge.textContent=slides[0].dataset.client||'';badge.classList.add('active');}
+  resetBar();start();
+})();
+</script>
+</body>
+</html>

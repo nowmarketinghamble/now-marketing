@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copywriting Agency Southampton | Brand Copywriter Hampshire | Now Marketing</title>
+  <meta name="description" content="Brand copywriting services in Southampton and Hampshire. Web copy, brand messaging, sales literature, tone of voice and SEO copywriting. Now Marketing." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.now-marketing.net/services/copywriting/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../shared.css" />
+  <style>
+    body { background: var(--white); color: #111; }
+    .page-hero { min-height: 65vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 var(--pad) 80px; position: relative; overflow: hidden; }
+    .hero-media { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+    .hero-slides { position: absolute; inset: 0; }
+    .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease; background-color: var(--dark-2); }
+    .hero-slide.active { opacity: 1; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,.3) 60%, rgba(0,0,0,.1) 100%); z-index: 1; }
+    .hero-dots { position: absolute; bottom: 32px; right: var(--pad); display: flex; gap: 8px; z-index: 3; }
+    .hero-dot { width: 8px; height: 8px; border-radius: 50%; border: none; background: rgba(255,255,255,.35); cursor: pointer; transition: background .3s; }
+    .hero-dot.active { background: var(--blue); }
+    .hero-content { position: relative; z-index: 2; }
+    .page-hero-eyebrow { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .page-hero-eyebrow::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .page-hero-headline { font-family: var(--font-headline); font-size: clamp(52px,7vw,100px); font-weight: 300; line-height: .94; letter-spacing: -.01em; text-transform: uppercase; color: var(--white); max-width: 16ch; margin-bottom: 28px; }
+    .page-hero-headline .blue { color: var(--blue); }
+    .page-hero-sub { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: rgba(255,255,255,.88); max-width: 520px; }
+
+    .intro-section { background: var(--dark); padding: 100px 0; }
+    .intro-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 100px; }
+    .section-label { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--blue); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .section-label::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
+    .section-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; margin-bottom: 32px; }
+    .section-h2 em { font-family: var(--font-main); font-style: normal; font-weight: 300; color: var(--blue); }
+    .body-dark p { font-family: var(--font-body); font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.92); margin-bottom: 22px; }
+
+    .services-section { background: var(--white); padding: 100px 0; }
+    .services-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--vapor); }
+    .svc-card { background: var(--white); padding: 44px 32px; }
+    .svc-num { font-family: var(--font-headline); font-size: 48px; font-weight: 400; color: var(--blue); opacity: .45; margin-bottom: 12px; }
+    .svc-title { font-family: var(--font-headline); font-size: 20px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 12px; }
+    .svc-body { font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: #555; }
+
+    .tov-section { background: var(--ash); padding: 100px 0; }
+    .tov-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; }
+    .tov-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 24px; }
+    .tov-body p { font-family: var(--font-body); font-size: 17px; line-height: 1.75; color: #333; margin-bottom: 20px; }
+
+    .cta-band { background: var(--blue); padding: 80px 0; }
+    .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .cta-h { font-family: var(--font-headline); font-size: clamp(28px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; }
+    .btn-white { display: inline-block; font-family: var(--font-main); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--blue); background: var(--white); border: none; padding: 18px 36px; border-radius: 4px; text-decoration: none; white-space: nowrap; transition: background .2s, color .2s; }
+    .btn-white:hover { background: var(--dark); color: var(--white); }
+
+    @media (max-width: 900px) {
+      .intro-inner, .tov-inner { grid-template-columns: 1fr; gap: 40px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .cta-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="sitenav">
+  <a href="/" class="nav-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+  <ul class="nav-links">
+    <li class="nav-mega-trigger">
+      <a href="/services/" class="active">Services</a>
+      <div class="nav-mega-panel">
+        <div>
+          <a href="/services/branding-and-identity/" class="nav-mega-item"><span class="nav-mega-title">Branding &amp; Identity</span><span class="nav-mega-sub">Logo, brand strategy, guidelines</span></a>
+          <a href="/services/web-design-southampton/" class="nav-mega-item"><span class="nav-mega-title">Web Design</span><span class="nav-mega-sub">UX-led, mobile-first website design</span></a>
+          <a href="/services/web-development/" class="nav-mega-item"><span class="nav-mega-title">Web Development</span><span class="nav-mega-sub">Bespoke builds, CMS, e-commerce</span></a>
+          <a href="/services/digital-marketing/" class="nav-mega-item"><span class="nav-mega-title">Digital Marketing</span><span class="nav-mega-sub">SEO, PPC, social media</span></a>
+        </div>
+        <div>
+          <a href="/services/print-and-advertising/" class="nav-mega-item"><span class="nav-mega-title">Print &amp; Advertising</span><span class="nav-mega-sub">Brochures, press ads, direct mail</span></a>
+          <a href="/services/copywriting/" class="nav-mega-item"><span class="nav-mega-title">Copywriting</span><span class="nav-mega-sub">Brand copy, web content, SEO writing</span></a>
+          <a href="/services/exhibitions-and-signage/" class="nav-mega-item"><span class="nav-mega-title">Exhibitions &amp; Signage</span><span class="nav-mega-sub">Stands, banners, vehicle livery</span></a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="/sectors/">Sectors</a>
+      <div class="nav-dropdown-panel">
+        <a href="/sectors/property-marketing/" class="nav-dd-item"><span class="nav-dd-num">01</span><span class="nav-dd-label">Property Marketing</span></a>
+        <a href="/sectors/professional-services/" class="nav-dd-item"><span class="nav-dd-num">02</span><span class="nav-dd-label">Professional Services</span></a>
+        <a href="/sectors/luxury-brands/" class="nav-dd-item"><span class="nav-dd-num">03</span><span class="nav-dd-label">Luxury &amp; Premium Brands</span></a>
+      </div>
+    </li>
+    <li><a href="/work/">Work</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/insights/">Insights</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:07899792663" class="nav-phone">07899 792663</a>
+    <a href="/contact/" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-media">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide active"></div>
+      <div class="hero-slide"></div>
+      <div class="hero-slide"></div>
+    </div>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" data-slide="0"></button>
+    <button class="hero-dot" data-slide="1"></button>
+    <button class="hero-dot" data-slide="2"></button>
+  </div>
+  <div class="hero-content" style="padding-top:68px;">
+    <p class="page-hero-eyebrow">Copywriting Southampton</p>
+    <h1 class="page-hero-headline">Brand copywriting services in <em class="blue">Southampton.</em></h1>
+    <p class="page-hero-sub">Words that work. Brand copy, web content, sales literature, tone of voice and SEO copywriting for businesses across Hampshire and the South.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="wrap">
+    <div class="intro-inner">
+      <div>
+        <p class="section-label">Why words matter</p>
+        <h2 class="section-h2">Copy that <em>earns its place.</em></h2>
+      </div>
+      <div class="body-dark">
+        <p>Words are doing work all the time in your marketing. The headline on your website that makes someone decide to read on or click away. The first line of your brochure that either hooks the reader or loses them. The email subject line that gets opened or deleted. The strapline that sticks or disappears. Good copywriting is not about filling space with sentences -- it is about choosing words precisely, because words are the interface between your business and the people you are trying to reach.</p>
+        <p>Our copywriting work starts with understanding what you are actually trying to say and who you are saying it to. A technical brochure for a professional audience reads differently to a development brochure for residential purchasers. Web copy designed to rank in Google has different requirements to advertising copy designed to stop someone in their tracks. We adapt our approach to the medium, the audience and the objective in every project we take on.</p>
+        <p>We write for the full range of marketing formats: websites, sales brochures, advertising, direct mail, social media, email campaigns, brand guidelines, SEO content and tone of voice frameworks. Because we work across design and digital as well as copy, we think about how words sit alongside visual elements rather than treating them in isolation. The result is more coherent, more effective work throughout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="wrap">
+    <p class="section-label">Copywriting services</p>
+    <h2 class="services-h2">What we write.</h2>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-num">01</div>
+        <div class="svc-title">Web Copy</div>
+        <p class="svc-body">Homepage, service pages, about us, case studies and landing pages. Web copy must work on two levels: persuading human readers while clearly communicating relevance to search engines. We write with both audiences in mind, producing pages that read naturally and perform well in organic search.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">02</div>
+        <div class="svc-title">Brand Messaging</div>
+        <p class="svc-body">Straplines, brand statements, elevator pitches, key message hierarchies and campaign headlines. The language that defines how your business presents itself across every touchpoint. We develop brand messaging frameworks that give your team a clear, consistent voice to work from.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">03</div>
+        <div class="svc-title">Sales Literature Copy</div>
+        <p class="svc-body">Brochure body copy, product descriptions, capability statements and proposal templates. Sales literature copy must be clear, credible and compelling -- it is often the first detailed look a prospect gets at what you do and how well you do it.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">04</div>
+        <div class="svc-title">Tone of Voice</div>
+        <p class="svc-body">Defining how your brand sounds, not just how it looks. A tone of voice framework gives everyone writing on behalf of your business clear principles and practical examples to work from. The result is a consistent, recognisable voice across every channel.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">05</div>
+        <div class="svc-title">SEO Copywriting</div>
+        <p class="svc-body">Long-form content, blog posts, location pages and FAQs written to rank for specific search terms. Good SEO copywriting is genuinely useful content that happens to be optimised -- not keyword-stuffed filler that wastes everyone's time, including search engines'.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">06</div>
+        <div class="svc-title">Advertising Copy</div>
+        <p class="svc-body">Press ads, outdoor campaigns, social media ads, email subject lines and direct mail copy. Advertising copy has to work hard in a very small space: every word earns its place or it does not go in. We bring the same rigour to a six-word headline as to a thousand-word brochure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tov-section">
+  <div class="wrap">
+    <div class="tov-inner">
+      <div>
+        <p class="section-label">Tone of voice</p>
+        <h2 class="tov-h2">Sound as good as you look.</h2>
+      </div>
+      <div class="tov-body">
+        <p>Most businesses spend significant time and money on how their brand looks, and much less on how it sounds. But the words your business uses -- the vocabulary, the sentence structure, the level of formality, the sense of humour or lack of it -- are as much a part of your brand as your logo or colour palette. When your visual identity and your verbal identity are aligned, the result is a brand that feels coherent and trustworthy at every touchpoint.</p>
+        <p>A tone of voice framework is a practical document that captures the principles behind your brand's voice and translates them into clear guidance for anyone writing on your behalf. It covers things like: what adjectives describe your brand's personality? What should you avoid saying? How formal or conversational is the right register? What does a good headline look like versus a poor one?</p>
+        <p>We develop tone of voice frameworks for businesses that want to communicate with more consistency, more confidence and more personality. The work typically involves a discovery phase -- interviews, review of existing materials, competitive analysis -- followed by a structured framework document that is both aspirational and immediately practical.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-inner">
+      <h2 class="cta-h">Brief us on your copywriting project.</h2>
+      <a href="/contact/" class="btn-white">Get a Quote</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <div>
+        <a href="/" class="footer-logo"><span class="nav-logo-now">now&nbsp;</span><span class="nav-logo-mark">marketing</span><span class="nav-logo-dot"></span></a>
+        <p class="footer-tagline-sub">Creative Marketing Agency</p>
+        <p class="footer-tagline">The Creative Hub, 7 Carisbrooke<br>Netley Abbey, Southampton<br>Hampshire, SO31 5GH<br><br>T: <a href="tel:07899792663" style="color:inherit;text-decoration:none;">07899 792663</a><br>E: <a href="mailto:hello@now-marketing.net" style="color:inherit;text-decoration:none;">hello@now-marketing.net</a></p>
+      </div>
+      <div>
+        <p class="footer-col-h">Services</p>
+        <div class="footer-links">
+          <a href="/services/branding-and-identity/">Branding &amp; Identity</a>
+          <a href="/services/web-design-southampton/">Web Design</a>
+          <a href="/services/web-development/">Web Development</a>
+          <a href="/services/digital-marketing/">Digital Marketing</a>
+          <a href="/services/print-and-advertising/">Print &amp; Advertising</a>
+          <a href="/services/copywriting/">Copywriting</a>
+          <a href="/services/exhibitions-and-signage/">Exhibitions &amp; Signage</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Sectors</p>
+        <div class="footer-links">
+          <a href="/sectors/property-marketing/">Property Marketing</a>
+          <a href="/sectors/professional-services/">Professional Services</a>
+          <a href="/sectors/luxury-brands/">Luxury &amp; Premium</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-h">Studio</p>
+        <div class="footer-links">
+          <a href="/about/">About Us</a>
+          <a href="/work/">Our Work</a>
+          <a href="/insights/">Insights</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">&#169; 2025 Now Marketing. All rights reserved. Registered in England.</p>
+      <p class="footer-legal">Creative Marketing Agency &nbsp;·&nbsp; Southampton, Hampshire</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){var s=document.querySelectorAll('#heroSlides .hero-slide'),d=document.querySelectorAll('#heroDots .hero-dot'),c=0,t;function g(n){s[c].classList.remove('active');d[c].classList.remove('active');c=(n+s.length)%s.length;s[c].classList.add('active');d[c].classList.add('active');}function st(){t=setInterval(function(){g(c+1);},5000);}d.forEach(function(x,i){x.addEventListener('click',function(){clearInterval(t);g(i);st();});});st();})();
+</script>
+</body>
+</html>
