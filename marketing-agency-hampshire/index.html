@@ -112,8 +112,9 @@
     .clients-h { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: var(--mid); text-align: center; margin-bottom: 48px; display: flex; align-items: center; justify-content: center; gap: 16px; }
     .clients-h::before, .clients-h::after { content: ''; flex: 1; height: 1px; background: var(--vapor); }
     .logo-strip { display: grid; grid-template-columns: repeat(6,1fr); border: 1px solid var(--vapor); border-radius: var(--r); overflow: hidden; }
-    .logo-cell { height: 200px; display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--vapor); padding: 20px; box-sizing: border-box; transition: background .25s; }
-    .logo-cell:last-child { border-right: none; }
+    .logo-cell { height: 200px; display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--vapor); border-bottom: 1px solid var(--vapor); padding: 20px; box-sizing: border-box; transition: background .25s; }
+    .logo-cell:nth-child(6n) { border-right: none; }
+    .logo-cell:nth-last-child(-n+6) { border-bottom: none; }
     .logo-cell:hover { background: var(--ash); }
     .logo-cell img { max-height: 160px; max-width: 100%; width: auto; height: auto; display: block; object-fit: contain; filter: grayscale(100%) opacity(0.45); transition: filter .35s ease; }
     .logo-cell:hover img { filter: grayscale(0%) opacity(1); }
@@ -333,26 +334,18 @@
       <div class="logo-cell"><img src="../images/logos/mortgage-decisions.png" alt="Mortgage Decisions" onerror="this.outerHTML='<span class=logo-fallback>Mortgage Decisions</span>'"></div>
       <div class="logo-cell"><img src="../images/logos/olive-homes.png" alt="Olive Homes" onerror="this.outerHTML='<span class=logo-fallback>Olive Homes</span>'"></div>
       <div class="logo-cell"><img src="../images/logos/austin-hughes.png" alt="Austin Hughes" onerror="this.outerHTML='<span class=logo-fallback>Austin Hughes</span>'"></div>
-    </div>
-    <div style="margin-top:1px;">
-      <div class="logo-strip">
-        <div class="logo-cell"><img src="../images/logos/glenfiddich.png" alt="Glenfiddich" onerror="this.outerHTML='<span class=logo-fallback>Glenfiddich</span>'"></div>
-        <div class="logo-cell"><img src="../images/logos/strutt-and-parker.png" alt="Strutt &amp; Parker" onerror="this.outerHTML='<span class=logo-fallback>Strutt &amp; Parker</span>'"></div>
-        <div class="logo-cell"><img src="../images/logos/charters.png" alt="Charters" onerror="this.outerHTML='<span class=logo-fallback>Charters</span>'"></div>
-        <div class="logo-cell"><img src="../images/logos/stolichnaya.png" alt="Stolichnaya" onerror="this.outerHTML='<span class=logo-fallback>Stolichnaya</span>'"></div>
-        <div class="logo-cell"><img src="../images/logos/trinity-rose.png" alt="Trinity Rose" onerror="this.outerHTML='<span class=logo-fallback>Trinity Rose</span>'"></div>
-        <div class="logo-cell"><img src="../images/logos/wykeham-homes.png" alt="Wykeham Homes" onerror="this.outerHTML='<span class=logo-fallback>Wykeham Homes</span>'"></div>
-      </div>
-    </div>
-    <div style="margin-top:1px;">
-      <div class="logo-strip">
-        <div class="logo-cell"><img src="../images/logos/steens-group.png" alt="Steens Group" onerror="this.outerHTML='<span class=logo-fallback>Steens Group</span>'"></div>
-        <div class="logo-cell"><img src="../images/logos/newman-cozens.png" alt="Newman Cozens" onerror="this.outerHTML='<span class=logo-fallback>Newman Cozens</span>'"></div>
-        <div class="logo-cell"><img src="../images/logos/doswell.png" alt="Doswell" onerror="this.outerHTML='<span class=logo-fallback>Doswell</span>'"></div>
-        <div class="logo-cell"><img src="../images/logos/st-cross-homes.png" alt="St Cross Homes" onerror="this.outerHTML='<span class=logo-fallback>St Cross Homes</span>'"></div>
-        <div class="logo-cell"><img src="../images/logos/william-jarrod.png" alt="William Jarrod" onerror="this.outerHTML='<span class=logo-fallback>William Jarrod</span>'"></div>
-        <div class="logo-cell"><img src="../images/logos/charters-financial.png" alt="Charters Financial" onerror="this.outerHTML='<span class=logo-fallback>Charters Financial</span>'"></div>
-      </div>
+      <div class="logo-cell"><img src="../images/logos/glenfiddich.png" alt="Glenfiddich" onerror="this.outerHTML='<span class=logo-fallback>Glenfiddich</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/strutt-and-parker.png" alt="Strutt &amp; Parker" onerror="this.outerHTML='<span class=logo-fallback>Strutt &amp; Parker</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/charters.png" alt="Charters" onerror="this.outerHTML='<span class=logo-fallback>Charters</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/stolichnaya.png" alt="Stolichnaya" onerror="this.outerHTML='<span class=logo-fallback>Stolichnaya</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/trinity-rose.png" alt="Trinity Rose" onerror="this.outerHTML='<span class=logo-fallback>Trinity Rose</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/wykeham-homes.png" alt="Wykeham Homes" onerror="this.outerHTML='<span class=logo-fallback>Wykeham Homes</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/steens-group.png" alt="Steens Group" onerror="this.outerHTML='<span class=logo-fallback>Steens Group</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/newman-cozens.png" alt="Newman Cozens" onerror="this.outerHTML='<span class=logo-fallback>Newman Cozens</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/doswell.png" alt="Doswell" onerror="this.outerHTML='<span class=logo-fallback>Doswell</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/st-cross-homes.png" alt="St Cross Homes" onerror="this.outerHTML='<span class=logo-fallback>St Cross Homes</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/william-jarrod.png" alt="William Jarrod" onerror="this.outerHTML='<span class=logo-fallback>William Jarrod</span>'"></div>
+      <div class="logo-cell"><img src="../images/logos/charters-financial.png" alt="Charters Financial" onerror="this.outerHTML='<span class=logo-fallback>Charters Financial</span>'"></div>
     </div>
   </div>
 </section>
