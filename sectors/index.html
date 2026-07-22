@@ -78,8 +78,9 @@
     .client-bar { background: var(--dark); padding: 80px 0; border-top: 1px solid rgba(255,255,255,.35); }
     .client-bar-label { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.35); text-align: center; margin-bottom: 48px; }
     .client-grid { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px 64px; }
-    .client-name { font-family: var(--font-headline); font-size: 14px; font-weight: 400; text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.25); transition: color .2s; cursor: default; }
+    .client-name { font-family: var(--font-headline); font-size: 14px; font-weight: 400; text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.25); transition: color .2s; cursor: default; text-decoration: none; display: inline-block; }
     .client-name:hover { color: rgba(255,255,255,.65); }
+    a.client-name { cursor: pointer; }
 
     /* CTA BAND */
     .cta-band { background: var(--blue); padding: 80px 0; }
@@ -259,18 +260,18 @@
   <div class="wrap">
     <p class="client-bar-label">Clients across all three sectors</p>
     <div class="client-grid">
-      <span class="client-name">Glenfiddich</span>
-      <span class="client-name">Strutt &amp; Parker</span>
-      <span class="client-name">Charters</span>
-      <span class="client-name">Stolichnaya</span>
-      <span class="client-name">Trinity Rose</span>
-      <span class="client-name">Wykeham Homes</span>
-      <span class="client-name">St Cross Homes</span>
-      <span class="client-name">Doswell</span>
+      <a href="/work/glenfiddich/" class="client-name">Glenfiddich</a>
+      <a href="/work/strutt-and-parker/" class="client-name">Strutt &amp; Parker</a>
+      <a href="/work/charters/" class="client-name">Charters</a>
+      <a href="/work/stolichnaya/" class="client-name">Stolichnaya</a>
+      <a href="/work/trinity-rose/" class="client-name">Trinity Rose</a>
+      <a href="/work/wykeham-homes/" class="client-name">Wykeham Homes</a>
+      <a href="/work/st-cross-homes/" class="client-name">St Cross Homes</a>
+      <a href="/work/doswell-projects/" class="client-name">Doswell</a>
       <span class="client-name">Newman Cozens</span>
-      <span class="client-name">William Jarrod</span>
+      <a href="/work/william-jarrod/" class="client-name">William Jarrod</a>
       <span class="client-name">Charters Financial</span>
-      <span class="client-name">Steens Group</span>
+      <a href="/work/steens-group/" class="client-name">Steens Group</a>
     </div>
   </div>
 </section>

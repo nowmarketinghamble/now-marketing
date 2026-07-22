@@ -62,7 +62,8 @@
     .section-label::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
     .section-h2 { font-family: var(--font-headline); font-size: clamp(36px,4vw,58px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; margin-bottom: 60px; }
     .clients-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; background: rgba(255,255,255,.35); }
-    .client-cell { background: var(--dark-2); padding: 32px 28px; }
+    .client-cell { background: var(--dark-2); padding: 32px 28px; display: block; text-decoration: none; transition: background .2s; }
+    .client-cell:hover { background: rgba(255,255,255,.06); }
     .client-cell-name { font-family: var(--font-main); font-size: 14px; font-weight: 700; color: rgba(255,255,255,.9); margin-bottom: 4px; }
     .client-cell-sector { font-family: var(--font-main); font-size: 11px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .08em; }
 
@@ -330,6 +331,15 @@
         <span class="card-arrow">&#8594;</span>
       </a>
 
+      <a class="portfolio-card" href="/work/doswell-projects/" data-category="branding">
+        <div class="card-thumb"><img src="/images/work/doswell-projects.jpg" alt="Doswell Projects" onerror="this.remove()"><span class="card-thumb-label">Project image</span></div>
+        <span class="card-pill">Branding, Print</span>
+        <div class="card-client">Doswell Projects</div>
+        <div class="card-project">Brand &amp; Marketing</div>
+        <p class="card-outcome">Brand and marketing support for Doswell Projects, an established name in Hampshire property.</p>
+        <span class="card-arrow">&#8594;</span>
+      </a>
+
     </div>
   </div>
 </section>
@@ -339,19 +349,19 @@
     <p class="section-label">Our clients</p>
     <h2 class="section-h2">Businesses we have worked with.</h2>
     <div class="clients-grid">
-      <div class="client-cell"><div class="client-cell-name">Charters</div><div class="client-cell-sector">Estate Agency</div></div>
-      <div class="client-cell"><div class="client-cell-name">Glenfiddich</div><div class="client-cell-sector">Luxury Spirits</div></div>
-      <div class="client-cell"><div class="client-cell-name">Strutt &amp; Parker</div><div class="client-cell-sector">Property</div></div>
-      <div class="client-cell"><div class="client-cell-name">Trinity Rose</div><div class="client-cell-sector">Professional Services</div></div>
-      <div class="client-cell"><div class="client-cell-name">Steens Group</div><div class="client-cell-sector">Manufacturing</div></div>
-      <div class="client-cell"><div class="client-cell-name">Wykeham Homes</div><div class="client-cell-sector">Property Development</div></div>
-      <div class="client-cell"><div class="client-cell-name">St Cross Homes</div><div class="client-cell-sector">Residential Development</div></div>
-      <div class="client-cell"><div class="client-cell-name">Doswell</div><div class="client-cell-sector">Property</div></div>
+      <a href="/work/charters/" class="client-cell"><div class="client-cell-name">Charters</div><div class="client-cell-sector">Estate Agency</div></a>
+      <a href="/work/glenfiddich/" class="client-cell"><div class="client-cell-name">Glenfiddich</div><div class="client-cell-sector">Luxury Spirits</div></a>
+      <a href="/work/strutt-and-parker/" class="client-cell"><div class="client-cell-name">Strutt &amp; Parker</div><div class="client-cell-sector">Property</div></a>
+      <a href="/work/trinity-rose/" class="client-cell"><div class="client-cell-name">Trinity Rose</div><div class="client-cell-sector">Professional Services</div></a>
+      <a href="/work/steens-group/" class="client-cell"><div class="client-cell-name">Steens Group</div><div class="client-cell-sector">Manufacturing</div></a>
+      <a href="/work/wykeham-homes/" class="client-cell"><div class="client-cell-name">Wykeham Homes</div><div class="client-cell-sector">Property Development</div></a>
+      <a href="/work/st-cross-homes/" class="client-cell"><div class="client-cell-name">St Cross Homes</div><div class="client-cell-sector">Residential Development</div></a>
+      <a href="/work/doswell-projects/" class="client-cell"><div class="client-cell-name">Doswell</div><div class="client-cell-sector">Property</div></a>
       <div class="client-cell"><div class="client-cell-name">Newman Cozens</div><div class="client-cell-sector">Estate Agency</div></div>
-      <div class="client-cell"><div class="client-cell-name">Stolichnaya</div><div class="client-cell-sector">Luxury Spirits</div></div>
-      <div class="client-cell"><div class="client-cell-name">William Jarrod</div><div class="client-cell-sector">Professional Services</div></div>
+      <a href="/work/stolichnaya/" class="client-cell"><div class="client-cell-name">Stolichnaya</div><div class="client-cell-sector">Luxury Spirits</div></a>
+      <a href="/work/william-jarrod/" class="client-cell"><div class="client-cell-name">William Jarrod</div><div class="client-cell-sector">Professional Services</div></a>
       <div class="client-cell"><div class="client-cell-name">Charters Financial</div><div class="client-cell-sector">Financial Services</div></div>
-      <div class="client-cell"><div class="client-cell-name">DK Holdings</div><div class="client-cell-sector">Professional Services</div></div>
+      <a href="/work/dk-holdings/" class="client-cell"><div class="client-cell-name">DK Holdings</div><div class="client-cell-sector">Professional Services</div></a>
     </div>
   </div>
 </section>

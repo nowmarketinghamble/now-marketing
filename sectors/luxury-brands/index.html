@@ -40,7 +40,8 @@
     .credentials-section { background: var(--white); padding: 100px 0; }
     .cred-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
     .cred-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--vapor); }
-    .cred-card { background: var(--white); padding: 44px 32px; }
+    .cred-card { background: var(--white); padding: 44px 32px; display: block; text-decoration: none; transition: background .2s; }
+    a.cred-card:hover { background: var(--ash); }
     .cred-badge { display: inline-block; font-family: var(--font-main); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--blue); border: 1px solid rgba(0,174,239,.3); padding: 5px 12px; border-radius: 20px; margin-bottom: 20px; }
     .cred-title { font-family: var(--font-headline); font-size: 24px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 12px; }
     .cred-body { font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: #555; }
@@ -48,7 +49,8 @@
     .work-section { background: var(--dark-3); padding: 100px 0; }
     .work-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; margin-bottom: 60px; }
     .work-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(255,255,255,.35); }
-    .work-card { background: var(--dark-3); padding: 40px 28px; }
+    .work-card { background: var(--dark-3); padding: 40px 28px; display: block; text-decoration: none; transition: background .2s; }
+    a.work-card:hover { background: var(--dark-4); }
     .work-thumb { width: 100%; aspect-ratio: 4/3; background: rgba(255,255,255,.35); border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
     .work-thumb-label { font-family: var(--font-main); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.2); }
     .work-client { font-family: var(--font-headline); font-size: 22px; font-weight: 400; text-transform: uppercase; color: var(--white); margin-bottom: 8px; }
@@ -162,21 +164,21 @@
     <p class="section-label">Our luxury credentials</p>
     <h2 class="cred-h2">Clients with the highest standards.</h2>
     <div class="cred-grid">
-      <div class="cred-card">
+      <a href="/work/glenfiddich/" class="cred-card">
         <span class="cred-badge">Premium Spirits</span>
         <div class="cred-title">Glenfiddich</div>
         <p class="cred-body">Premium sales literature, point-of-sale design and trade campaign materials for one of the world's most recognised single malt Scotch whiskies. Every piece designed to honour the brand's extraordinary heritage and uncompromising quality standards.</p>
-      </div>
-      <div class="cred-card">
+      </a>
+      <a href="/work/stolichnaya/" class="cred-card">
         <span class="cred-badge">Premium Spirits</span>
         <div class="cred-title">Stolichnaya</div>
         <p class="cred-body">Brand-consistent marketing materials for the premium vodka brand's UK market activity. Design work that maintained the brand's distinctive visual identity while adapting effectively to a range of format requirements.</p>
-      </div>
-      <div class="cred-card">
+      </a>
+      <a href="/work/wykeham-homes/" class="cred-card">
         <span class="cred-badge">Premium Property</span>
         <div class="cred-title">Wykeham Homes</div>
         <p class="cred-body">Full brand identity and premium sales literature for a high-quality Hampshire residential developer. Development brochures produced with premium paper stocks and special finishes to match the quality of the homes being sold.</p>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -186,21 +188,21 @@
     <p class="section-label" style="color:var(--blue);">Featured luxury work</p>
     <h2 class="work-h2">Work we have produced for premium brands.</h2>
     <div class="work-grid">
-      <div class="work-card">
+      <a href="/work/glenfiddich/" class="work-card">
         <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
         <div class="work-client">Glenfiddich</div>
         <p class="work-proj">UK trade campaign literature and point-of-sale design. Premium production values throughout, with attention to brand consistency at every scale.</p>
-      </div>
-      <div class="work-card">
+      </a>
+      <a href="/work/stolichnaya/" class="work-card">
         <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
         <div class="work-client">Stolichnaya</div>
         <p class="work-proj">Brand marketing materials adapted for the UK market. Design work that maintains the brand's global visual standards while delivering effectively in a regional market context.</p>
-      </div>
-      <div class="work-card">
+      </a>
+      <a href="/work/wykeham-homes/" class="work-card">
         <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
         <div class="work-client">Wykeham Homes</div>
         <p class="work-proj">Brand creation and premium development brochures for a quality Hampshire developer. Soft-touch laminate and foil blocking used throughout to match the quality expectations of discerning purchasers.</p>
-      </div>
+      </a>
     </div>
   </div>
 </section>

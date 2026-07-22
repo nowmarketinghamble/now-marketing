@@ -38,7 +38,8 @@
     .section-h2 em { font-family: var(--font-main); font-style: normal; font-weight: 300; color: var(--blue); }
     .body-dark p { font-family: var(--font-body); font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.92); margin-bottom: 22px; }
     .client-names { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
-    .client-badge { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.85); background: rgba(0,174,239,.15); border: 1px solid rgba(0,174,239,.3); padding: 8px 16px; border-radius: 4px; }
+    .client-badge { font-family: var(--font-main); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.85); background: rgba(0,174,239,.15); border: 1px solid rgba(0,174,239,.3); padding: 8px 16px; border-radius: 4px; text-decoration: none; display: inline-block; transition: background .2s; }
+    a.client-badge:hover { background: rgba(0,174,239,.28); }
 
     .services-section { background: var(--white); padding: 100px 0; }
     .services-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
@@ -50,7 +51,8 @@
     .work-section { background: var(--ash); padding: 100px 0; }
     .work-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
     .work-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--vapor); }
-    .work-card { background: var(--ash); padding: 40px 28px; }
+    .work-card { background: var(--ash); padding: 40px 28px; display: block; text-decoration: none; transition: background .2s; }
+    a.work-card:hover { background: var(--ash-2); }
     .work-thumb { width: 100%; aspect-ratio: 4/3; background: var(--vapor); border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
     .work-thumb-label { font-family: var(--font-main); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--fog); }
     .work-client { font-family: var(--font-headline); font-size: 22px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 8px; }
@@ -158,11 +160,11 @@
         <p class="section-label">Our property expertise</p>
         <h2 class="section-h2">A specialist in <em>property marketing.</em></h2>
         <div class="client-names">
-          <span class="client-badge">Charters</span>
-          <span class="client-badge">Strutt &amp; Parker</span>
-          <span class="client-badge">Wykeham Homes</span>
-          <span class="client-badge">St Cross Homes</span>
-          <span class="client-badge">Doswell</span>
+          <a href="/work/charters/" class="client-badge">Charters</a>
+          <a href="/work/strutt-and-parker/" class="client-badge">Strutt &amp; Parker</a>
+          <a href="/work/wykeham-homes/" class="client-badge">Wykeham Homes</a>
+          <a href="/work/st-cross-homes/" class="client-badge">St Cross Homes</a>
+          <a href="/work/doswell-projects/" class="client-badge">Doswell</a>
           <span class="client-badge">Newman Cozens</span>
         </div>
       </div>
@@ -214,21 +216,21 @@
     <p class="section-label">Featured property work</p>
     <h2 class="work-h2">Property projects we are proud of.</h2>
     <div class="work-grid">
-      <div class="work-card">
+      <a href="/work/charters/" class="work-card">
         <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
         <div class="work-client">Charters</div>
         <p class="work-proj">We built the Charters brand from scratch when they opened their first Winchester office, and have been their creative agency ever since. Brand identity, all sales and marketing literature, website design and build, and office branding across every location as the business has grown across the South Coast.</p>
-      </div>
-      <div class="work-card">
+      </a>
+      <a href="/work/wykeham-homes/" class="work-card">
         <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
         <div class="work-client">Wykeham Homes</div>
         <p class="work-proj">Development brochures, website and digital marketing campaign for two Hampshire residential developments. Premium print production with special finishes throughout, aligned with the developer's quality positioning.</p>
-      </div>
-      <div class="work-card">
+      </a>
+      <a href="/work/st-cross-homes/" class="work-card">
         <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
         <div class="work-client">St Cross Homes</div>
         <p class="work-proj">Brand identity and sales literature for a Portsmouth-based residential developer. New brand, development brochures and web presence designed to reflect the quality of the homes being delivered.</p>
-      </div>
+      </a>
     </div>
   </div>
 </section>

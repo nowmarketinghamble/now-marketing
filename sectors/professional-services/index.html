@@ -47,7 +47,8 @@
     .work-section { background: var(--ash); padding: 100px 0; }
     .work-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
     .work-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--vapor); }
-    .work-card { background: var(--ash); padding: 40px 28px; }
+    .work-card { background: var(--ash); padding: 40px 28px; display: block; text-decoration: none; transition: background .2s; }
+    a.work-card:hover { background: var(--ash-2); }
     .work-thumb { width: 100%; aspect-ratio: 4/3; background: var(--vapor); border-radius: 8px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; }
     .work-thumb-label { font-family: var(--font-main); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--fog); }
     .work-client { font-family: var(--font-headline); font-size: 22px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 8px; }
@@ -194,21 +195,21 @@
     <p class="section-label">Featured work</p>
     <h2 class="work-h2">Professional services projects.</h2>
     <div class="work-grid">
-      <div class="work-card">
+      <a href="/work/trinity-rose/" class="work-card">
         <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
         <div class="work-client">Trinity Rose</div>
         <p class="work-proj">Full brand creation from scratch. Logo, identity system, brand guidelines, website, stationery and capability literature for a growing Hampshire professional services firm.</p>
-      </div>
+      </a>
       <div class="work-card">
         <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
         <div class="work-client">Charters Financial</div>
         <p class="work-proj">Brand alignment and marketing materials for the financial services arm of the Charters group. Credible, compliant marketing that reflects the quality of the parent brand.</p>
       </div>
-      <div class="work-card">
+      <a href="/work/william-jarrod/" class="work-card">
         <div class="work-thumb"><span class="work-thumb-label">Project image</span></div>
         <div class="work-client">William Jarrod</div>
         <p class="work-proj">Brand refresh and web redesign for a Hampshire professional firm. New identity, website and updated marketing collateral aligned with the firm's repositioning.</p>
-      </div>
+      </a>
     </div>
   </div>
 </section>
