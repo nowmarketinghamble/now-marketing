@@ -72,8 +72,8 @@
     .testi-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
     .testi-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; background: var(--vapor); }
     .testi-card { background: var(--ash); padding: 44px 36px; }
+    .testi-card::before { content: '\201C'; font-family: var(--font-headline); font-size: 48px; color: var(--blue); line-height: 1; display: block; margin-bottom: 8px; }
     .testi-quote { font-family: var(--font-body); font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 28px; }
-    .testi-quote::before { content: '\201C'; font-family: var(--font-headline); font-size: 48px; color: var(--blue); line-height: 1; display: block; margin-bottom: 8px; }
     .testi-name { font-family: var(--font-main); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--dark); }
     .testi-co { font-family: var(--font-main); font-size: 11px; color: var(--mid); margin-top: 4px; }
 
@@ -388,7 +388,9 @@
         <div class="testi-name">Enfields Estate Agents</div>
       </div>
       <div class="testi-card">
-        <p class="testi-quote">We've worked with Now Marketing for the past couple of years, and they've become an invaluable extension of our team. From creative design and branding to high quality print and signage, they've consistently delivered work of an exceptional standard, often to demanding deadlines. They understand our business, our brand and the premium image we strive to maintain, always bringing fresh ideas alongside a proactive, solutions-focused approach. Their attention to detail, reliability and outstanding customer service make them a pleasure to work with, and I wouldn't hesitate to recommend them.</p>
+        <p class="testi-quote">We've worked with Now Marketing for the past couple of years, and they've become an invaluable extension of our team.</p>
+        <p class="testi-quote">From creative design and branding to high quality print and signage, they've consistently delivered work of an exceptional standard, often to demanding deadlines. They understand our business, our brand and the premium image we strive to maintain, always bringing fresh ideas alongside a proactive, solutions-focused approach.</p>
+        <p class="testi-quote">Their attention to detail, reliability and outstanding customer service make them a pleasure to work with, and I wouldn't hesitate to recommend them.</p>
         <div class="testi-name">Spencers Property</div>
       </div>
     </div>
