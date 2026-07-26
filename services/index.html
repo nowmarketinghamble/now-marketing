@@ -136,16 +136,9 @@
 <section class="page-hero">
   <div class="hero-media">
     <div class="hero-slides" id="heroSlides">
-      <div class="hero-slide active"></div>
-      <div class="hero-slide"></div>
-      <div class="hero-slide"></div>
+      <div class="hero-slide active" style="background-image:url('/images/hero-services-1.jpg');background-size:cover;background-position:center;"></div>
     </div>
     <div class="hero-overlay"></div>
-  </div>
-  <div class="hero-dots" id="heroDots">
-    <button class="hero-dot active" data-slide="0"></button>
-    <button class="hero-dot" data-slide="1"></button>
-    <button class="hero-dot" data-slide="2"></button>
   </div>
   <div class="hero-content" style="padding-top:68px;">
     <p class="page-hero-eyebrow">Full service agency</p>
@@ -327,9 +320,6 @@
   </div>
 </footer>
 
-<script>
-(function(){var s=document.querySelectorAll('#heroSlides .hero-slide'),d=document.querySelectorAll('#heroDots .hero-dot'),c=0,t;function g(n){s[c].classList.remove('active');d[c].classList.remove('active');c=(n+s.length)%s.length;s[c].classList.add('active');d[c].classList.add('active');}function st(){t=setInterval(function(){g(c+1);},5000);}d.forEach(function(x,i){x.addEventListener('click',function(){clearInterval(t);g(i);st();});});st();})();
-</script>
 <script>
 (function(){
   var b=document.getElementById('navBurger'),m=document.getElementById('mobileNav');
