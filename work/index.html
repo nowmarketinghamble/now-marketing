@@ -43,6 +43,7 @@
     /* PORTFOLIO GRID */
     .portfolio-section { background: var(--white); padding: 60px 0 100px; }
     .portfolio-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--vapor); }
+    .portfolio-grid > *:last-child:nth-child(3n+1) { grid-column: 1 / -1; }
     .portfolio-card { background: var(--white); padding: 40px; transition: background .2s; text-decoration: none; display: block; }
     .portfolio-card:hover { background: var(--ash-2); }
     .portfolio-card[style*="none"] { display: none; }
@@ -62,6 +63,7 @@
     .section-label::before { content:''; display:block; width:32px; height:2px; background:var(--blue); border-radius:2px; }
     .section-h2 { font-family: var(--font-headline); font-size: clamp(36px,4vw,58px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; margin-bottom: 60px; }
     .clients-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; background: rgba(255,255,255,.35); }
+    .clients-grid > *:last-child:nth-child(4n+1) { grid-column: 1 / -1; }
     .client-cell { background: var(--dark-2); padding: 32px 28px; display: block; text-decoration: none; transition: background .2s; }
     .client-cell:hover { background: rgba(255,255,255,.06); }
     .client-cell-name { font-family: var(--font-main); font-size: 14px; font-weight: 700; color: rgba(255,255,255,.9); margin-bottom: 4px; }
@@ -71,6 +73,7 @@
     .testi-section { background: var(--ash); padding: 100px 0; }
     .testi-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
     .testi-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; background: var(--vapor); }
+    .testi-grid > *:last-child:nth-child(2n+1) { grid-column: 1 / -1; }
     .testi-card { background: var(--ash); padding: 44px 36px; }
     .testi-card::before { content: '\201C'; font-family: var(--font-headline); font-size: 48px; color: var(--blue); line-height: 1; display: block; margin-bottom: 8px; }
     .testi-quote { font-family: var(--font-body); font-size: 16px; line-height: 1.75; color: #333; margin-bottom: 28px; }

@@ -40,6 +40,7 @@
     .types-section { background: var(--white); padding: 100px 0; }
     .types-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
     .types-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--vapor); }
+    .types-grid > *:last-child:nth-child(3n+1) { grid-column: 1 / -1; }
     .type-card { background: var(--white); padding: 44px 32px; }
     .type-num { font-family: var(--font-headline); font-size: 48px; font-weight: 400; color: var(--blue); opacity: .45; margin-bottom: 12px; }
     .type-title { font-family: var(--font-headline); font-size: 20px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 12px; }
@@ -48,6 +49,7 @@
     .work-section { background: var(--dark-3); padding: 100px 0; }
     .work-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; margin-bottom: 60px; }
     .work-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; background: rgba(255,255,255,.35); }
+    .work-grid > *:last-child:nth-child(2n+1) { grid-column: 1 / -1; }
     .work-card { background: var(--dark-3); padding: 44px 36px; }
     .work-thumb { width: 100%; aspect-ratio: 16/9; background: rgba(255,255,255,.35); border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; }
     .work-thumb-label { font-family: var(--font-main); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.2); }

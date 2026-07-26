@@ -66,6 +66,7 @@
     /* WHY IT MATTERS STRIP */
     .why-strip { background: var(--dark-3); padding: 100px 0; }
     .why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(255,255,255,.35); margin-top: 60px; }
+    .why-grid > *:last-child:nth-child(3n+1) { grid-column: 1 / -1; }
     .why-cell { background: var(--dark-3); padding: 48px 36px; }
     .why-cell-bar { height: 3px; background: var(--blue); margin-bottom: 32px; }
     .why-cell-title { font-family: var(--font-headline); font-size: 20px; font-weight: 400; text-transform: uppercase; color: var(--white); margin-bottom: 14px; }

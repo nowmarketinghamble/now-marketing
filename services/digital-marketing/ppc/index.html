@@ -40,6 +40,7 @@
     .platforms-section { background: var(--white); padding: 100px 0; }
     .platforms-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
     .platforms-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; background: var(--vapor); }
+    .platforms-grid > *:last-child:nth-child(2n+1) { grid-column: 1 / -1; }
     .platform-card { background: var(--white); padding: 44px 36px; }
     .platform-title { font-family: var(--font-headline); font-size: 22px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 14px; }
     .platform-body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: #444; }
@@ -47,6 +48,7 @@
     .campaign-types { background: var(--ash); padding: 100px 0; }
     .campaign-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
     .campaign-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--vapor); }
+    .campaign-grid > *:last-child:nth-child(3n+1) { grid-column: 1 / -1; }
     .campaign-card { background: var(--ash); padding: 36px 28px; }
     .campaign-card-title { font-family: var(--font-headline); font-size: 18px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 12px; }
     .campaign-card-body { font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: #555; }
@@ -56,6 +58,7 @@
     .reporting-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; margin-bottom: 24px; }
     .reporting-body p { font-family: var(--font-body); font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.82); margin-bottom: 20px; }
     .metric-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; background: rgba(255,255,255,.35); }
+    .metric-grid > *:last-child:nth-child(2n+1) { grid-column: 1 / -1; }
     .metric-cell { background: var(--dark-2); padding: 24px; }
     .metric-name { font-family: var(--font-main); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--blue); margin-bottom: 4px; }
     .metric-desc { font-family: var(--font-body); font-size: 14px; color: rgba(255,255,255,.6); }

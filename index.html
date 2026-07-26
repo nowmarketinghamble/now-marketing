@@ -103,6 +103,7 @@
       gap: 2px; background: var(--vapor);
       border-radius: var(--r); overflow: hidden;
     }
+    .work-grid > *:last-child:nth-child(3n+1) { grid-column: 1 / -1; }
     .work-tile {
       background: var(--white);
       display: flex; flex-direction: column;
@@ -151,6 +152,7 @@
       background: rgba(255,255,255,.35); border-radius: var(--r); overflow: hidden;
       margin-top: 56px;
     }
+    .sectors-grid > *:last-child:nth-child(3n+1) { grid-column: 1 / -1; }
     .sector-card {
       background: var(--dark-3); padding: 52px 44px;
       text-decoration: none; position: relative; overflow: hidden;
@@ -225,6 +227,7 @@
       background: rgba(255,255,255,.35); border-radius: var(--r); overflow: hidden;
       margin-top: 56px;
     }
+    .testi-grid > *:last-child:nth-child(2n+1) { grid-column: 1 / -1; }
     .testi-card {
       background: var(--dark-2); padding: 44px; position: relative;
     }
@@ -285,6 +288,7 @@
       display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
       background: var(--vapor); border-radius: var(--r); overflow: hidden; margin-top: 56px;
     }
+    .insights-grid > *:last-child:nth-child(3n+1) { grid-column: 1 / -1; }
     .insight-card {
       background: var(--white); padding: 36px; text-decoration: none;
       display: flex; flex-direction: column; gap: 12px;
@@ -335,6 +339,9 @@
 
     /* RESPONSIVE */
     @media (max-width:1024px) {
+      .insights-grid > *:last-child:nth-child(2n+1) { grid-column: 1 / -1; }
+      .sectors-grid > *:last-child:nth-child(2n+1) { grid-column: 1 / -1; }
+      .work-grid > *:last-child:nth-child(2n+1) { grid-column: 1 / -1; }
       .section-2col, .about-inner { grid-template-columns:1fr; gap:48px; }
       .svc-grid-3, .work-grid, .sectors-grid, .testi-grid, .insights-grid { grid-template-columns:1fr 1fr; }
       .logo-strip { grid-template-columns: repeat(3,1fr); }

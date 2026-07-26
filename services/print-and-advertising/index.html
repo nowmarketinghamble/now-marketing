@@ -40,6 +40,7 @@
     .produce-section { background: var(--white); padding: 100px 0; }
     .produce-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--dark); line-height: .96; margin-bottom: 60px; }
     .produce-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 2px; background: var(--vapor); }
+    .produce-grid > *:last-child:nth-child(2n+1) { grid-column: 1 / -1; }
     .produce-card { background: var(--white); padding: 44px 36px; }
     .produce-title { font-family: var(--font-headline); font-size: 22px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 14px; }
     .produce-body { font-family: var(--font-body); font-size: 16px; line-height: 1.7; color: #444; }
@@ -52,6 +53,7 @@
     .work-section { background: var(--dark-3); padding: 100px 0; }
     .work-h2 { font-family: var(--font-headline); font-size: clamp(32px,3.5vw,52px); font-weight: 400; text-transform: uppercase; color: var(--white); line-height: .96; margin-bottom: 60px; }
     .work-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: rgba(255,255,255,.35); }
+    .work-grid > *:last-child:nth-child(3n+1) { grid-column: 1 / -1; }
     .work-card { background: var(--dark-3); padding: 40px 32px; }
     .work-thumb { width: 100%; aspect-ratio: 4/3; background: rgba(255,255,255,.35); border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; }
     .work-thumb-label { font-family: var(--font-main); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.2); }
