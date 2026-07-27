@@ -43,6 +43,8 @@
     .cred-grid > *:last-child:nth-child(3n+1) { grid-column: 1 / -1; }
     .cred-card { background: var(--white); padding: 44px 32px; display: block; text-decoration: none; transition: background .2s; }
     a.cred-card:hover { background: var(--ash); }
+    .cred-thumb { width: 100%; aspect-ratio: 4/3; background: var(--vapor); border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; }
+    .cred-thumb-label { font-family: var(--font-main); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--fog); }
     .cred-badge { display: inline-block; font-family: var(--font-main); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; color: var(--blue); border: 1px solid rgba(0,174,239,.3); padding: 5px 12px; border-radius: 20px; margin-bottom: 20px; }
     .cred-title { font-family: var(--font-headline); font-size: 24px; font-weight: 400; text-transform: uppercase; color: var(--dark); margin-bottom: 12px; }
     .cred-body { font-family: var(--font-body); font-size: 15px; line-height: 1.65; color: #555; }
@@ -167,16 +169,19 @@
     <h2 class="cred-h2">Clients with the highest standards.</h2>
     <div class="cred-grid">
       <a href="/work/glenfiddich/" class="cred-card">
+        <div class="cred-thumb"><span class="cred-thumb-label">Project image</span></div>
         <span class="cred-badge">Premium Spirits</span>
         <div class="cred-title">Glenfiddich</div>
         <p class="cred-body">Premium sales literature, point-of-sale design and trade campaign materials for one of the world's most recognised single malt Scotch whiskies. Every piece designed to honour the brand's extraordinary heritage and uncompromising quality standards.</p>
       </a>
       <a href="/work/stolichnaya/" class="cred-card">
+        <div class="cred-thumb"><span class="cred-thumb-label">Project image</span></div>
         <span class="cred-badge">Premium Spirits</span>
         <div class="cred-title">Stolichnaya</div>
         <p class="cred-body">Brand-consistent marketing materials for the premium vodka brand's UK market activity. Design work that maintained the brand's distinctive visual identity while adapting effectively to a range of format requirements.</p>
       </a>
       <div class="cred-card">
+        <div class="cred-thumb"><span class="cred-thumb-label">Project image</span></div>
         <span class="cred-badge">Premium Spirits</span>
         <div class="cred-title">Balvenie</div>
         <p class="cred-body">Premium sales literature and trade campaign materials for one of Speyside's most celebrated single malt Scotch whisky distilleries, reflecting decades of traditional craftsmanship and rare cask expertise.</p>
