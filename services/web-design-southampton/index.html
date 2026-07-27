@@ -163,16 +163,9 @@
 <section class="page-hero">
   <div class="hero-media">
     <div class="hero-slides" id="heroSlides">
-      <div class="hero-slide active"></div>
-      <div class="hero-slide"></div>
-      <div class="hero-slide"></div>
+      <div class="hero-slide active" style="background-image:url('/images/hero-web-design-1.jpg');background-size:cover;background-position:center;"></div>
     </div>
     <div class="hero-overlay"></div>
-  </div>
-  <div class="hero-dots" id="heroDots">
-    <button class="hero-dot active" data-slide="0"></button>
-    <button class="hero-dot" data-slide="1"></button>
-    <button class="hero-dot" data-slide="2"></button>
   </div>
   <div class="hero-content" style="padding-top:68px;">
     <p class="page-hero-eyebrow">Web design agency Southampton</p>
@@ -267,17 +260,17 @@
     <h2 class="featured-h2">Web projects we are proud of.</h2>
     <div class="featured-grid">
       <div class="featured-card">
-        <div class="featured-thumb"><span class="featured-thumb-label">Project screenshot</span></div>
+        <div class="featured-thumb" style="background-image:url('/images/work/charters.jpg');background-size:cover;background-position:center;"></div>
         <div class="featured-client">Charters</div>
         <p class="featured-proj">Website design and build for the Charters brand we created from a single Winchester office. Mobile-first, CMS-powered, with integrated property search, updated and extended as the business has grown across the South Coast.</p>
       </div>
       <div class="featured-card">
-        <div class="featured-thumb"><span class="featured-thumb-label">Project screenshot</span></div>
+        <div class="featured-thumb" style="background-image:url('/images/work/wykeham-homes.jpg');background-size:cover;background-position:center;"></div>
         <div class="featured-client">Wykeham Homes</div>
         <p class="featured-proj">New website for a Hampshire residential developer. Designed to showcase developments compellingly and capture enquiries from purchasers at every stage of the buying decision.</p>
       </div>
       <div class="featured-card">
-        <div class="featured-thumb"><span class="featured-thumb-label">Project screenshot</span></div>
+        <div class="featured-thumb" style="background-image:url('/images/work/trinity-rose.jpg');background-size:cover;background-position:center;"></div>
         <div class="featured-client">Trinity Rose</div>
         <p class="featured-proj">Brand-new website for a growing professional services firm. Clean, authoritative design with clear service navigation and strong SEO foundations built into every page.</p>
       </div>
@@ -371,8 +364,6 @@
   </div>
 </footer>
 
-<script>
-(function(){var s=document.querySelectorAll('#heroSlides .hero-slide'),d=document.querySelectorAll('#heroDots .hero-dot'),c=0,t;function g(n){s[c].classList.remove('active');d[c].classList.remove('active');c=(n+s.length)%s.length;s[c].classList.add('active');d[c].classList.add('active');}function st(){t=setInterval(function(){g(c+1);},5000);}d.forEach(function(x,i){x.addEventListener('click',function(){clearInterval(t);g(i);st();});});st();})();
 // FAQ accordion
 document.querySelectorAll('.faq-q').forEach(function(q){
   q.addEventListener('click',function(){
